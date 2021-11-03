@@ -15,3 +15,4 @@ Our cool project for GitHub Game Off 2021
 - Metal slug gameboy: https://www.youtube.com/watch?v=1cRgZnEzrqg
 - Hyper light drifter: https://www.youtube.com/watch?v=9DZYM2PJdjM
 - Fez: https://www.youtube.com/watch?v=UIQIcOlCxas
+- Drag queen in pixel art: https://user-images.githubusercontent.com/846063/139999565-33073a1b-c028-42a9-9435-9829239d74ef.png
