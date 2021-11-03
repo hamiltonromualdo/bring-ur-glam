@@ -1,5 +1,5 @@
 # bring-ur-glam
-Our cool project for GitHub Game Off 2021
+Our cool project for [GitHub Game Off 2021](https://itch.io/jam/game-off-2021)!
 
 
 # Material
