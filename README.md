@@ -10,6 +10,10 @@ Our cool project for [GitHub Game Off 2021](https://itch.io/jam/game-off-2021)!
 - Free assets: https://www.kenney.nl/assets
 - Pixel art: https://www.spriters-resource.com/
 
+## Music source
+- Chiptone: https://sfbgames.itch.io/chiptone
+- Kenney: https://www.kenney.nl/assets/interface-sounds
+
 # Inspirations
 
 - Metal slug gameboy: https://www.youtube.com/watch?v=1cRgZnEzrqg
