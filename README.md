@@ -9,6 +9,7 @@ Our cool project for [GitHub Game Off 2021](https://itch.io/jam/game-off-2021)!
 - Getting started (latest): https://docs.godotengine.org/en/latest/getting_started/first_2d_game/index.html
 - Free assets: https://www.kenney.nl/assets
 - Pixel art: https://www.spriters-resource.com/
+- Example: https://godotengine.org/asset-library/asset/120
 
 ## Music source
 - Chiptone: https://sfbgames.itch.io/chiptone
