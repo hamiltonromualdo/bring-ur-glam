@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://HealthBar.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.635294, 0.231373, 0.231373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.278431, 0.270588, 0.270588, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.909804, 0.843137, 0.290196, 1 )
+
+[node name="HealthBar" type="Control"]
+anchor_left = -0.021
+anchor_top = -0.016
+anchor_right = 0.075
+anchor_bottom = 0.081
+margin_left = 6.72
+margin_top = 2.88
+margin_right = -24.0
+margin_bottom = -14.58
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_left = -0.025
+anchor_top = -0.037
+margin_right = 10.0
+margin_bottom = 1.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+step = 1.0
+value = 50.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar2" type="ProgressBar" parent="ProgressBar"]
+show_behind_parent = true
+anchor_left = -0.025
+anchor_top = -0.037
+margin_left = 0.25
+margin_top = 0.037
+margin_right = 10.0
+margin_bottom = 1.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 2 )
+step = 1.0
+value = 70.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 0.2
+
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_Timer_timeout"]

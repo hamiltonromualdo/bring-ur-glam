@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/prototype.png" type="Texture" id=1]
+[ext_resource path="res://Enemy.gd" type="Script" id=2]
+[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.98543, 6.95294 )
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 1 )
+
+[node name="EdgeDetector" type="RayCast2D" parent="."]
+position = Vector2( 3.78616, 0.361803 )
+enabled = true
+cast_to = Vector2( 0, 8 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="HealthBar" parent="." instance=ExtResource( 3 )]
+margin_left = -5.29384
+margin_top = -11.2648
+margin_right = -5.29384
+margin_bottom = -11.2648
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
