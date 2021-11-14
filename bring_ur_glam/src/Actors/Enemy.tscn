@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/prototype.png" type="Texture" id=1]
-[ext_resource path="res://Enemy.gd" type="Script" id=2]
-[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://src/UserInterface/HealthBar.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.98543, 6.95294 )

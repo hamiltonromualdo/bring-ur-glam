@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://HealthBar.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/HealthBar.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.635294, 0.231373, 0.231373, 1 )
+bg_color = Color( 0.392157, 0.682353, 0.337255, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.278431, 0.270588, 0.270588, 0 )
+bg_color = Color( 0.25098, 0.25098, 0.25098, 0 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.909804, 0.843137, 0.290196, 1 )
@@ -44,9 +44,9 @@ show_behind_parent = true
 anchor_left = -0.025
 anchor_top = -0.037
 margin_left = 0.25
-margin_top = 0.037
+margin_top = 0.0271569
 margin_right = 10.0
-margin_bottom = 1.0
+margin_bottom = 0.990157
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 2 )
 step = 1.0
@@ -58,6 +58,6 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="ProgressBar"]
-wait_time = 0.2
+wait_time = 0.5
 
 [connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_Timer_timeout"]

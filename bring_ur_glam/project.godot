@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Playground"
-run/main_scene="res://Main.tscn"
+config/name="Bring Ur Glam"
+run/main_scene="res://src/Levels/Playground.tscn"
 config/icon="res://icon.png"
 
 [display]
