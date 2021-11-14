@@ -22,6 +22,6 @@ func _on_VisibilityNotifier2D_screen_exited():
     queue_free()
 
 func _on_HeartAmmo_body_entered(body):
-    if "Enemy" in body.name:
+    if "Enemy" in body.name or "Player" in body.name:
         body.hurt()
     queue_free()
