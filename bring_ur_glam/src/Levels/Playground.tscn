@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Prototype-test.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Levels/Playground.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/bg.png" type="Texture" id=6]
 [ext_resource path="res://assets/tree.png" type="Texture" id=7]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=8]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource( 2 )
@@ -93,3 +94,6 @@ tile_data = PoolIntArray( 458811, 10, 0, 786411, 10, 0 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Enemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( -701.745, 152.188 )
