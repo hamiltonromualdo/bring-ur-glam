@@ -18,7 +18,7 @@ func set_direction(dir):
     DIRECTION = dir
     $Sprite.flip_h = !DIRECTION
     $EdgeDetector.position.x = abs($EdgeDetector.position.x)
-    $Position2D.set("position", Vector2(12, 0) if dir else Vector2(-12, 0))
+    $Muzzle.set("position", Vector2(12, 0) if dir else Vector2(-12, 0))
     if !dir:
         $EdgeDetector.position.x *= -1
 
@@ -30,7 +30,7 @@ func fire():
         var fireball = FIREBALL.instance()
         fireball.set_fireball_direction(DIRECTION)
         get_parent().add_child(fireball)
-        fireball.position = $Position2D.global_position
+        fireball.position = $Muzzle.global_position
         $ShootingTimer.start()
         canFire = false
 

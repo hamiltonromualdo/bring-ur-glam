@@ -9,4 +9,4 @@ func _process(delta):
         var fireball = FIREBALL.instance()
         fireball.set_fireball_direction(playerPosition)
         get_parent().add_child(fireball)
-        fireball.position = $Player/Position2D.global_position
+        fireball.position = $Player/Muzzle.global_position

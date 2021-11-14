@@ -59,9 +59,9 @@ func get_input_velocity(velocity: Vector2) -> Vector2:
 
 func set_gun_barrel(is_right: bool) -> void:
     if is_right:
-        $Position2D.set("position", Vector2(12, 10))
+        $Muzzle.set("position", Vector2(12, 10))
     else:
-        $Position2D.set("position", Vector2(-12, 10))
+        $Muzzle.set("position", Vector2(-12, 10))
 
 
 func update_direction(is_right: bool) -> void:
