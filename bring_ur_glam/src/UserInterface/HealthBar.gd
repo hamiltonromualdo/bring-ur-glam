@@ -25,7 +25,7 @@ func _process(delta):
         $ProgressBar/ProgressBar2.value = $ProgressBar.value
         set_process(false)
         $ProgressBar/Timer.stop()
-    
+
 func _on_Timer_timeout():
     print("Timer finished")
     set_process(true)

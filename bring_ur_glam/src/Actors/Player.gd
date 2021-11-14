@@ -49,12 +49,12 @@ func _physics_process(delta):
         $AnimationPlayer.play("Walk")
     else:
         $AnimationPlayer.play("Idle")
-        
+
     if velocity.y != 0:
         $AnimationPlayer.play("Up")
-    
+
     velocity.y += GRAVITY
-    
+
     velocity = move_and_slide(velocity, FLOOR)
 
 func _on_DeathTimer_timeout():
