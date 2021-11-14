@@ -1,51 +1,78 @@
 extends KinematicBody2D
 
-export var SPEED = 100
-export var GRAVITY = 10
-export var JUMP_POWER = -250
+export var SPEED = 100.0
+export var GRAVITY = 10.0
+export var JUMP_POWER = -250.0
 const FLOOR = Vector2(0, -1)
 export var HP = 10
 
 export var DIRECTION = true
-var velocity = Vector2.ZERO
+var _velocity = Vector2.ZERO
 
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
     hurt()
 
 
-func _ready():
+func _on_DeathTimer_timeout() -> void:
+    queue_free()
+
+
+func _ready() -> void:
     $HealthBar.set_values(0, HP, HP)
+
+
+func die():
+    _velocity = Vector2.ZERO
+    $HealthBar.visible = false
+    $CollisionShape2D.set_deferred("disabled", true)
+    $DeathTimer.start()
+    $Sprite.flip_v = true
+
 
 func hurt():
     HP -= 1
     $HealthBar.set_hp(HP)
     if HP <= 0:
-        velocity = Vector2.ZERO
-        $HealthBar.visible = false
-        $CollisionShape2D.set_deferred("disabled", true)
-        $DeathTimer.start()
-        $Sprite.flip_v = true
+        die()
 
-func _physics_process(delta):
+
+func get_x_input() -> float:
     if Input.is_action_pressed("ui_right"):
-        velocity.x = SPEED
+        return SPEED
     elif Input.is_action_pressed("ui_left"):
-        velocity.x = -SPEED
+        return -SPEED
     else:
-        velocity.x = 0
-    
+        return 0.0
+
+
+func get_y_input(velocity: Vector2) -> float:
     if is_on_floor() and Input.is_action_pressed("ui_jump"):
-        velocity.y = JUMP_POWER
-    
+        return JUMP_POWER
+    else:
+        return velocity.y
+
+
+func get_input_velocity(velocity: Vector2) -> Vector2:
+    return Vector2(get_x_input(), get_y_input(velocity))
+
+
+func set_gun_barrel(is_right: bool) -> void:
+    if is_right:
+        $Position2D.set("position", Vector2(12, 10))
+    else:
+        $Position2D.set("position", Vector2(-12, 10))
+
+
+func update_direction(is_right: bool) -> void:
+    DIRECTION = is_right
+    set_gun_barrel(is_right)
+    $Sprite.flip_h = !is_right
+
+
+func set_animation(velocity: Vector2) -> void:
     if velocity.x != 0:
-        DIRECTION = velocity.x > 0
-        if DIRECTION:
-            $Position2D.set("position", Vector2(12, 10))
-            $Sprite.flip_h = false
-        else:
-            $Position2D.set("position", Vector2(-12, 10))
-            $Sprite.flip_h = true
+        update_direction(velocity.x > 0)
         $AnimationPlayer.play("Walk")
     else:
         $AnimationPlayer.play("Idle")
@@ -53,9 +80,11 @@ func _physics_process(delta):
     if velocity.y != 0:
         $AnimationPlayer.play("Up")
 
-    velocity.y += GRAVITY
 
-    velocity = move_and_slide(velocity, FLOOR)
+func _physics_process(delta: float) -> void:
+    var new_velocity = get_input_velocity(_velocity)
+    set_animation(new_velocity)
 
-func _on_DeathTimer_timeout():
-    queue_free()
+    new_velocity.y += GRAVITY
+
+    _velocity = move_and_slide(new_velocity, FLOOR)
