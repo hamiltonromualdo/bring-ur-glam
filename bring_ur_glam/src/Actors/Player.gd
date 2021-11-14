@@ -9,6 +9,11 @@ export var HP = 10
 export var DIRECTION = true
 var velocity = Vector2.ZERO
 
+
+func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
+    hurt()
+
+
 func _ready():
     $HealthBar.set_values(0, HP, HP)
 

@@ -38,11 +38,6 @@ func _physics_process(delta):
         DIRECTION = !DIRECTION
         $Sprite.flip_h = !DIRECTION
         $EdgeDetector.position.x *= -1
-    
-    if get_slide_count() > 0:
-        for i in range(get_slide_count()):
-            if "Person" in get_slide_collision(i).collider.name:
-                get_slide_collision(i).collider.hurt()
 
 
 func _on_DeathTimer_timeout():
