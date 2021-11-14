@@ -45,6 +45,7 @@ margin_right = -5.29384
 margin_bottom = -11.2648
 
 [node name="PlayerFinder" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerFinder"]
 shape = SubResource( 2 )
