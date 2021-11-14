@@ -70,18 +70,18 @@ func _physics_process(delta):
 
     if get_slide_count() > 0:
         for i in range(get_slide_count()):
-            if "Person" in get_slide_collision(i).collider.name:
+            if "Player" in get_slide_collision(i).collider.name:
                 get_slide_collision(i).collider.hurt()
 
 func _on_DeathTimer_timeout():
     queue_free()
 
 func _on_PlayerFinder_body_entered(body: Node) -> void:
-    if body.name == "Person":
+    if body.name == "Player":
         player = body
 
 func _on_PlayerFinder_body_exited(body: Node) -> void:
-    if body.name == "Person":
+    if body.name == "Player":
         player = null
 
 func _on_ShootingTimer_timeout() -> void:
