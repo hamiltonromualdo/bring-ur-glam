@@ -33,7 +33,7 @@ func _physics_process(delta):
 
     velocity.y += GRAVITY
     velocity = move_and_slide(velocity, FLOOR)
-    
+
     if is_on_wall() or not $EdgeDetector.is_colliding():
         DIRECTION = !DIRECTION
         $Sprite.flip_h = !DIRECTION
