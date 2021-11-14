@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UserInterface/ColorSwatch.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/blank_button.png" type="Texture" id=2]
+
+[node name="ColorSwatch" type="TextureButton"]
+anchor_right = 0.05
+anchor_bottom = 0.089
+margin_right = 1.90735e-06
+margin_bottom = -0.0200024
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
+texture = ExtResource( 2 )
