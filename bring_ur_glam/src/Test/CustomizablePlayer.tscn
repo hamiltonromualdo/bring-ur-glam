@@ -1,0 +1,335 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/player/shoes_1.png" type="Texture" id=1]
+[ext_resource path="res://assets/player/body_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/player/hair_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/gun_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/dress_1.png" type="Texture" id=5]
+[ext_resource path="res://src/Test/CustomizablePlayer.gd" type="Script" id=6]
+[ext_resource path="res://assets/UbuntuMono-Regular.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositionalSprites/Hair:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositionalSprites/Dress:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositionalSprites/Shoes:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositionalSprites/Gun:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositionalSprites/Body:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Walk"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositionalSprites/Hair:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositionalSprites/Dress:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositionalSprites/Shoes:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositionalSprites/Gun:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositionalSprites/Body:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 7 )
+
+[node name="CustomizablePlayer" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="CompositionalSprites" type="Node2D" parent="."]
+position = Vector2( 45, 32 )
+scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hair" type="Sprite" parent="CompositionalSprites"]
+texture = ExtResource( 3 )
+hframes = 10
+
+[node name="Dress" type="Sprite" parent="CompositionalSprites"]
+texture = ExtResource( 5 )
+hframes = 10
+
+[node name="Shoes" type="Sprite" parent="CompositionalSprites"]
+texture = ExtResource( 1 )
+hframes = 10
+
+[node name="Gun" type="Sprite" parent="CompositionalSprites"]
+texture = ExtResource( 4 )
+hframes = 10
+
+[node name="Body" type="Sprite" parent="CompositionalSprites"]
+texture = ExtResource( 2 )
+hframes = 10
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Idle = SubResource( 3 )
+anims/Walk = SubResource( 2 )
+
+[node name="Hair" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 9.0
+margin_right = 139.0
+margin_bottom = 19.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Hair"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairChangeLeft" type="Button" parent="."]
+margin_left = 98.0
+margin_top = 4.0
+margin_right = 114.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 4 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairChangeRight" type="Button" parent="."]
+margin_left = 141.0
+margin_top = 3.0
+margin_right = 157.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 4 )
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairColorPicker" type="ColorPicker" parent="."]
+margin_left = 98.0
+margin_top = 23.0
+margin_right = 406.0
+margin_bottom = 461.0
+rect_scale = Vector2( 0.2, 0.2 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dress" type="RichTextLabel" parent="."]
+margin_left = 186.0
+margin_top = 6.0
+margin_right = 212.0
+margin_bottom = 16.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Dress"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DressColorPicker" type="ColorPicker" parent="."]
+margin_left = 171.0
+margin_top = 23.0
+margin_right = 479.0
+margin_bottom = 461.0
+rect_scale = Vector2( 0.2, 0.2 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shoes" type="RichTextLabel" parent="."]
+margin_left = 263.0
+margin_top = 7.0
+margin_right = 289.0
+margin_bottom = 17.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Shoes"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShoesColorPicker" type="ColorPicker" parent="."]
+margin_left = 246.0
+margin_top = 22.0
+margin_right = 554.0
+margin_bottom = 460.0
+rect_scale = Vector2( 0.2, 0.2 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gun" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 112.0
+margin_right = 146.0
+margin_bottom = 122.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Gun"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GunColorPicker" type="ColorPicker" parent="."]
+margin_left = 100.0
+margin_top = 122.0
+margin_right = 408.0
+margin_bottom = 560.0
+rect_scale = Vector2( 0.2, 0.2 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="RichTextLabel" parent="."]
+margin_left = 190.0
+margin_top = 112.0
+margin_right = 216.0
+margin_bottom = 122.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "Body"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodyColorPicker" type="ColorPicker" parent="."]
+margin_left = 170.0
+margin_top = 121.0
+margin_right = 478.0
+margin_bottom = 559.0
+rect_scale = Vector2( 0.2, 0.2 )
+edit_alpha = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rand" type="Button" parent="."]
+margin_left = 37.0
+margin_top = 125.0
+margin_right = 53.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 4 )
+text = "Rand"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="HairChangeLeft" to="." method="_on_HairChangeLeft_pressed"]
+[connection signal="pressed" from="HairChangeRight" to="." method="_on_HairChangeRight_pressed"]
+[connection signal="color_changed" from="HairColorPicker" to="." method="_on_HairColorPicker_color_changed"]
+[connection signal="color_changed" from="DressColorPicker" to="." method="_on_DressColorPicker_color_changed"]
+[connection signal="color_changed" from="ShoesColorPicker" to="." method="_on_ShoesColorPicker_color_changed"]
+[connection signal="color_changed" from="GunColorPicker" to="." method="_on_GunColorPicker_color_changed"]
+[connection signal="color_changed" from="BodyColorPicker" to="." method="_on_BodyColorPicker_color_changed"]
+[connection signal="pressed" from="Rand" to="." method="_on_Rand_pressed"]
