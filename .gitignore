@@ -1,12 +1,8 @@
 
 # Godot-specific ignores
-.import/
-export.cfg
-export_presets.cfg
-
-playground/.import/
-playground/export.cfg
-playground/export_presets.cfg
+bring_ur_glam/.import/
+bring_ur_glam/export.cfg
+bring_ur_glam/export_presets.cfg
 
 # Mono-specific ignores
 .mono/
