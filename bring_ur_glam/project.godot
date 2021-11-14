@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Actors/Player.gd"
+}, {
+"base": "TextureButton",
+"class": "ColorSwatch",
+"language": "GDScript",
+"path": "res://src/UserInterface/ColorSwatch.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
-"Player": ""
+"Player": "",
+"ColorSwatch": ""
 }
 
 [application]
