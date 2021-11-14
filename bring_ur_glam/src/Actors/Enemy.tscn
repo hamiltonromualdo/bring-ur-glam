@@ -4,11 +4,12 @@
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/HealthBar.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.98543, 6.95294 )
 
 [node name="Enemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -24,6 +25,7 @@ shape = SubResource( 1 )
 position = Vector2( 3.78616, 0.361803 )
 enabled = true
 cast_to = Vector2( 0, 8 )
+collision_mask = 4
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 2.0
