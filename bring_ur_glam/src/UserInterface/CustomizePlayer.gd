@@ -92,3 +92,7 @@ func _on_DressColor_color_changed(color) -> void:
 
 func _on_ShoesColor_color_changed(color) -> void:
     set_shoes_color(color)
+
+
+func _on_Save_pressed() -> void:
+    pass # Replace with function body.

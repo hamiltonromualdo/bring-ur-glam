@@ -27,7 +27,7 @@ margin_right = 305.0
 margin_bottom = 174.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 15
+custom_constants/separation = 11
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -71,9 +71,9 @@ __meta__ = {
 }
 
 [node name="HairColor" parent="VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 30.0
+margin_top = 26.0
 margin_right = 171.0
-margin_bottom = 38.0
+margin_bottom = 34.0
 
 [node name="ColorSwatch" type="TextureButton" parent="VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -147,9 +147,9 @@ __meta__ = {
 color = Color( 0.188235, 0.211765, 0, 1 )
 
 [node name="SkinColor" parent="VBoxContainer" instance=ExtResource( 8 )]
-margin_top = 53.0
+margin_top = 45.0
 margin_right = 171.0
-margin_bottom = 61.0
+margin_bottom = 53.0
 
 [node name="ColorSwatch" type="TextureButton" parent="VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -247,9 +247,9 @@ __meta__ = {
 color = Color( 0.678431, 0.192157, 0, 1 )
 
 [node name="GunColor" parent="VBoxContainer" instance=ExtResource( 11 )]
-margin_top = 76.0
+margin_top = 64.0
 margin_right = 171.0
-margin_bottom = 84.0
+margin_bottom = 72.0
 
 [node name="ColorSwatch" type="TextureButton" parent="VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -347,9 +347,9 @@ __meta__ = {
 color = Color( 0.996078, 0.313726, 0, 1 )
 
 [node name="DressColor" parent="VBoxContainer" instance=ExtResource( 12 )]
-margin_top = 99.0
+margin_top = 83.0
 margin_right = 171.0
-margin_bottom = 107.0
+margin_bottom = 91.0
 
 [node name="ColorSwatch" type="TextureButton" parent="VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -447,9 +447,9 @@ __meta__ = {
 color = Color( 0.239216, 0.00784314, 0.419608, 1 )
 
 [node name="ShoesColor" parent="VBoxContainer" instance=ExtResource( 13 )]
-margin_top = 122.0
+margin_top = 102.0
 margin_right = 171.0
-margin_bottom = 130.0
+margin_bottom = 110.0
 
 [node name="ColorSwatch" type="TextureButton" parent="VBoxContainer/ShoesColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -547,11 +547,21 @@ __meta__ = {
 color = Color( 0.0156863, 0.0156863, 0.0705882, 1 )
 
 [node name="Rand" type="Button" parent="VBoxContainer"]
-margin_top = 145.0
+margin_top = 121.0
 margin_right = 171.0
-margin_bottom = 160.0
+margin_bottom = 136.0
 custom_fonts/font = SubResource( 4 )
 text = "Rand"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="VBoxContainer"]
+margin_top = 147.0
+margin_right = 171.0
+margin_bottom = 162.0
+custom_fonts/font = SubResource( 4 )
+text = "Save"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -564,3 +574,4 @@ __meta__ = {
 [connection signal="color_changed" from="VBoxContainer/DressColor" to="." method="_on_DressColor_color_changed"]
 [connection signal="color_changed" from="VBoxContainer/ShoesColor" to="." method="_on_ShoesColor_color_changed"]
 [connection signal="pressed" from="VBoxContainer/Rand" to="." method="_on_Rand_pressed"]
+[connection signal="pressed" from="VBoxContainer/Save" to="." method="_on_Save_pressed"]
