@@ -59,3 +59,7 @@ func _on_ShoesColor_color_changed(color) -> void:
 
 func _on_Save_pressed() -> void:
     player.save_data()
+
+
+func _on_StartGame_pressed() -> void:
+    get_tree().change_scene("res://src/Levels/Playground.tscn")

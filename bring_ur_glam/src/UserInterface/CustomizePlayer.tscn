@@ -560,12 +560,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Save" type="Button" parent="VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 147.0
 margin_right = 171.0
 margin_bottom = 162.0
+
+[node name="Save" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 28.0
+margin_bottom = 15.0
 custom_fonts/font = SubResource( 4 )
 text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGame" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 32.0
+margin_right = 116.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 4 )
+text = "Start Game! Yaaay!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -578,6 +592,7 @@ __meta__ = {
 [connection signal="color_changed" from="VBoxContainer/DressColor" to="." method="_on_DressColor_color_changed"]
 [connection signal="color_changed" from="VBoxContainer/ShoesColor" to="." method="_on_ShoesColor_color_changed"]
 [connection signal="pressed" from="VBoxContainer/Rand" to="." method="_on_Rand_pressed"]
-[connection signal="pressed" from="VBoxContainer/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/StartGame" to="." method="_on_StartGame_pressed"]
 
 [editable path="PlayerImages"]
