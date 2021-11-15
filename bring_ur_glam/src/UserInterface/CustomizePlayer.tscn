@@ -1,11 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/UserInterface/PlayerCustomization/HairColorSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.gd" type="Script" id=2]
-[ext_resource path="res://assets/player/shoes_1.png" type="Texture" id=3]
-[ext_resource path="res://assets/player/dress_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/player/gun_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/player/hair_1.png" type="Texture" id=6]
+[ext_resource path="res://src/Actors/PlayerImages.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/UbuntuMono-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/SkinColorSelector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.tscn" type="PackedScene" id=9]
@@ -14,139 +11,6 @@
 [ext_resource path="res://src/UserInterface/PlayerCustomization/DressColorSelector.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ShoesColorSelector.tscn" type="PackedScene" id=13]
 
-[sub_resource type="StreamTexture" id=5]
-load_path = "res://.import/body_1.png-fd4edeb15dcc1a774ed828a2dbebd69c.stex"
-
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("CompositionalSprites/Hair:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CompositionalSprites/Dress:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CompositionalSprites/Shoes:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CompositionalSprites/Gun:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("CompositionalSprites/Skin:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "Walk"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("CompositionalSprites/Hair:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CompositionalSprites/Dress:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CompositionalSprites/Shoes:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CompositionalSprites/Gun:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("CompositionalSprites/Skin:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
-}
-
 [sub_resource type="DynamicFont" id=4]
 size = 8
 font_data = ExtResource( 7 )
@@ -154,37 +18,7 @@ font_data = ExtResource( 7 )
 [node name="CustomizablePlayer" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="CompositionalSprites" type="Node2D" parent="."]
-position = Vector2( 61, 74 )
-scale = Vector2( 4, 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Hair" type="Sprite" parent="CompositionalSprites"]
-texture = ExtResource( 6 )
-hframes = 10
-
-[node name="Dress" type="Sprite" parent="CompositionalSprites"]
-texture = ExtResource( 4 )
-hframes = 10
-
-[node name="Shoes" type="Sprite" parent="CompositionalSprites"]
-texture = ExtResource( 3 )
-hframes = 10
-
-[node name="Gun" type="Sprite" parent="CompositionalSprites"]
-texture = ExtResource( 5 )
-hframes = 10
-
-[node name="Skin" type="Sprite" parent="CompositionalSprites"]
-texture = SubResource( 5 )
-hframes = 10
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
-anims/Idle = SubResource( 3 )
-anims/Walk = SubResource( 2 )
+[node name="PlayerImages" parent="." instance=ExtResource( 3 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 134.0
