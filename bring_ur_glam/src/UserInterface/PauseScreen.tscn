@@ -3,7 +3,6 @@
 [ext_resource path="res://src/UserInterface/PauseScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/UbuntuMono-Regular.ttf" type="DynamicFontData" id=2]
 
-
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
@@ -57,5 +56,16 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 144.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 1 )
+text = "Restart"
+__meta__ = {
+"_editor_description_": ""
+}
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
