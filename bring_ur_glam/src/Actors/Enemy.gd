@@ -22,7 +22,7 @@ func set_direction(dir):
     DIRECTION = dir
     $Sprite.flip_h = !DIRECTION
     $EdgeDetector.position.x = abs($EdgeDetector.position.x)
-    $Muzzle.set("position", Vector2(12, 0) if dir else Vector2(-12, 0))
+    $Gun.set("position", Vector2(12, 0) if dir else Vector2(-12, 0))
     if !dir:
         $EdgeDetector.position.x *= -1
 
@@ -31,12 +31,7 @@ func _ready():
 
 func fire():
     if canFire:
-        var b = BULLET.instance()
-        b.set_fireball_direction(DIRECTION)
-        owner.add_child(b)
-        # TODO should use position or transform?
-        #b.position = $Muzzle.global_position
-        b.transform = $Muzzle.global_transform
+        $Gun.fire(DIRECTION)
         $ShootingTimer.start()
         canFire = false
 
