@@ -11,6 +11,9 @@ export var HP = 10
 export var DIRECTION = true
 var _velocity = Vector2.ZERO
 
+onready var animationPlayer = $PlayerImages/AnimationPlayer
+onready var sprite = $PlayerImages
+
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
     hurt()
@@ -29,7 +32,7 @@ func die():
     $HealthBar.visible = false
     $CollisionShape2D.set_deferred("disabled", true)
     $DeathTimer.start()
-    $Sprite.flip_v = true
+    sprite.flip_v(true)
 
 
 func hurt():
@@ -69,18 +72,18 @@ func set_gun_barrel(is_right: bool) -> void:
 func update_direction(is_right: bool) -> void:
     DIRECTION = is_right
     set_gun_barrel(is_right)
-    $Sprite.flip_h = !is_right
+    sprite.flip_h(!is_right)
 
 
 func set_animation(velocity: Vector2) -> void:
     if velocity.x != 0:
         update_direction(velocity.x > 0)
-        $AnimationPlayer.play("Walk")
+        animationPlayer.play("Walk")
     else:
-        $AnimationPlayer.play("Idle")
+        animationPlayer.play("Idle")
 
     if velocity.y != 0:
-        $AnimationPlayer.play("Up")
+        animationPlayer.play("Up")
 
 
 func _physics_process(delta: float) -> void:
