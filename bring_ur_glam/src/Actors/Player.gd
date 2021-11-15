@@ -1,3 +1,4 @@
+class_name Player
 extends KinematicBody2D
 
 export var SPEED = 100.0
@@ -5,6 +6,7 @@ export var GRAVITY = 10.0
 export var JUMP_POWER = -250.0
 const FLOOR = Vector2(0, -1)
 export var HP = 10
+
 
 export var DIRECTION = true
 var _velocity = Vector2.ZERO
@@ -59,9 +61,9 @@ func get_input_velocity(velocity: Vector2) -> Vector2:
 
 func set_gun_barrel(is_right: bool) -> void:
     if is_right:
-        $Position2D.set("position", Vector2(12, 10))
+        $Gun.set("position", Vector2(12, 10))
     else:
-        $Position2D.set("position", Vector2(-12, 10))
+        $Gun.set("position", Vector2(-12, 10))
 
 
 func update_direction(is_right: bool) -> void:
@@ -84,6 +86,9 @@ func set_animation(velocity: Vector2) -> void:
 func _physics_process(delta: float) -> void:
     var new_velocity = get_input_velocity(_velocity)
     set_animation(new_velocity)
+
+    if Input.is_action_just_pressed("ui_shoot"):
+        $Gun.fire(DIRECTION)
 
     new_velocity.y += GRAVITY
 
