@@ -6,9 +6,9 @@
 [node name="ColorSwatch" type="TextureButton"]
 anchor_right = 0.05
 anchor_bottom = 0.089
-margin_right = 1.90735e-06
-margin_bottom = -0.0200024
-rect_min_size = Vector2( 16, 16 )
+margin_right = -8.0
+margin_bottom = -8.02
+rect_min_size = Vector2( 8, 8 )
 expand = true
 script = ExtResource( 1 )
 __meta__ = {
@@ -16,5 +16,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="Sprite" parent="."]
-position = Vector2( 8, 8 )
+position = Vector2( 4, 4 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
