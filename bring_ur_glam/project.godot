@@ -19,14 +19,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/Player.gd"
 }, {
+"base": "GridContainer",
+"class": "ColorSelectorBase",
+"language": "GDScript",
+"path": "res://src/UserInterface/PlayerCustomization/ColorSelectorBase.gd"
+}, {
 "base": "TextureButton",
 "class": "ColorSwatch",
 "language": "GDScript",
-"path": "res://src/UserInterface/ColorSwatch.gd"
+"path": "res://src/UserInterface/PlayerCustomization/ColorSwatch.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
 "Player": "",
+"ColorSelectorBase": "",
 "ColorSwatch": ""
 }
 

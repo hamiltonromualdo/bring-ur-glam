@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UserInterface/PlayerCustomization/SkinColorSelector.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.gd" type="Script" id=3]
+
+[node name="SkinColorSelector" type="GridContainer"]
+margin_right = 156.0
+margin_bottom = 16.0
+columns = 9
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorSwatch" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.207843, 0.0509804, 0.00784314, 1 )
+
+[node name="ColorSwatch2" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.419608, 0.168627, 0.105882, 1 )
+
+[node name="ColorSwatch3" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.54902, 0.278431, 0.196078, 1 )
+
+[node name="ColorSwatch4" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.678431, 0.388235, 0.290196, 1 )
+
+[node name="ColorSwatch5" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 80.0
+margin_right = 96.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 1, 0.713726, 0.670588, 1 )
+
+[node name="ColorSwatch6" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 100.0
+margin_right = 116.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.85098, 0.498039, 0.439216, 1 )
+
+[node name="ColorSwatch7" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 120.0
+margin_right = 136.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.764706, 0.345098, 0.219608, 1 )
+
+[node name="ColorSwatch8" type="TextureButton" parent="." instance=ExtResource( 2 )]
+margin_left = 140.0
+margin_right = 156.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+expand = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.678431, 0.192157, 0, 1 )
