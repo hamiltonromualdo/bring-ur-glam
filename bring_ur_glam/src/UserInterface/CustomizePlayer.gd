@@ -62,4 +62,5 @@ func _on_Save_pressed() -> void:
 
 
 func _on_StartGame_pressed() -> void:
+    player.save_data()
     get_tree().change_scene("res://src/Levels/Playground.tscn")
