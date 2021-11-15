@@ -9,16 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "Enemy",
-"language": "GDScript",
-"path": "res://src/Actors/Enemy.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Player",
-"language": "GDScript",
-"path": "res://src/Actors/Player.gd"
-}, {
 "base": "GridContainer",
 "class": "ColorSelectorBase",
 "language": "GDScript",
@@ -28,12 +18,22 @@ _global_script_classes=[ {
 "class": "ColorSwatch",
 "language": "GDScript",
 "path": "res://src/UserInterface/PlayerCustomization/ColorSwatch.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/Actors/Enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/Actors/Player.gd"
 } ]
 _global_script_class_icons={
-"Enemy": "",
-"Player": "",
 "ColorSelectorBase": "",
-"ColorSwatch": ""
+"ColorSwatch": "",
+"Enemy": "",
+"Player": ""
 }
 
 [application]
