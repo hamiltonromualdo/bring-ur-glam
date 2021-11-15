@@ -5,6 +5,7 @@ export var GRAVITY = 10.0
 export var JUMP_POWER = -250.0
 const FLOOR = Vector2(0, -1)
 export var HP = 10
+export (PackedScene) var BULLET
 
 export var DIRECTION = true
 var _velocity = Vector2.ZERO
@@ -35,6 +36,15 @@ func hurt():
     $HealthBar.set_hp(HP)
     if HP <= 0:
         die()
+
+
+func fire():
+    var b = BULLET.instance()
+    b.set_fireball_direction(DIRECTION)
+    owner.add_child(b)
+    # TODO should use position or transform?
+    #b.position = $Muzzle.global_position
+    b.transform = $Muzzle.global_transform
 
 
 func get_x_input() -> float:
@@ -82,6 +92,8 @@ func set_animation(velocity: Vector2) -> void:
 
 
 func _physics_process(delta: float) -> void:
+    if Input.is_action_just_pressed("ui_shoot"):
+        fire()
     var new_velocity = get_input_velocity(_velocity)
     set_animation(new_velocity)
 

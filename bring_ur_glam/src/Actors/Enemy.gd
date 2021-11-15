@@ -1,18 +1,21 @@
 extends KinematicBody2D
 
+
 export var SPEED = 50
 export var GRAVITY = 10
 export var JUMP_POWER = -250
+export var HP = 3
+export (PackedScene) var BULLET
+
 const FLOOR = Vector2(0, -1)
+
 
 export var DIRECTION = true
 var velocity = Vector2.ZERO
 
-const FIREBALL = preload("res://src/Objects/Bullet.tscn")
 var player = null
 var canFire = true
 
-export var HP = 3
 
 func set_direction(dir):
     DIRECTION = dir
@@ -27,10 +30,12 @@ func _ready():
 
 func fire():
     if canFire:
-        var fireball = FIREBALL.instance()
-        fireball.set_fireball_direction(DIRECTION)
-        get_parent().add_child(fireball)
-        fireball.position = $Muzzle.global_position
+        var b = BULLET.instance()
+        b.set_fireball_direction(DIRECTION)
+        owner.add_child(b)
+        # TODO should use position or transform?
+        #b.position = $Muzzle.global_position
+        b.transform = $Muzzle.global_transform
         $ShootingTimer.start()
         canFire = false
 
