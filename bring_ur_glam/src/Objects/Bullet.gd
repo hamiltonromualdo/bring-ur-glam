@@ -6,6 +6,10 @@ const SPEED = 150
 var velocity = Vector2()
 
 
+func _ready() -> void:
+    $HeartSound.play()
+    
+    
 func _on_Bullet_body_entered(body) -> void:
     if body is Enemy or body is Player:
         body.hurt()

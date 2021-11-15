@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Objects/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/rotatingheart.png" type="Texture" id=2]
+[ext_resource path="res://assets/sound/heart.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 2.0
@@ -84,6 +85,9 @@ process_material = SubResource( 3 )
 autoplay = "RotatingHeart"
 anims/RESET = SubResource( 4 )
 anims/RotatingHeart = SubResource( 5 )
+
+[node name="HeartSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
