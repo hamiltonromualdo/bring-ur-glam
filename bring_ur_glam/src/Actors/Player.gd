@@ -25,6 +25,7 @@ func _on_DeathTimer_timeout() -> void:
 
 func _ready() -> void:
     $HealthBar.set_values(0, HP, HP)
+    $PlayerImages.load_default()
 
 
 func die():

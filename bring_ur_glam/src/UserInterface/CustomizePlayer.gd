@@ -12,6 +12,8 @@ onready var gunColor = $VBoxContainer/GunColor
 onready var dressColor = $VBoxContainer/DressColor
 onready var shoesColor = $VBoxContainer/ShoesColor
 
+var save_path = "user://player.dat"
+
 var hairIndex = 0
 var hair_spritesheet = {
     0: preload("res://assets/player/hair_1.png"),
@@ -95,4 +97,17 @@ func _on_ShoesColor_color_changed(color) -> void:
 
 
 func _on_Save_pressed() -> void:
-    pass # Replace with function body.
+    var player_info = {
+        "hair_style": hairIndex,
+        "hair_color": hairSprite.modulate,
+        "dress_color": dressSprite.modulate,
+        "shoes_color": shoesSprite.modulate,
+        "gun_color": gunSprite.modulate,
+        "skin_color": skinSprite.modulate,
+    }
+    var file = File.new()
+    var error = file.open(save_path, File.WRITE)
+    if error == OK:
+        file.store_var(player_info)
+        file.close()
+
