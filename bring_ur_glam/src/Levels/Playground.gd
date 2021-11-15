@@ -1,6 +1,6 @@
 extends Node2D
 
-const FIREBALL = preload("res://src/Objects/HeartAmmo.tscn")
+const FIREBALL = preload("res://src/Objects/Bullet.tscn")
 
 func _process(delta):
     if Input.is_action_just_pressed("ui_shoot"):

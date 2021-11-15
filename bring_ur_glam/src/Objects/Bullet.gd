@@ -6,7 +6,7 @@ const SPEED = 150
 var velocity = Vector2()
 
 
-func _on_HeartAmmo_body_entered(body) -> void:
+func _on_Bullet_body_entered(body) -> void:
     if "Enemy" in body.name or "Player" in body.name:
         body.hurt()
     queue_free()

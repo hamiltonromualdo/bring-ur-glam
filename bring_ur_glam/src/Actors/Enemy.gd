@@ -8,7 +8,7 @@ const FLOOR = Vector2(0, -1)
 export var DIRECTION = true
 var velocity = Vector2.ZERO
 
-const FIREBALL = preload("res://src/Objects/HeartAmmo.tscn")
+const FIREBALL = preload("res://src/Objects/Bullet.tscn")
 var player = null
 var canFire = true
 
