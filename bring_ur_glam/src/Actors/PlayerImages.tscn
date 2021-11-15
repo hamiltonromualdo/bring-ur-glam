@@ -5,9 +5,7 @@
 [ext_resource path="res://assets/player/gun_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/player/dress_1.png" type="Texture" id=4]
 [ext_resource path="res://src/Actors/PlayerImages.gd" type="Script" id=5]
-
-[sub_resource type="StreamTexture" id=5]
-load_path = "res://.import/body_1.png-fd4edeb15dcc1a774ed828a2dbebd69c.stex"
+[ext_resource path="res://assets/player/skin_1.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
@@ -301,7 +299,7 @@ frame = 1
 
 [node name="Skin" type="Sprite" parent="CompositionalSprites"]
 modulate = Color( 0.356863, 0.227451, 0.172549, 1 )
-texture = SubResource( 5 )
+texture = ExtResource( 6 )
 hframes = 10
 frame = 1
 
