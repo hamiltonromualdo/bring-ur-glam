@@ -11,6 +11,7 @@ onready var player = $PlayerImages
 var save_path = "user://player.dat"
 
 func randomize_char() -> void:
+    randomize()
     player.change_hair(randi())
     player.set_hair_color(hairColor.get_rand_color())
     player.set_dress_color(dressColor.get_rand_color())
