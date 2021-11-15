@@ -8,6 +8,8 @@ export var JUMP_POWER = -250
 export var HP = 3
 export (PackedScene) var BULLET
 
+signal died
+
 const FLOOR = Vector2(0, -1)
 
 
@@ -44,6 +46,7 @@ func hurt():
         $CollisionShape2D.set_deferred("disabled", true)
         $DeathTimer.start()
         $Sprite.flip_v = true
+        emit_signal("died")
 
 func _physics_process(delta):
     if HP <= 0:
