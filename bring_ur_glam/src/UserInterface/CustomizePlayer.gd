@@ -1,10 +1,10 @@
 extends Node2D
 
-onready var hairSprite = $CompositionalSprites/Hair
-onready var dressSprite = $CompositionalSprites/Dress
-onready var shoesSprite = $CompositionalSprites/Shoes
-onready var gunSprite = $CompositionalSprites/Gun
-onready var skinSprite = $CompositionalSprites/Skin
+onready var hairSprite = $PlayerImages/CompositionalSprites/Hair
+onready var dressSprite = $PlayerImages/CompositionalSprites/Dress
+onready var shoesSprite = $PlayerImages/CompositionalSprites/Shoes
+onready var gunSprite = $PlayerImages/CompositionalSprites/Gun
+onready var skinSprite = $PlayerImages/CompositionalSprites/Skin
 
 onready var hairColor = $VBoxContainer/HairColor
 onready var skinColor = $VBoxContainer/SkinColor
