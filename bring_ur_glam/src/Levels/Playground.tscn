@@ -88,3 +88,5 @@ __meta__ = {
 }
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
