@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Levels/Playground.gd" type="Script" id=2]
 [ext_resource path="res://assets/Prototype.tres" type="TileSet" id=3]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/bg.png" type="Texture" id=6]
 [ext_resource path="res://src/UserInterface/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/tiles/path.tres" type="TileSet" id=8]
 
 [node name="Playground" type="Node2D"]
 script = ExtResource( 2 )
@@ -27,6 +28,7 @@ centered = false
 [node name="WalkingPath" type="TileMap" parent="."]
 show_behind_parent = true
 position = Vector2( -1280, 64 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4
 collision_mask = 3
