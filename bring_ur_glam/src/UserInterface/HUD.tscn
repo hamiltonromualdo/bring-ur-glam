@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_right = -4.0
+margin_bottom = 37.0
+theme = ExtResource( 1 )
+text = "o"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

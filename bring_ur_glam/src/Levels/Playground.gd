@@ -10,6 +10,7 @@ func _on_enemyDied() -> void:
     enemiesKilled += 1
     liveEnemies -= 1
     updateNumberOfEnemiesInScreen()
+    $HUD.update_score(enemiesKilled)
 
 
 func updateNumberOfEnemiesInScreen() -> void:
