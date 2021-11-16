@@ -14,6 +14,8 @@ var _velocity = Vector2.ZERO
 onready var animationPlayer = $PlayerImages/AnimationPlayer
 onready var sprite = $PlayerImages
 
+var is_grounded
+signal grounded_updated(is_grounded)
 
 func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
     hurt()
@@ -92,3 +94,9 @@ func _physics_process(delta: float) -> void:
     new_velocity.y += GRAVITY
 
     _velocity = move_and_slide(new_velocity, FLOOR)
+    
+    var was_grounded = is_grounded
+    is_grounded = is_on_floor()
+    
+    if was_grounded == null || is_grounded != was_grounded:
+        emit_signal("grounded_updated", is_grounded)

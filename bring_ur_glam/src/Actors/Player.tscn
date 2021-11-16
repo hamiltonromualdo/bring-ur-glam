@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/Actors/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://src/Objects/Gun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/PlayerImages.tscn" type="PackedScene" id=5]
 
@@ -32,5 +33,24 @@ collision_mask = 2
 position = Vector2( 0, 9 )
 shape = SubResource( 5 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 47, 7 )
+current = true
+limit_left = -1376
+limit_top = -300
+limit_right = 400
+limit_bottom = 210
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_top = 0.75
+editor_draw_limits = true
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Tween" type="Tween" parent="Camera2D"]
+
+[connection signal="grounded_updated" from="." to="Camera2D" method="_on_Player_grounded_updated"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
