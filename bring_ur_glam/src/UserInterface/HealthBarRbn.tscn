@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UserInterface/HealthBarRbn.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/HealthBarRbn.tres" type="Texture" id=2]
+[ext_resource path="res://src/UserInterface/HealthBarRbn2.tres" type="Texture" id=3]
+
+[node name="HealthBarRbn" type="Control"]
+anchor_left = -0.021
+anchor_top = -0.016
+anchor_right = 0.075
+anchor_bottom = 0.081
+margin_left = 6.0
+margin_top = 2.88
+margin_right = -24.0
+margin_bottom = -14.58
+rect_pivot_offset = Vector2( -88.28, 44 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 100.0
+margin_bottom = 7.0
+value = 50.0
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar2" type="TextureProgress" parent="ProgressBar"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+value = 70.0
+texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="ProgressBar"]
+wait_time = 0.3
+
+[connection signal="timeout" from="ProgressBar/Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,5 @@
 extends Control
+class_name HealthBar
 
 func set_values(min_value, max_value, value):
     $ProgressBar.min_value = min_value

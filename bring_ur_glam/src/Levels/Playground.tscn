@@ -67,3 +67,5 @@ format = 1
 tile_data = PoolIntArray( 655321, 6, 0, 655322, 6, 0, 655323, 6, 0, 655324, 6, 0, 655325, 6, 0, 720857, 6, 0, 720858, 6, 0, 720859, 6, 0, 720860, 6, 0, 720861, 6, 0, 786393, 6, 0, 786394, 6, 0, 786395, 6, 0, 786396, 6, 0, 786397, 6, 0 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
+
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]

@@ -5,8 +5,8 @@ export var SPEED = 100.0
 export var GRAVITY = 10.0
 export var JUMP_POWER = -250.0
 const FLOOR = Vector2(0, -1)
-export var HP = 10
 
+signal hit
 
 export var DIRECTION = true
 var _velocity = Vector2.ZERO
@@ -24,23 +24,18 @@ func _on_DeathTimer_timeout() -> void:
 
 
 func _ready() -> void:
-    $HealthBar.set_values(0, HP, HP)
     $PlayerImages.load_data()
 
 
 func die():
     _velocity = Vector2.ZERO
-    $HealthBar.visible = false
     $CollisionShape2D.set_deferred("disabled", true)
     $DeathTimer.start()
     sprite.flip_v(true)
 
 
 func hurt():
-    HP -= 1
-    $HealthBar.set_hp(HP)
-    if HP <= 0:
-        die()
+    emit_signal("hit")
 
 
 func get_x_input() -> float:
