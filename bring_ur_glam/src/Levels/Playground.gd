@@ -68,6 +68,7 @@ func _on_Player_hit() -> void:
     hp -= 10
     $HUD.update_hp(hp)
     if hp <= 0:
+        hp = 0
         $Player.die()
     
 
