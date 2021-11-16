@@ -86,7 +86,7 @@ autoplay = "RotatingHeart"
 anims/RESET = SubResource( 4 )
 anims/RotatingHeart = SubResource( 5 )
 
-[node name="HeartSound" type="AudioStreamPlayer2D" parent="."]
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
