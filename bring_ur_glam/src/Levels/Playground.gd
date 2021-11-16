@@ -37,10 +37,11 @@ func getNewEnemyPosition(enemy: Enemy) -> Vector2:
 
     var spawnToLeft = (randi() % 2) == 0
     var posX = 0
+    var enemyOffset = abs(enemy.get_viewport_rect().position.x - enemy.get_viewport_rect().end.x)/2
     if spawnToLeft:
-        posX = rand_range(floorLeftLimit, $Player.position.x - viewportOffset)
+        posX = rand_range(floorLeftLimit + enemyOffset, $Player.position.x - viewportOffset)
     else:
-        posX = rand_range($Player.position.x + viewportOffset, floorRightLimit)
+        posX = rand_range($Player.position.x + viewportOffset, floorRightLimit - enemyOffset)
 
     var posY = $Player/Camera2D.limit_top
     
