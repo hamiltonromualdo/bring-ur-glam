@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rotatingheart.png-3277b1a6df0b07b91c8d18d2c42fc2f6.stex"
+path="res://.import/rotatingheart.png-824e3fea7275e773732c15ca2f4e4d21.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rotatingheart.png"
-dest_files=[ "res://.import/rotatingheart.png-3277b1a6df0b07b91c8d18d2c42fc2f6.stex" ]
+source_file="res://assets/objects/rotatingheart.png"
+dest_files=[ "res://.import/rotatingheart.png-824e3fea7275e773732c15ca2f4e4d21.stex" ]
 
 [params]
 
