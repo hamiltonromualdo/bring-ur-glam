@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "BulletBase",
+"language": "GDScript",
+"path": "res://src/Objects/BulletBase.gd"
+}, {
 "base": "GridContainer",
 "class": "ColorSelectorBase",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://src/Actors/Player.gd"
 } ]
 _global_script_class_icons={
+"BulletBase": "",
 "ColorSelectorBase": "",
 "ColorSwatch": "",
 "Enemy": "",

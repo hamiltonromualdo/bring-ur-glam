@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/prototype.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/HealthBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Objects/Bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Objects/Gun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/EnemyBullet.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.98543, 6.95294 )
@@ -58,6 +59,7 @@ wait_time = 0.5
 
 [node name="Gun" parent="." instance=ExtResource( 5 )]
 position = Vector2( 12, 0 )
+BULLET = ExtResource( 6 )
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="body_entered" from="PlayerFinder" to="." method="_on_PlayerFinder_body_entered"]
