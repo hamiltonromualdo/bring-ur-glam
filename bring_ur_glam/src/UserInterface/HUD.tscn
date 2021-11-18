@@ -5,7 +5,6 @@
 [ext_resource path="res://src/UserInterface/HealthBarRbn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/fonts/UbuntuMono-Regular.ttf" type="DynamicFontData" id=4]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 10
 font_data = ExtResource( 4 )

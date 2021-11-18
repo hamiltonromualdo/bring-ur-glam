@@ -1,10 +1,10 @@
 extends Node2D
 
-onready var hairColor = $VBoxContainer/HairColor
-onready var skinColor = $VBoxContainer/SkinColor
-onready var gunColor = $VBoxContainer/GunColor
-onready var dressColor = $VBoxContainer/DressColor
-onready var shoesColor = $VBoxContainer/ShoesColor
+onready var hairColor = $Control/VBoxContainer/HairColor
+onready var skinColor = $Control/VBoxContainer/SkinColor
+onready var gunColor = $Control/VBoxContainer/GunColor
+onready var dressColor = $Control/VBoxContainer/DressColor
+onready var shoesColor = $Control/VBoxContainer/ShoesColor
 
 onready var player = $PlayerImages
 
