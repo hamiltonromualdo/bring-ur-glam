@@ -591,6 +591,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="CanvasLayer" parent="Control"]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Control/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.647059, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/HairChangeLeft" to="." method="_on_HairChangeLeft_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/HairChangeRight" to="." method="_on_HairChangeRight_pressed"]
 [connection signal="color_changed" from="Control/VBoxContainer/HairColor" to="." method="_on_HairColor_color_changed"]
