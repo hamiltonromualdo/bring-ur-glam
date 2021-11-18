@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/UserInterface/PlayerCustomization/HairColorSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=4]
 [ext_resource path="res://assets/icons/random.png" type="Texture" id=5]
 [ext_resource path="res://assets/icons/save.png" type="Texture" id=6]
+[ext_resource path="res://src/UserInterface/RandButton.gd" type="Script" id=7]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/SkinColorSelector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.gd" type="Script" id=10]
@@ -562,18 +563,19 @@ color = Color( 0.0156863, 0.0156863, 0.0705882, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
 margin_top = 124.0
-margin_right = 180.0
+margin_right = 60.0
 margin_bottom = 142.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Rand" type="Button" parent="Control/VBoxContainer/MarginContainer"]
-margin_right = 180.0
+margin_right = 60.0
 margin_bottom = 18.0
 rect_min_size = Vector2( 30, 15 )
 text = "      "
 flat = true
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -642,6 +644,10 @@ __meta__ = {
 [connection signal="color_changed" from="Control/VBoxContainer/GunColor" to="." method="_on_GunColorSelector_color_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/DressColor" to="." method="_on_DressColor_color_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/ShoesColor" to="." method="_on_ShoesColor_color_changed"]
+[connection signal="button_down" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_button_down"]
+[connection signal="button_up" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_button_up"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_mouse_exited"]
 [connection signal="pressed" from="Control/VBoxContainer/MarginContainer/Rand" to="." method="_on_Rand_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/StartGame" to="." method="_on_StartGame_pressed"]
