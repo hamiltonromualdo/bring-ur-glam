@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/UserInterface/PlayerCustomization/HairColorSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/PlayerImages.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=4]
 [ext_resource path="res://assets/fonts/UbuntuMono-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/SkinColorSelector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.tscn" type="PackedScene" id=9]
@@ -27,6 +28,7 @@ position = Vector2( 16, 16.5 )
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+theme = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -46,11 +48,11 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
 margin_right = 171.0
-margin_bottom = 15.0
+margin_bottom = 13.0
 
 [node name="HairChangeLeft" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-margin_right = 16.0
-margin_bottom = 15.0
+margin_right = 8.0
+margin_bottom = 13.0
 custom_fonts/font = SubResource( 4 )
 text = "<"
 __meta__ = {
@@ -58,9 +60,9 @@ __meta__ = {
 }
 
 [node name="Hair" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 20.0
-margin_right = 70.0
-margin_bottom = 15.0
+margin_left = 12.0
+margin_right = 62.0
+margin_bottom = 13.0
 rect_min_size = Vector2( 50, 0 )
 custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = true
@@ -72,9 +74,9 @@ __meta__ = {
 }
 
 [node name="HairChangeRight" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 74.0
-margin_right = 90.0
-margin_bottom = 15.0
+margin_left = 66.0
+margin_right = 74.0
+margin_bottom = 13.0
 custom_fonts/font = SubResource( 4 )
 text = ">"
 __meta__ = {
@@ -82,9 +84,9 @@ __meta__ = {
 }
 
 [node name="HairColor" parent="Control/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 26.0
+margin_top = 24.0
 margin_right = 171.0
-margin_bottom = 34.0
+margin_bottom = 32.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -158,9 +160,9 @@ __meta__ = {
 color = Color( 0.188235, 0.211765, 0, 1 )
 
 [node name="SkinColor" parent="Control/VBoxContainer" instance=ExtResource( 8 )]
-margin_top = 45.0
+margin_top = 43.0
 margin_right = 171.0
-margin_bottom = 53.0
+margin_bottom = 51.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -258,9 +260,9 @@ __meta__ = {
 color = Color( 0.678431, 0.192157, 0, 1 )
 
 [node name="GunColor" parent="Control/VBoxContainer" instance=ExtResource( 11 )]
-margin_top = 64.0
+margin_top = 62.0
 margin_right = 171.0
-margin_bottom = 72.0
+margin_bottom = 70.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -358,9 +360,9 @@ __meta__ = {
 color = Color( 0.996078, 0.313726, 0, 1 )
 
 [node name="DressColor" parent="Control/VBoxContainer" instance=ExtResource( 12 )]
-margin_top = 83.0
+margin_top = 81.0
 margin_right = 171.0
-margin_bottom = 91.0
+margin_bottom = 89.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -458,9 +460,9 @@ __meta__ = {
 color = Color( 0.239216, 0.00784314, 0.419608, 1 )
 
 [node name="ShoesColor" parent="Control/VBoxContainer" instance=ExtResource( 13 )]
-margin_top = 102.0
+margin_top = 100.0
 margin_right = 171.0
-margin_bottom = 110.0
+margin_bottom = 108.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/ShoesColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -558,9 +560,9 @@ __meta__ = {
 color = Color( 0.0156863, 0.0156863, 0.0705882, 1 )
 
 [node name="Rand" type="Button" parent="Control/VBoxContainer"]
-margin_top = 121.0
+margin_top = 119.0
 margin_right = 171.0
-margin_bottom = 136.0
+margin_bottom = 132.0
 custom_fonts/font = SubResource( 4 )
 text = "Rand"
 __meta__ = {
@@ -568,13 +570,13 @@ __meta__ = {
 }
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
-margin_top = 147.0
+margin_top = 143.0
 margin_right = 171.0
-margin_bottom = 162.0
+margin_bottom = 156.0
 
 [node name="Save" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_right = 28.0
-margin_bottom = 15.0
+margin_right = 20.0
+margin_bottom = 13.0
 custom_fonts/font = SubResource( 4 )
 text = "Save"
 __meta__ = {
@@ -582,9 +584,9 @@ __meta__ = {
 }
 
 [node name="StartGame" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_left = 32.0
-margin_right = 116.0
-margin_bottom = 15.0
+margin_left = 24.0
+margin_right = 100.0
+margin_bottom = 13.0
 custom_fonts/font = SubResource( 4 )
 text = "Start Game! Yaaay!"
 __meta__ = {
