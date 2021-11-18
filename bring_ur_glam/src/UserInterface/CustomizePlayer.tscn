@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/UserInterface/PlayerCustomization/HairColorSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/PlayerImages.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/icons/random.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/save.png" type="Texture" id=6]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/SkinColorSelector.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/UserInterface/PlayerCustomization/ColorSwatch.gd" type="Script" id=10]
@@ -13,9 +15,14 @@
 
 [node name="CustomizablePlayer" type="Node2D"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 175.0 ],
+"_edit_vertical_guides_": [ 157.0 ]
+}
 
 [node name="PlayerImages" parent="." instance=ExtResource( 3 )]
-scale = Vector2( 4, 4 )
+position = Vector2( 36, 34 )
+scale = Vector2( 2, 2 )
 
 [node name="CompositionalSprites" parent="PlayerImages" index="0"]
 position = Vector2( 16, 16.5 )
@@ -30,9 +37,9 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 margin_left = 134.0
-margin_top = 10.0
-margin_right = 305.0
-margin_bottom = 174.0
+margin_top = 5.0
+margin_right = 314.0
+margin_bottom = 176.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 11
@@ -49,6 +56,7 @@ margin_bottom = 18.0
 margin_right = 12.0
 margin_bottom = 18.0
 text = "<"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,6 +79,7 @@ margin_left = 70.0
 margin_right = 82.0
 margin_bottom = 18.0
 text = ">"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -551,14 +560,29 @@ __meta__ = {
 }
 color = Color( 0.0156863, 0.0156863, 0.0705882, 1 )
 
-[node name="Rand" type="Button" parent="Control/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
 margin_top = 124.0
 margin_right = 180.0
 margin_bottom = 142.0
-text = "Rand"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Rand" type="Button" parent="Control/VBoxContainer/MarginContainer"]
+margin_right = 180.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 30, 15 )
+text = "      "
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/VBoxContainer/MarginContainer/Rand"]
+modulate = Color( 0, 0.352941, 0.509804, 1 )
+position = Vector2( 19, 10 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
 margin_top = 153.0
@@ -566,18 +590,25 @@ margin_right = 180.0
 margin_bottom = 171.0
 
 [node name="Save" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_right = 52.0
+margin_right = 25.0
 margin_bottom = 18.0
-text = "Save"
+rect_min_size = Vector2( 25, 18 )
+text = "     "
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Control/VBoxContainer/HBoxContainer2/Save"]
+position = Vector2( 14, 10 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
 [node name="StartGame" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_left = 56.0
-margin_right = 180.0
+margin_left = 29.0
+margin_right = 81.0
 margin_bottom = 18.0
-text = "Start Game!"
+text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -593,6 +624,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect2" type="ColorRect" parent="Control/Background"]
+margin_left = 39.0
+margin_top = 34.0
+margin_right = 79.0
+margin_bottom = 74.0
+rect_scale = Vector2( 1.50376, 2.12089 )
+color = Color( 0, 0.588235, 0.901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/HairChangeLeft" to="." method="_on_HairChangeLeft_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/HairChangeRight" to="." method="_on_HairChangeRight_pressed"]
 [connection signal="color_changed" from="Control/VBoxContainer/HairColor" to="." method="_on_HairColor_color_changed"]
@@ -600,7 +642,7 @@ __meta__ = {
 [connection signal="color_changed" from="Control/VBoxContainer/GunColor" to="." method="_on_GunColorSelector_color_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/DressColor" to="." method="_on_DressColor_color_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/ShoesColor" to="." method="_on_ShoesColor_color_changed"]
-[connection signal="pressed" from="Control/VBoxContainer/Rand" to="." method="_on_Rand_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MarginContainer/Rand" to="." method="_on_Rand_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/StartGame" to="." method="_on_StartGame_pressed"]
 
