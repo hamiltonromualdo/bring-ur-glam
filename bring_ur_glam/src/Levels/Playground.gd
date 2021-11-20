@@ -69,3 +69,8 @@ func _ready() -> void:
 func _process(_delta) -> void:
     if ENABLE_ENEMY_SPAWN:
         check_and_instance_enemies()
+
+
+func _on_DoorArea_body_entered(body):
+    get_tree().change_scene("res://src/Levels/EndGame.tscn")
+
