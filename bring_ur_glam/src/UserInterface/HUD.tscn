@@ -11,10 +11,11 @@ script = ExtResource( 2 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -40.0
+margin_top = 4.0
 margin_right = -4.0
-margin_bottom = 37.0
+margin_bottom = 41.0
 theme = ExtResource( 1 )
-text = "o"
+text = "0"
 align = 2
 autowrap = true
 __meta__ = {
@@ -23,8 +24,9 @@ __meta__ = {
 
 [node name="HPLabel" type="Label" parent="."]
 margin_left = 4.0
-margin_right = 22.0
-margin_bottom = 17.0
+margin_top = 3.0
+margin_right = 32.0
+margin_bottom = 20.0
 theme = ExtResource( 1 )
 text = "HP"
 __meta__ = {
@@ -32,15 +34,15 @@ __meta__ = {
 }
 
 [node name="HealthBarRbn" parent="." instance=ExtResource( 3 )]
-margin_left = 32.72
-margin_top = 8.88
-margin_right = 2.0
-margin_bottom = -8.58
+margin_left = 44.72
+margin_top = 9.88
+margin_right = 14.0
+margin_bottom = -7.58
 
 [node name="HPValue" type="Label" parent="."]
-margin_left = 131.0
+margin_left = 146.0
 margin_top = 4.0
-margin_right = 171.0
+margin_right = 228.0
 margin_bottom = 20.0
 theme = ExtResource( 1 )
 text = "50/120"
