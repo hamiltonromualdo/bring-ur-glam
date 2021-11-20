@@ -39,8 +39,8 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 margin_left = 134.0
 margin_top = 5.0
-margin_right = 314.0
-margin_bottom = 176.0
+margin_right = 289.0
+margin_bottom = 197.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 11
@@ -50,12 +50,12 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
-margin_right = 180.0
-margin_bottom = 18.0
+margin_right = 155.0
+margin_bottom = 23.0
 
 [node name="HairChangeLeft" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-margin_right = 12.0
-margin_bottom = 18.0
+margin_right = 13.0
+margin_bottom = 23.0
 text = "<"
 flat = true
 __meta__ = {
@@ -63,10 +63,10 @@ __meta__ = {
 }
 
 [node name="Hair" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 16.0
-margin_right = 66.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 50, 0 )
+margin_left = 17.0
+margin_right = 87.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 70, 0 )
 bbcode_enabled = true
 bbcode_text = "[center]Hair[/center]"
 text = "Hair"
@@ -76,9 +76,9 @@ __meta__ = {
 }
 
 [node name="HairChangeRight" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 70.0
-margin_right = 82.0
-margin_bottom = 18.0
+margin_left = 91.0
+margin_right = 104.0
+margin_bottom = 23.0
 text = ">"
 flat = true
 __meta__ = {
@@ -86,9 +86,9 @@ __meta__ = {
 }
 
 [node name="HairColor" parent="Control/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 29.0
-margin_right = 180.0
-margin_bottom = 37.0
+margin_top = 34.0
+margin_right = 155.0
+margin_bottom = 42.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -162,9 +162,9 @@ __meta__ = {
 color = Color( 0.188235, 0.211765, 0, 1 )
 
 [node name="SkinColor" parent="Control/VBoxContainer" instance=ExtResource( 8 )]
-margin_top = 48.0
-margin_right = 180.0
-margin_bottom = 56.0
+margin_top = 53.0
+margin_right = 155.0
+margin_bottom = 61.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -262,9 +262,9 @@ __meta__ = {
 color = Color( 0.678431, 0.192157, 0, 1 )
 
 [node name="GunColor" parent="Control/VBoxContainer" instance=ExtResource( 11 )]
-margin_top = 67.0
-margin_right = 180.0
-margin_bottom = 75.0
+margin_top = 72.0
+margin_right = 155.0
+margin_bottom = 80.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -362,9 +362,9 @@ __meta__ = {
 color = Color( 0.996078, 0.313726, 0, 1 )
 
 [node name="DressColor" parent="Control/VBoxContainer" instance=ExtResource( 12 )]
-margin_top = 86.0
-margin_right = 180.0
-margin_bottom = 94.0
+margin_top = 91.0
+margin_right = 155.0
+margin_bottom = 99.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -462,9 +462,9 @@ __meta__ = {
 color = Color( 0.239216, 0.00784314, 0.419608, 1 )
 
 [node name="ShoesColor" parent="Control/VBoxContainer" instance=ExtResource( 13 )]
-margin_top = 105.0
-margin_right = 180.0
-margin_bottom = 113.0
+margin_top = 110.0
+margin_right = 155.0
+margin_bottom = 118.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/ShoesColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -561,17 +561,14 @@ __meta__ = {
 }
 color = Color( 0.0156863, 0.0156863, 0.0705882, 1 )
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
-margin_top = 124.0
-margin_right = 60.0
-margin_bottom = 142.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
+margin_top = 129.0
+margin_right = 155.0
+margin_bottom = 152.0
 
-[node name="Rand" type="Button" parent="Control/VBoxContainer/MarginContainer"]
-margin_right = 60.0
-margin_bottom = 18.0
+[node name="Rand" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
+margin_right = 46.0
+margin_bottom = 23.0
 rect_min_size = Vector2( 30, 15 )
 text = "      "
 flat = true
@@ -580,20 +577,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="Control/VBoxContainer/MarginContainer/Rand"]
+[node name="Sprite" type="Sprite" parent="Control/VBoxContainer/HBoxContainer2/Rand"]
 modulate = Color( 0, 0.352941, 0.509804, 1 )
 position = Vector2( 19, 10 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
-margin_top = 153.0
-margin_right = 180.0
-margin_bottom = 171.0
+[node name="StartGame" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
+margin_left = 50.0
+margin_right = 98.0
+margin_bottom = 23.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Save" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_right = 25.0
-margin_bottom = 18.0
+margin_left = 102.0
+margin_right = 141.0
+margin_bottom = 23.0
 rect_min_size = Vector2( 25, 18 )
 text = "     "
 flat = true
@@ -605,15 +607,6 @@ __meta__ = {
 position = Vector2( 14, 10 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
-
-[node name="StartGame" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_left = 29.0
-margin_right = 81.0
-margin_bottom = 18.0
-text = "Play"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="CanvasLayer" parent="Control"]
 layer = -1
@@ -644,12 +637,12 @@ __meta__ = {
 [connection signal="color_changed" from="Control/VBoxContainer/GunColor" to="." method="_on_GunColorSelector_color_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/DressColor" to="." method="_on_DressColor_color_changed"]
 [connection signal="color_changed" from="Control/VBoxContainer/ShoesColor" to="." method="_on_ShoesColor_color_changed"]
-[connection signal="button_down" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_button_down"]
-[connection signal="button_up" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_button_up"]
-[connection signal="mouse_entered" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_mouse_entered"]
-[connection signal="mouse_exited" from="Control/VBoxContainer/MarginContainer/Rand" to="Control/VBoxContainer/MarginContainer/Rand" method="_on_Rand_mouse_exited"]
-[connection signal="pressed" from="Control/VBoxContainer/MarginContainer/Rand" to="." method="_on_Rand_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/Save" to="." method="_on_Save_pressed"]
+[connection signal="button_down" from="Control/VBoxContainer/HBoxContainer2/Rand" to="Control/VBoxContainer/HBoxContainer2/Rand" method="_on_Rand_button_down"]
+[connection signal="button_up" from="Control/VBoxContainer/HBoxContainer2/Rand" to="Control/VBoxContainer/HBoxContainer2/Rand" method="_on_Rand_button_up"]
+[connection signal="mouse_entered" from="Control/VBoxContainer/HBoxContainer2/Rand" to="Control/VBoxContainer/HBoxContainer2/Rand" method="_on_Rand_mouse_entered"]
+[connection signal="mouse_exited" from="Control/VBoxContainer/HBoxContainer2/Rand" to="Control/VBoxContainer/HBoxContainer2/Rand" method="_on_Rand_mouse_exited"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/Rand" to="." method="_on_Rand_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/Save" to="." method="_on_Save_pressed"]
 
 [editable path="PlayerImages"]

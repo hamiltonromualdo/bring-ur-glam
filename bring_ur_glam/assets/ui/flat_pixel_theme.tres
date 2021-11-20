@@ -6,6 +6,9 @@
 font_path = "res://assets/fonts/UbuntuMono-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
+size = 14
+extra_spacing_top = 3
+extra_spacing_bottom = 4
 font_data = ExtResource( 2 )
 fallback/0 = SubResource( 6 )
 
@@ -39,6 +42,9 @@ border_color = Color( 0, 0.270588, 0.396078, 1 )
 font_path = "res://assets/fonts/UbuntuMono-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=8]
+size = 14
+extra_spacing_top = 3
+extra_spacing_bottom = 4
 font_data = ExtResource( 2 )
 fallback/0 = SubResource( 7 )
 
