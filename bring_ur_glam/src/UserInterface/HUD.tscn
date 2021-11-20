@@ -3,7 +3,7 @@
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/HUD.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/HealthBarRbn.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/UserInterface/PauseScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/PauseOverlay.tscn" type="PackedScene" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -51,6 +51,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PauseScreen" parent="." instance=ExtResource( 4 )]
+[node name="PauseOverlay" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
 visible = false
