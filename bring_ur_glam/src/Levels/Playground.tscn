@@ -60,5 +60,3 @@ tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 655315, 40, 0, 655316, 40, 0 )
-
-[connection signal="hit" from="Player" to="." method="_on_Player_hit"]

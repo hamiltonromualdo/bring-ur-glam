@@ -12,6 +12,7 @@ signal died
 
 const FLOOR = Vector2(0, -1)
 
+export var score: = 1
 
 export var DIRECTION = true
 var velocity = Vector2.ZERO
@@ -46,6 +47,7 @@ func hurt():
         $CollisionShape2D.set_deferred("disabled", true)
         $DeathTimer.start()
         $Sprite.flip_v = true
+        PlayerData.score += score
         emit_signal("died")
 
 func _physics_process(delta):

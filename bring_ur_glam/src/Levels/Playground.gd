@@ -12,7 +12,6 @@ func _on_enemyDied() -> void:
     enemiesKilled += 1
     liveEnemies -= 1
     update_number_of_enemies_in_screen()
-    $HUD.update_score(enemiesKilled)
 
 
 func update_number_of_enemies_in_screen() -> void:
@@ -64,15 +63,7 @@ func check_and_instance_enemies():
             instance_enemy()
 
 
-func _on_Player_hit() -> void:
-    hp = clamp(hp - 10, 0, total_hp)
-    $HUD.update_hp(hp)
-    if hp <= 0:
-        $Player.die()
-
-
 func _ready() -> void:
-    $HUD.set_total_hp(total_hp)
     randomize()
 
 

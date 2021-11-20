@@ -6,8 +6,6 @@ export var GRAVITY = 10.0
 export var JUMP_POWER = -250.0
 const FLOOR = Vector2(0, -1)
 
-signal hit
-
 export var DIRECTION = true
 var _velocity = Vector2.ZERO
 
@@ -37,7 +35,9 @@ func die():
 
 
 func hurt():
-    emit_signal("hit")
+    PlayerData.hp -= 10
+    if PlayerData.hp <= 0:
+        die()
 
 
 func get_x_input() -> float:
