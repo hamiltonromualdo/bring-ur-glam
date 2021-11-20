@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Playground.gd" type="Script" id=2]
-[ext_resource path="res://src/UserInterface/PauseScreen.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/bg.png" type="Texture" id=6]
 [ext_resource path="res://src/UserInterface/HUD.tscn" type="PackedScene" id=7]
@@ -42,10 +41,6 @@ script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource( 4 )]
-pause_mode = 2
-visible = false
-
 [node name="Buidings" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
@@ -65,3 +60,5 @@ tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 655315, 40, 0, 655316, 40, 0 )
+
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
