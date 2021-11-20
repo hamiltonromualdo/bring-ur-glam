@@ -34,7 +34,7 @@ position = Vector2( 0, 9 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 47, 7 )
+position = Vector2( 0, -18 )
 current = true
 limit_left = -1376
 limit_top = -300
@@ -48,8 +48,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="Tween" type="Tween" parent="Camera2D"]
 
 [connection signal="grounded_updated" from="." to="Camera2D" method="_on_Player_grounded_updated"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
