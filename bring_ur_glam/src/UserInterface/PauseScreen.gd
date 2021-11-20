@@ -1,8 +1,8 @@
 extends Control
 
 onready var resume_btn = $MarginContainer/VBoxContainer/Resume
-onready var quit_btn = $MarginContainer/VBoxContainer/Quit
-onready var restart_btn = $MarginContainer/VBoxContainer/Restart
+onready var quit_btn = $MarginContainer/VBoxContainer/QuitButton
+onready var restart_btn = $MarginContainer/VBoxContainer/ChangeSceneButton
 
 
 func toggle_visibility() -> void:
