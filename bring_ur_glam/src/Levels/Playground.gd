@@ -71,6 +71,7 @@ func _process(_delta) -> void:
         check_and_instance_enemies()
 
 
-func _on_DoorArea_body_entered(body):
-    get_tree().change_scene("res://src/Levels/EndGame.tscn")
-
+func _on_DoorArea_body_entered(_body):
+    var error = get_tree().change_scene("res://src/Levels/EndGame.tscn")
+    if error:
+        print("Error in door enter: ", error)
