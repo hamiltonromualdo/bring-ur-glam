@@ -5,8 +5,6 @@ var enemiesInScreen = 1
 var enemiesKilled = 0
 var liveEnemies = 0
 
-var total_hp = 100
-var hp = 100
 
 func _on_enemyDied() -> void:
     enemiesKilled += 1
