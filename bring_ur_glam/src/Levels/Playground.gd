@@ -17,21 +17,21 @@ func _on_enemyDied() -> void:
 
 func updateNumberOfEnemiesInScreen() -> void:
     enemiesInScreen = 1 if enemiesKilled <= 1 else ceil(log(enemiesKilled) / log(2))
-    
+
 
 func getFloorXBoundaries() -> Array:
     var floorMap = $WalkingPath
     var floorMapRect = floorMap.get_used_rect()
-    
+
     return [floorMapRect.position.x * floorMap.cell_size.x + floorMap.position.x,
         floorMapRect.end.x * floorMap.cell_size.x + floorMap.position.x]
-    
+
 
 func getNewEnemyPosition(enemy: Enemy) -> Vector2:
     var floorXBoundaries = getFloorXBoundaries()
     var floorLeftLimit = floorXBoundaries[0]
     var floorRightLimit = floorXBoundaries[1]
-    
+
     var viewportRect = get_viewport().get_visible_rect()
     var viewportOffset = abs(viewportRect.position.x - viewportRect.end.x)/2
 
@@ -44,7 +44,7 @@ func getNewEnemyPosition(enemy: Enemy) -> Vector2:
         posX = rand_range($Player.position.x + viewportOffset, floorRightLimit - enemyOffset)
 
     var posY = $Player/Camera2D.limit_top
-    
+
     return Vector2(posX, posY)
 
 
@@ -70,7 +70,7 @@ func _on_Player_hit() -> void:
     if hp <= 0:
         hp = 0
         $Player.die()
-    
+
 
 func _ready() -> void:
     $HUD.set_total_hp(total_hp)
