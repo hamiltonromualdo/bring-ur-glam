@@ -21,6 +21,8 @@ func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
 
 func _on_DeathTimer_timeout() -> void:
     queue_free()
+    # Go to game over screen
+    get_tree().change_scene("res://src/UserInterface/GameOverScreen.tscn")
 
 
 func _ready() -> void:
