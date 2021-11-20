@@ -94,9 +94,9 @@ func _physics_process(delta: float) -> void:
     new_velocity.y += GRAVITY
 
     _velocity = move_and_slide(new_velocity, FLOOR)
-    
+
     var was_grounded = is_grounded
     is_grounded = is_on_floor()
-    
+
     if was_grounded == null || is_grounded != was_grounded:
         emit_signal("grounded_updated", is_grounded)

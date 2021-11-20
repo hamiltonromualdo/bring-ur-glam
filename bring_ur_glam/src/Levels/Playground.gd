@@ -11,27 +11,27 @@ var hp = 100
 func _on_enemyDied() -> void:
     enemiesKilled += 1
     liveEnemies -= 1
-    updateNumberOfEnemiesInScreen()
+    update_number_of_enemies_in_screen()
     $HUD.update_score(enemiesKilled)
 
 
-func updateNumberOfEnemiesInScreen() -> void:
+func update_number_of_enemies_in_screen() -> void:
     enemiesInScreen = 1 if enemiesKilled <= 1 else ceil(log(enemiesKilled) / log(2))
-    
 
-func getFloorXBoundaries() -> Array:
+
+func get_floor_x_boundaries() -> Array:
     var floorMap = $WalkingPath
     var floorMapRect = floorMap.get_used_rect()
-    
+
     return [floorMapRect.position.x * floorMap.cell_size.x + floorMap.position.x,
         floorMapRect.end.x * floorMap.cell_size.x + floorMap.position.x]
-    
 
-func getNewEnemyPosition(enemy: Enemy) -> Vector2:
-    var floorXBoundaries = getFloorXBoundaries()
+
+func get_new_enemy_position(enemy: Enemy) -> Vector2:
+    var floorXBoundaries = get_floor_x_boundaries()
     var floorLeftLimit = floorXBoundaries[0]
     var floorRightLimit = floorXBoundaries[1]
-    
+
     var viewportRect = get_viewport().get_visible_rect()
     var viewportOffset = abs(viewportRect.position.x - viewportRect.end.x)/2
 
@@ -44,33 +44,32 @@ func getNewEnemyPosition(enemy: Enemy) -> Vector2:
         posX = rand_range($Player.position.x + viewportOffset, floorRightLimit - enemyOffset)
 
     var posY = $Player/Camera2D.limit_top
-    
+
     return Vector2(posX, posY)
 
 
-func instanceEnemy() -> void:
+func instance_enemy() -> void:
     var enemy = Enemy.instance()
     add_child(enemy)
     liveEnemies += 1
 
-    enemy.position = getNewEnemyPosition(enemy)
+    enemy.position = get_new_enemy_position(enemy)
     enemy.connect("died", self, "_on_enemyDied")
     enemy.move_and_collide(Vector2(0, 1000))
 
 
-func checkAndInstanceEnemies():
+func check_and_instance_enemies():
     if liveEnemies == 0:
         for n in enemiesInScreen:
-            instanceEnemy()
+            instance_enemy()
 
 
 func _on_Player_hit() -> void:
-    hp -= 10
+    hp = clamp(hp - 10, 0, total_hp)
     $HUD.update_hp(hp)
     if hp <= 0:
-        hp = 0
         $Player.die()
-    
+
 
 func _ready() -> void:
     $HUD.set_total_hp(total_hp)
@@ -78,4 +77,4 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
-    checkAndInstanceEnemies()
+    check_and_instance_enemies()

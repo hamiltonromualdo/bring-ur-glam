@@ -53,7 +53,7 @@ func _physics_process(delta):
         return
 
     if player != null:
-        velocity = position.direction_to(player.position) * SPEED
+        velocity = position.direction_to(player.global_position) * SPEED
         velocity.y = 0
         velocity.normalized()
         set_direction(velocity.x >= 0)

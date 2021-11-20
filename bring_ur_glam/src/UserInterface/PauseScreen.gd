@@ -2,33 +2,31 @@ extends Control
 
 onready var resume_btn = $MarginContainer/VBoxContainer/Resume
 onready var quit_btn = $MarginContainer/VBoxContainer/Quit
+onready var restart_btn = $MarginContainer/VBoxContainer/Restart
 
-func toggle_visibility():
+
+func toggle_visibility() -> void:
     get_tree().paused = !get_tree().paused
     visible = !visible
 
-func _ready():
+
+func _ready() -> void:
     resume_btn.grab_focus()
-    quit_btn.grab_focus()
 
-func _process(delta):
-    if resume_btn.is_hovered():
-        resume_btn.grab_focus()
-    if quit_btn.is_hovered():
-        quit_btn.grab_focus()
 
-func _input(event):
-    if event.is_action_pressed("ui_cancel"):
+func _process(delta: float) -> void:
+    if Input.is_action_just_pressed("ui_cancel"):
         resume_btn.grab_focus()
         toggle_visibility()
 
-func _on_Resume_pressed():
+
+func _on_Resume_pressed() -> void:
     toggle_visibility()
 
-func _on_Exit_pressed():
-    get_tree().quit()
 
-
-func _on_Restart_pressed() -> void:
+func _on_Restart_button_up() -> void:
     toggle_visibility()
-    get_tree().change_scene("res://src/UserInterface/CustomizePlayer.tscn")
+
+
+func _on_ChangeSceneButton_button_up() -> void:
+    toggle_visibility()

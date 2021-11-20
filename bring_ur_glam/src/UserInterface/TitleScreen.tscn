@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=4]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -45.0
+margin_top = 43.3823
+margin_right = 45.0
+margin_bottom = 57.3823
+text = "Bring Ur Glam"
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -42.5
+margin_top = -95.9871
+margin_right = 42.5
+margin_bottom = -45.9871
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
+margin_right = 85.0
+text = "Play"
+next_scene = ExtResource( 4 )
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 2 )]
+margin_top = 27.0
+margin_right = 85.0
+margin_bottom = 50.0
