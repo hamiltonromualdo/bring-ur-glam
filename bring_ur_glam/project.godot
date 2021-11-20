@@ -54,6 +54,10 @@ config/name="Bring Ur Glam"
 run/main_scene="res://src/UserInterface/TitleScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://src/Autoload/PlayerData.tscn"
+
 [display]
 
 window/size/width=320
