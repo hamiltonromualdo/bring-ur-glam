@@ -37,6 +37,7 @@ __meta__ = {
 
 [node name="ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
 margin_right = 85.0
+text = "Play"
 next_scene = ExtResource( 4 )
 
 [node name="QuitButton" parent="Menu" instance=ExtResource( 2 )]

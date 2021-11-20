@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Bring Ur Glam"
-run/main_scene="res://src/Levels/Playground.tscn"
+run/main_scene="res://src/UserInterface/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
