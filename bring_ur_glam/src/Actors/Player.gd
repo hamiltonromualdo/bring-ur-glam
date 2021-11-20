@@ -1,6 +1,8 @@
 class_name Player
 extends KinematicBody2D
 
+export (bool) var GODNESS_MODE = false
+
 export var SPEED = 100.0
 export var GRAVITY = 10.0
 export var JUMP_POWER = -250.0
@@ -37,6 +39,8 @@ func die():
 
 
 func hurt():
+    if GODNESS_MODE:
+        return
     PlayerData.hp -= 10
     if PlayerData.hp <= 0:
         die()
