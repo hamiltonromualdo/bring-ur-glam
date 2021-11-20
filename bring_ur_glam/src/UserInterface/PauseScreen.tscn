@@ -58,3 +58,4 @@ margin_top = 54.0
 margin_bottom = 77.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/ChangeSceneButton" to="." method="_on_ChangeSceneButton_button_up"]

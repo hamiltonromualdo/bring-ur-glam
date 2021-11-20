@@ -27,3 +27,6 @@ func _on_Resume_pressed() -> void:
 func _on_Restart_button_up() -> void:
     toggle_visibility()
 
+
+func _on_ChangeSceneButton_button_up() -> void:
+    toggle_visibility()
