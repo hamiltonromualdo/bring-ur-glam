@@ -1823,6 +1823,9 @@ extents = Vector2( 8, 3 )
 115/shapes = [  ]
 115/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 16 )
+
 [node name="Playground" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -2063,3 +2066,20 @@ HP = 5
 SHOOTING_INTERVAL = 0.3
 PLAYER_FINDER_SIZE = 2
 DIRECTION = false
+
+[node name="Door" type="TileMap" parent="."]
+z_index = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+format = 1
+tile_data = PoolIntArray( 655382, 18, 0, 720918, 21, 0 )
+
+[node name="DoorArea" type="Area2D" parent="Door"]
+collision_layer = 4
+
+[node name="DoorCollision" type="CollisionShape2D" parent="Door/DoorArea"]
+position = Vector2( 349.5, 176 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Door/DoorArea" to="." method="_on_DoorArea_body_entered"]
