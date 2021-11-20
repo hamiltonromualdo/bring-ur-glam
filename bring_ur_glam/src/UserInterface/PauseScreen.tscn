@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/UserInterface/PauseScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=7]
 
 [node name="PauseScreen" type="Control"]
 anchor_right = 1.0
@@ -45,24 +48,13 @@ margin_right = 137.0
 margin_bottom = 23.0
 text = "Resume (Esc)"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ChangeSceneButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 27.0
-margin_right = 137.0
 margin_bottom = 50.0
-text = "Quit"
-__meta__ = {
-"_editor_description_": ""
-}
+next_scene = ExtResource( 7 )
 
-[node name="Restart" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 54.0
-margin_right = 137.0
 margin_bottom = 77.0
-text = "Restart"
-__meta__ = {
-"_editor_description_": ""
-}
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]

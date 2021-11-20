@@ -19,15 +19,11 @@ func _process(delta: float) -> void:
         resume_btn.grab_focus()
         toggle_visibility()
 
-    
+
 func _on_Resume_pressed() -> void:
     toggle_visibility()
-    
-    
-func _on_Quit_pressed() -> void:
-    get_tree().quit()
 
 
-func _on_Restart_pressed() -> void:
+func _on_Restart_button_up() -> void:
     toggle_visibility()
-    get_tree().change_scene("res://src/UserInterface/CustomizePlayer.tscn")
+
