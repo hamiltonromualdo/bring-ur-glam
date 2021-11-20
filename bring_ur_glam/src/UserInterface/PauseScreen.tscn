@@ -64,5 +64,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
