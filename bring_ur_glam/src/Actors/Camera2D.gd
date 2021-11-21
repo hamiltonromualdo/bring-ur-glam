@@ -1,7 +1,6 @@
 extends Camera2D
 
 onready var prev_camera_pos = get_camera_position()
-onready var tween = $Tween
 
 const LOOK_AHEAD_FACTOR = 0.2
 const SHIFT_TRANS = Tween.TRANS_SINE
