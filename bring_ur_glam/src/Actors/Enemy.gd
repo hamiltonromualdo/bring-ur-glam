@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export (bool) var MOVING_ENEMY = true
 export (int) var HP = 3
+export (float) var SHOOTING_INTERVAL = 0.5
 export (int) var SPEED = 50
 export (int) var GRAVITY = 10
 export (int) var JUMP_POWER = -250
@@ -31,6 +32,7 @@ func set_direction(dir):
 
 func _ready():
     $HealthBar.set_values(0, HP, HP)
+    $ShootingTimer.wait_time = SHOOTING_INTERVAL
 
 func fire():
     if canFire:
