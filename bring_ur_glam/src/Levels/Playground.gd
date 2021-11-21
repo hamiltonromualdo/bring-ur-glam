@@ -5,6 +5,7 @@ var enemiesInScreen = 1
 var enemiesKilled = 0
 var liveEnemies = 0
 
+export (bool) var ENABLE_ENEMY_SPAWN = true
 
 func _on_enemyDied() -> void:
     enemiesKilled += 1
@@ -66,4 +67,5 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
-    check_and_instance_enemies()
+    if ENABLE_ENEMY_SPAWN:
+        check_and_instance_enemies()

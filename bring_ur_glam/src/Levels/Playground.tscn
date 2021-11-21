@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Playground.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/bg.png" type="Texture" id=6]
 [ext_resource path="res://src/UserInterface/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tiles/path.tres" type="TileSet" id=8]
-[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/tiles/buildings.tres" type="TileSet" id=10]
 
 [node name="Playground" type="Node2D"]
@@ -64,9 +63,6 @@ tile_data = PoolIntArray( 262061, 1, 0, 262062, 1, 0, 262063, 1, 0, 262071, 12, 
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1222, 63 )
-
-[node name="Enemy" parent="." instance=ExtResource( 9 )]
-position = Vector2( -1289, 172 )
 
 [node name="Building Details" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
