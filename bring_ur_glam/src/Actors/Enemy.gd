@@ -1,12 +1,15 @@
 class_name Enemy
 extends KinematicBody2D
 
+enum PlayerFinderSize {SMALL, MEDIUM, LARGE}
+
 export (bool) var MOVING_ENEMY = true
 export (int) var HP = 3
 export (float) var SHOOTING_INTERVAL = 0.5
 export (int) var SPEED = 50
 export (int) var GRAVITY = 10
 export (int) var JUMP_POWER = -250
+export (PlayerFinderSize) var PLAYER_FINDER_SIZE = PlayerFinderSize.MEDIUM
 export (PackedScene) var BULLET
 
 signal died
@@ -21,6 +24,11 @@ var velocity = Vector2.ZERO
 var player = null
 var canFire = true
 
+func get_player_finder_size() -> Vector2:
+    var values = {PlayerFinderSize.SMALL: Vector2(10, 10),
+                  PlayerFinderSize.MEDIUM: Vector2(75, 25),
+                  PlayerFinderSize.LARGE: Vector2(100, 25)}
+    return values[PLAYER_FINDER_SIZE]
 
 func set_direction(dir):
     DIRECTION = dir
@@ -33,6 +41,7 @@ func set_direction(dir):
 func _ready():
     $HealthBar.set_values(0, HP, HP)
     $ShootingTimer.wait_time = SHOOTING_INTERVAL
+    $PlayerFinder/CollisionShape2D.shape.extents = get_player_finder_size()
 
 func fire():
     if canFire:
