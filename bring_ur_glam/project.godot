@@ -138,6 +138,7 @@ ui_jump={
 2d_physics/layer_2="enemies"
 2d_physics/layer_3="environment"
 2d_physics/layer_4="powerups"
+2d_physics/layer_5="buildings"
 
 [physics]
 

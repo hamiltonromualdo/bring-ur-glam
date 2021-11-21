@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Actors/PassThrough.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 5.77692, 6.7235 )
+
+[node name="PassThrough" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.0269394, 9.00539 )
+shape = SubResource( 6 )
+
+[connection signal="body_exited" from="." to="." method="_on_PassThrough_body_exited"]

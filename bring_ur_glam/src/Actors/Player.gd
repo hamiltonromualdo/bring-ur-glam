@@ -6,6 +6,7 @@ export (bool) var GODNESS_MODE = false
 export var SPEED = 100.0
 export var GRAVITY = 10.0
 export var JUMP_POWER = -250.0
+export var JUMP_DOWN_POWER = 0.0
 const FLOOR = Vector2(0, -1)
 
 export var DIRECTION = true
@@ -56,7 +57,10 @@ func get_x_input() -> float:
 
 
 func get_y_input(velocity: Vector2) -> float:
-    if is_on_floor() and Input.is_action_pressed("ui_jump"):
+    if is_on_floor() and Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_jump"):
+        set_collision_mask_bit(4, false)
+        return JUMP_DOWN_POWER
+    elif is_on_floor() and Input.is_action_pressed("ui_jump"):
         return JUMP_POWER
     else:
         return velocity.y
