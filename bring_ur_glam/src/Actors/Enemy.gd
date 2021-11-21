@@ -1,11 +1,11 @@
 class_name Enemy
 extends KinematicBody2D
 
-
-export var SPEED = 50
-export var GRAVITY = 10
-export var JUMP_POWER = -250
-export var HP = 3
+export (bool) var MOVING_ENEMY = true
+export (int) var HP = 3
+export (int) var SPEED = 50
+export (int) var GRAVITY = 10
+export (int) var JUMP_POWER = -250
 export (PackedScene) var BULLET
 
 signal died
@@ -68,6 +68,8 @@ func _physics_process(delta):
         fire()
 
     velocity.y += GRAVITY
+    if not MOVING_ENEMY:
+        velocity.x = 0
     velocity = move_and_slide(velocity, FLOOR)
 
     if is_on_wall() or not $EdgeDetector.is_colliding():
