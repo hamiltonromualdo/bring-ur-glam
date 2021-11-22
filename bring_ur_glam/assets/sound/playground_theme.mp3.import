@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/playground_theme.mp3-3bb323ab1340d3ae31cc2a90822dfaf4.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/playground_theme.mp3"
+dest_files=[ "res://.import/playground_theme.mp3-3bb323ab1340d3ae31cc2a90822dfaf4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
