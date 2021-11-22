@@ -3,47 +3,42 @@ extends TileMap
 
 enum TILE_COLORS {NONE = -1, BROWN = 0, PURPLE = 1, RED = 2, GREY = 3, GREEN = 4}
 const TILE_COLORS_VEC = [TILE_COLORS.BROWN, TILE_COLORS.PURPLE, TILE_COLORS.RED, TILE_COLORS.GREY, TILE_COLORS.GREEN]
-const GENERATION_TILES = [5, 6, 7, 8, 9]
-const BROWN_BOTTOM_DOORS = [22, 59, 110, 111, 113]
-const GREY_BOTTOM_DOORS = [40, 112, 114, 115, 81]
+const GENERATION_TILE = 5
+const BROWN_BOTTOM_DOORS = [18, 55, 106, 107, 109]
+const GREY_BOTTOM_DOORS = [36, 108, 110, 111, 77]
 
 const PARTS = {
     TILE_COLORS.BROWN: {
-        "Window": [[13, 12], [14, 12], [16, 15]],
+        "Window": [[9, 8], [10, 8], [12, 11]],
         "DoorDown": BROWN_BOTTOM_DOORS,
-        "DoorUp": [19, 20, 21],
-        "Roof": [11]
+        "DoorUp": [15, 16, 17],
+        "Roof": [7]
     },
     TILE_COLORS.PURPLE: {
-        "Window": [[32, 34], [33, 34]],
+        "Window": [[28, 30], [29, 30]],
         "DoorDown": GREY_BOTTOM_DOORS,
-        "DoorUp": [37, 38, 39],
-        "Roof": [31]
+        "DoorUp": [33, 34, 35],
+        "Roof": [27]
     },
     TILE_COLORS.RED: {
-        "Window": [[52, 53], [54, 55]],
+        "Window": [[48, 49], [50, 51]],
         "DoorDown": BROWN_BOTTOM_DOORS,
-        "DoorUp": [56, 57, 58],
-        "Roof": [51]
+        "DoorUp": [52, 53, 54],
+        "Roof": [47]
     },
     TILE_COLORS.GREY: {
-        "Window": [[72, 77], [76, 77], [73, 77], [74, 77], [75, 77]],
+        "Window": [[68, 73], [72, 73], [69, 73], [70, 73], [71, 73]],
         "DoorDown": GREY_BOTTOM_DOORS,
-        "DoorUp": [78, 79, 80],
-        "Roof": [71]
+        "DoorUp": [74, 75, 76],
+        "Roof": [67]
     },
     TILE_COLORS.GREEN: {
-        "Window": [[92, 93], [94, 96], [95, 96], [98, 99], [97, 99]],
+        "Window": [[88, 89], [90, 92], [91, 92], [94, 95], [93, 95]],
         "DoorDown": GREY_BOTTOM_DOORS,
-        "DoorUp": [100, 101, 102],
-        "Roof": [91]
+        "DoorUp": [96, 97, 98],
+        "Roof": [87]
     }
 }
-
-func _get_generation_tile_color(tile: int):
-    # Generation tiles are from range [5, 9], so to get the color from the vector
-    # we need to subtract 5
-    return TILE_COLORS_VEC[tile - 5] if tile in GENERATION_TILES else TILE_COLORS.NONE
 
 
 func _get_tile_color(tile: int):
@@ -75,9 +70,12 @@ func set_cell(x: int, y: int,
               flip_x: bool = false, flip_y: bool = false, 
               transpose: bool = false, 
               autotile_coord: Vector2 = Vector2( 0, 0 )) -> void:
-    var generation_tile_color = _get_generation_tile_color(tile)
-    if generation_tile_color != TILE_COLORS.NONE:
-        var color = generation_tile_color
+    if tile == GENERATION_TILE:
+        # Get color from the tile on the right and use as reference
+        var color = _get_tile_color(get_cell(x + 1, y))
+        if color == TILE_COLORS.NONE:
+            return
+
         # The generation tile should be placed on the left lower corner
         # From there, we find the bounds of the building to be created
         var x_bound = x + 1

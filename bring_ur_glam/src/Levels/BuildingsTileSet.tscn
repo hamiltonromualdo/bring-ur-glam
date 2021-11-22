@@ -41,35 +41,11 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 64, 144, 16, 16 )
 
-[node name="0-Gen-Brown" type="Sprite" parent="."]
+[node name="0-Generate" type="Sprite" parent="."]
 position = Vector2( 16, 40 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 80, 144, 16, 16 )
-
-[node name="0-Gen-Purple" type="Sprite" parent="."]
-position = Vector2( 40, 40 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 96, 144, 16, 16 )
-
-[node name="0-Gen-Red" type="Sprite" parent="."]
-position = Vector2( 64, 40 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 112, 144, 16, 16 )
-
-[node name="0-Gen-Grey" type="Sprite" parent="."]
-position = Vector2( 88, 40 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 128, 144, 16, 16 )
-
-[node name="0-Gen-Green" type="Sprite" parent="."]
-position = Vector2( 112, 40 )
-texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 144, 144, 16, 16 )
 
 [node name="Brown-0" type="Sprite" parent="."]
 position = Vector2( 16, 64 )
