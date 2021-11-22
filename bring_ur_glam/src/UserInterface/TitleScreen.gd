@@ -16,3 +16,5 @@ func _process(delta):
         $Title.margin_top += 0.2
     if ($Title.margin_top >= 45 && $Glam.is_emitting() == false):
         $Glam.set_emitting(true)
+        $Menu.set_visible(true)
+        
