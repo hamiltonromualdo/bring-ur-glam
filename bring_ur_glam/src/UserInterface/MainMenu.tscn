@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=2]
 [ext_resource path="res://assets/ui/sparkle.png" type="Texture" id=3]
 [ext_resource path="res://src/UserInterface/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://assets/sound/main_theme.mp3" type="AudioStream" id=5]
 
 [sub_resource type="Image" id=5]
 data = {
@@ -80,3 +81,7 @@ text = "BRING UR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
