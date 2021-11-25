@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/bg.png" type="Texture" id=6]
 [ext_resource path="res://src/UserInterface/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tiles/path.tres" type="TileSet" id=8]
-[ext_resource path="res://src/Levels/Buidings.gd" type="Script" id=9]
+[ext_resource path="res://src/Levels/Buildings.gd" type="Script" id=9]
 [ext_resource path="res://assets/tiles/buildings.tres" type="TileSet" id=10]
 [ext_resource path="res://assets/tiles/buildings.png" type="Texture" id=11]
 
@@ -1850,7 +1850,7 @@ script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Buidings" type="TileMap" parent="."]
+[node name="Buildings" type="TileMap" parent="."]
 tile_set = ExtResource( 10 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 16
