@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://src/UserInterface/GameOverScreen.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=5]
@@ -8,6 +9,7 @@
 [node name="GameOverScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,11 +58,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChangeSceneButton" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
+[node name="RestartButton" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
 next_scene = ExtResource( 5 )
 
 [node name="QuitButton" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 27.0
 margin_bottom = 50.0
-
-[connection signal="button_up" from="PauseOverlay/MarginContainer/VBoxContainer/ChangeSceneButton" to="PauseOverlay" method="_on_ChangeSceneButton_button_up"]

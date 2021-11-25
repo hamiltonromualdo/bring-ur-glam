@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sound/button_focus.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/sound/button_press.wav" type="AudioStream" id=2]
+[ext_resource path="res://src/UserInterface/ButtonWithSound.gd" type="Script" id=3]
+
+[node name="ButtonWithSound" type="Button"]
+margin_right = 12.0
+margin_bottom = 20.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FocusSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = 24.0
+
+[node name="PressedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = 24.0
+
+[connection signal="button_up" from="." to="." method="_on_ButtonWithSound_button_up"]
+[connection signal="focus_exited" from="." to="." method="_on_ButtonWithSound_focus_exited"]

@@ -105,7 +105,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChangeSceneButton" parent="Menu" instance=ExtResource( 3 )]
+[node name="PlayButton" parent="Menu" instance=ExtResource( 3 )]
 margin_right = 85.0
 text = "Play"
 next_scene = ExtResource( 4 )

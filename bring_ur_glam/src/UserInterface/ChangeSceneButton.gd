@@ -1,9 +1,10 @@
 tool
-extends Button
+extends ButtonWithSound
 
 export (PackedScene) var next_scene
 
 func _on_button_up() -> void:
+    yield($PressedSound, "finished")
     PlayerData.reset()
     var error = get_tree().change_scene_to(next_scene)
     if error:

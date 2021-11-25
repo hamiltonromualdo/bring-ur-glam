@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://src/UserInterface/QuitButton.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/ButtonWithSound.tscn" type="PackedScene" id=2]
 
-[node name="QuitButton" type="Button"]
+[node name="QuitButton" instance=ExtResource( 2 )]
 margin_right = 137.0
 margin_bottom = 23.0
 text = "Quit"
