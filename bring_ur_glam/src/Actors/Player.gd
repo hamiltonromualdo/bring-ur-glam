@@ -61,8 +61,10 @@ func get_x_input() -> float:
 func get_y_input(velocity: Vector2) -> float:
     if is_on_floor() and Input.is_action_pressed("ui_down") and Input.is_action_pressed("ui_jump"):
         set_collision_mask_bit(4, false)
+        $JumpDownSound.play()
         return JUMP_DOWN_POWER
     elif is_on_floor() and Input.is_action_pressed("ui_jump"):
+        $JumpSound.play()
         return JUMP_POWER
     else:
         return velocity.y
@@ -111,4 +113,5 @@ func _physics_process(_delta: float) -> void:
     is_grounded = is_on_floor()
 
     if was_grounded == null || is_grounded != was_grounded:
+        $ReachGroundSound.play()
         emit_signal("grounded_updated", is_grounded)
