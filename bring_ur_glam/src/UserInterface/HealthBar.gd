@@ -16,7 +16,7 @@ func set_hp(value_to_set):
 func _ready():
     set_process(false)
 
-func _process(delta):
+func _process(_delta):
     $ProgressBar/ProgressBar2.value = lerp($ProgressBar/ProgressBar2.value, $ProgressBar.value, 0.1)
     if ($ProgressBar/ProgressBar2.value - $ProgressBar.value <= 5):
         $ProgressBar/ProgressBar2.value = $ProgressBar.value

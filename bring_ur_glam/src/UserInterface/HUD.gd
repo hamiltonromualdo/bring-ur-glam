@@ -2,8 +2,14 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-    PlayerData.connect("hp_updated", self, "update_hp")
-    PlayerData.connect("score_updated", self, "update_score")
+    var error = PlayerData.connect("hp_updated", self, "update_hp")
+    if error:
+        print("Error connecting hp: ", error)
+
+    error = PlayerData.connect("score_updated", self, "update_score")
+    if error:
+        print("Error connecting score: ", error)
+
     $HealthBarRbn.set_values(0, PlayerData.hp, PlayerData.total_hp)
     update_hp_text()
 

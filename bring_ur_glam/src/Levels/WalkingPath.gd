@@ -28,7 +28,7 @@ func set_cell(x: int, y: int,
               tile: int,
               flip_x: bool = false, flip_y: bool = false, 
               transpose: bool = false, 
-              autotile_coord: Vector2 = Vector2( 0, 0 )) -> void:
+              _autotile_coord: Vector2 = Vector2( 0, 0 )) -> void:
     # If there's a tile already in place and we are not removing, just skip it
     if tile != -1 and get_cell(x, y) != INVALID_CELL:
         return

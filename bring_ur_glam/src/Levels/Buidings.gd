@@ -69,7 +69,7 @@ func set_cell(x: int, y: int,
               tile: int,
               flip_x: bool = false, flip_y: bool = false, 
               transpose: bool = false, 
-              autotile_coord: Vector2 = Vector2( 0, 0 )) -> void:
+              _autotile_coord: Vector2 = Vector2( 0, 0 )) -> void:
     if tile == GENERATION_TILE:
         # Get color from the tile on the right and use as reference
         var color = _get_tile_color(get_cell(x + 1, y))

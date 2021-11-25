@@ -61,7 +61,7 @@ func hurt():
         PlayerData.score += score
         emit_signal("died")
 
-func _physics_process(delta):
+func _physics_process(_delta):
     if HP <= 0:
         return
 

@@ -14,7 +14,7 @@ func reset() -> void:
 
 
 func set_hp(new_hp: int) -> void:
-    hp = clamp(new_hp, 0, total_hp)
+    hp = int(clamp(new_hp, 0, total_hp))
     emit_signal("hp_updated")
 
 

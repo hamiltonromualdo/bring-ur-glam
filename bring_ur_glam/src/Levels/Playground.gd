@@ -14,7 +14,7 @@ func _on_enemyDied() -> void:
 
 
 func update_number_of_enemies_in_screen() -> void:
-    enemiesInScreen = 1 if enemiesKilled <= 1 else ceil(log(enemiesKilled) / log(2))
+    enemiesInScreen = 1 if enemiesKilled <= 1 else int(ceil(log(enemiesKilled) / log(2)))
 
 
 func get_floor_x_boundaries() -> Array:
@@ -66,6 +66,6 @@ func _ready() -> void:
     randomize()
 
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
     if ENABLE_ENEMY_SPAWN:
         check_and_instance_enemies()

@@ -22,7 +22,9 @@ func _ready() -> void:
         swatch.color = c
         add_child(swatch)
         swatch.set_owner(get_tree().edited_scene_root)
-        swatch.connect("pressed", self, "_on_ColorSwatch_pressed", [c])
+        var error = swatch.connect("pressed", self, "_on_ColorSwatch_pressed", [c])
+        if error:
+            print("Error connecting swatch: ", error)
     color = COLORS[randi() % len(COLORS)]
 
 

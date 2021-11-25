@@ -18,14 +18,16 @@ onready var sprite = $PlayerImages
 var is_grounded
 signal grounded_updated(is_grounded)
 
-func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
+func _on_EnemyDetector_body_entered(_body: PhysicsBody2D) -> void:
     hurt()
 
 
 func _on_DeathTimer_timeout() -> void:
     queue_free()
     # Go to game over screen
-    get_tree().change_scene("res://src/UserInterface/GameOverScreen.tscn")
+    var error = get_tree().change_scene("res://src/UserInterface/GameOverScreen.tscn")
+    if error:
+        print("Error changing scene: ", error)
 
 
 func _ready() -> void:
@@ -94,7 +96,7 @@ func set_animation(velocity: Vector2) -> void:
         animationPlayer.play("Up")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
     var new_velocity = get_input_velocity(_velocity)
     set_animation(new_velocity)
 

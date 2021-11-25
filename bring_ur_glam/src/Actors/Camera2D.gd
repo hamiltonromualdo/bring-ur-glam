@@ -9,7 +9,7 @@ const SHIFT_DURATION = 1.0
 var facing = 0
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     prev_camera_pos = get_camera_position()
 
 

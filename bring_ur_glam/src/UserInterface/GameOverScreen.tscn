@@ -1,17 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/UserInterface/QuitButton.gd" type="Script" id=1]
-[ext_resource path="res://src/UserInterface/GameOverScreen.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/UserInterface/ChangeSceneButton.gd" type="Script" id=6]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=7]
 
 [node name="GameOverScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,27 +56,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChangeSceneButton" type="Button" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_right = 137.0
-margin_bottom = 23.0
-text = "Restart"
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
+[node name="ChangeSceneButton" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
 next_scene = ExtResource( 5 )
 
-[node name="QuitButton" type="Button" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 4 )]
+[node name="QuitButton" parent="PauseOverlay/MarginContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_top = 27.0
-margin_right = 137.0
 margin_bottom = 50.0
-text = "Quit"
-script = ExtResource( 1 )
-__meta__ = {
-"_editor_description_": ""
-}
 
 [connection signal="button_up" from="PauseOverlay/MarginContainer/VBoxContainer/ChangeSceneButton" to="PauseOverlay" method="_on_ChangeSceneButton_button_up"]
-[connection signal="button_up" from="PauseOverlay/MarginContainer/VBoxContainer/ChangeSceneButton" to="PauseOverlay/MarginContainer/VBoxContainer/ChangeSceneButton" method="_on_button_up"]
-[connection signal="button_up" from="PauseOverlay/MarginContainer/VBoxContainer/QuitButton" to="PauseOverlay/MarginContainer/VBoxContainer/QuitButton" method="_on_button_up"]

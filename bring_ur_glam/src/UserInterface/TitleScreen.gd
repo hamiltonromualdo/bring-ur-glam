@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
     if ($Title.margin_top < 45):
         $Title.margin_top += 0.2
     if ($Title.margin_top >= 45 && $Glam.is_emitting() == false):
