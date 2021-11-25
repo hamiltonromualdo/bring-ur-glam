@@ -1,7 +1,12 @@
 extends Control
 
 
-func _ready():
+func set_up_menu() -> void:
+    $Menu.set_visible(true)
+
+    $Menu/PlayButton.disabled = false
+    $Menu/QuitButton.disabled = false
+
     # Start with focus on PlayButton to allow keyboard control
     $Menu/PlayButton.grab_focus()
 
@@ -12,5 +17,5 @@ func _process(_delta):
         $Title.margin_top += 0.2
     if ($Title.margin_top >= 45 && $Glam.is_emitting() == false):
         $Glam.set_emitting(true)
-        $Menu.set_visible(true)
+        set_up_menu()
         
