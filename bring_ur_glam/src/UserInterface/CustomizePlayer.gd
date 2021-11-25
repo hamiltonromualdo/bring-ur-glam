@@ -24,6 +24,9 @@ func _ready() -> void:
     if not loaded:
         randomize_char()
 
+    # Start with focus on StartGame to allow keyboard control
+    $Control/VBoxContainer/HBoxContainer2/StartGame.grab_focus()
+
 
 func _on_Rand_pressed() -> void:
     randomize_char()
@@ -62,6 +65,7 @@ func _on_Save_pressed() -> void:
 
 
 func _on_StartGame_pressed() -> void:
+    yield($Control/VBoxContainer/HBoxContainer2/StartGame/PressedSound, "finished")
     player.save_data()
     var error = get_tree().change_scene("res://src/Levels/Playground.tscn")
     if error:
