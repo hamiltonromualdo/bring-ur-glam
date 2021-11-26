@@ -1,0 +1,104 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/UserInterface/SoundControl.gd" type="Script" id=2]
+
+[node name="SoundControl" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 320.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.647059, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+margin_right = 280.0
+margin_bottom = 152.0
+
+[node name="SoundControl" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 20.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Sound control[/center]"
+text = "Sound control"
+fit_content_height = true
+
+[node name="MainAudio" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 24.0
+margin_right = 280.0
+margin_bottom = 44.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+text = "Global sound"
+fit_content_height = true
+
+[node name="MainSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 48.0
+margin_right = 280.0
+margin_bottom = 64.0
+max_value = 1.0
+step = 0.01
+
+[node name="MusicAudio" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 280.0
+margin_bottom = 88.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+text = "Music"
+fit_content_height = true
+
+[node name="MusicSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 280.0
+margin_bottom = 108.0
+max_value = 1.0
+step = 0.01
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="EffectsAudio" type="RichTextLabel" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 112.0
+margin_right = 280.0
+margin_bottom = 132.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+text = "Effects"
+fit_content_height = true
+
+[node name="EffectsSlider" type="HSlider" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 136.0
+margin_right = 280.0
+margin_bottom = 152.0
+max_value = 1.0
+step = 0.01
+__meta__ = {
+"_editor_description_": ""
+}
+
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/MainSlider" to="." method="_on_MainSlider_value_changed"]
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/EffectsSlider" to="." method="_on_EffectsSlider_value_changed"]
