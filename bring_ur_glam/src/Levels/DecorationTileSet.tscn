@@ -105,3 +105,27 @@ position = Vector2( 64, 72 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 48, 32, 16, 16 )
+
+[node name="Sprite18" type="Sprite" parent="."]
+position = Vector2( 23, 115 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 32, 48 )
+
+[node name="Sprite19" type="Sprite" parent="."]
+position = Vector2( 67, 114 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 80, 32, 64 )
+
+[node name="Sprite20" type="Sprite" parent="."]
+position = Vector2( 106, 113 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 32, 80, 48, 64 )
+
+[node name="Sprite21" type="Sprite" parent="."]
+position = Vector2( 148, 114 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 80, 80, 32, 64 )
