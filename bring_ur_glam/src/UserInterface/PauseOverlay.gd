@@ -7,7 +7,12 @@ var paused: = false setget set_paused
 
 func _unhandled_input(event: InputEvent) -> void:
     if event.is_action_pressed("ui_cancel"):
-        self.paused = not self.paused
+        # If the sound control node is visible, esc should return
+        # to the pause screen
+        if $SoundControl.visible:
+            $SoundControl.visible = false
+        else:
+            self.paused = not self.paused
 
 
 func set_paused(value: bool) -> void:
@@ -28,3 +33,7 @@ func _on_Resume_button_up() -> void:
     yield($MarginContainer/VBoxContainer/ResumeButton/PressedSound, "finished")
     self.paused = false
 
+
+
+func _on_SoundControlButton_pressed() -> void:
+    $SoundControl.visible = true
