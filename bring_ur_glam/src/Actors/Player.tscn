@@ -59,15 +59,18 @@ __meta__ = {
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 volume_db = 20.0
+bus = "Effects"
 
 [node name="JumpDownSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
 volume_db = 23.0
+bus = "Effects"
 
 [node name="ReachGroundSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 volume_db = 5.0
 attenuation = 0.353553
+bus = "Effects"
 
 [connection signal="grounded_updated" from="." to="Camera2D" method="_on_Player_grounded_updated"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
