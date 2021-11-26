@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 8, 4.5 )
+extents = Vector2( 8, 3 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 3 )
@@ -62,7 +62,7 @@ region_rect = Rect2( 0, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Brown-1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brown-1/StaticBody2D"]
-position = Vector2( 0, 3.5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 1 )
 one_way_collision = true
 
@@ -210,7 +210,7 @@ region_rect = Rect2( 48, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Purple-1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Purple-1/StaticBody2D"]
-position = Vector2( 0, 3.5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 1 )
 one_way_collision = true
 
@@ -358,7 +358,7 @@ region_rect = Rect2( 96, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Red-1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Red-1/StaticBody2D"]
-position = Vector2( 0, 3.5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 1 )
 one_way_collision = true
 
@@ -499,7 +499,7 @@ region_rect = Rect2( 16, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Grey-1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grey-1/StaticBody2D"]
-position = Vector2( 0, 3.5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 1 )
 one_way_collision = true
 
@@ -668,7 +668,7 @@ region_rect = Rect2( 112, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Green-1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Green-1/StaticBody2D"]
-position = Vector2( 0, 3.5 )
+position = Vector2( 0, 5 )
 shape = SubResource( 1 )
 one_way_collision = true
 

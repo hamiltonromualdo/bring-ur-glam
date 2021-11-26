@@ -7,7 +7,7 @@ extents = Vector2( 8, 3 )
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 8, 4.5 )
+extents = Vector2( 8, 3 )
 
 [resource]
 0/name = "0-Block-Brown"
@@ -116,8 +116,8 @@ extents = Vector2( 8, 4.5 )
 7/tile_mode = 0
 7/occluder_offset = Vector2( 8, 8 )
 7/navigation_offset = Vector2( 8, 8 )
-7/shape_offset = Vector2( 8, 11.5 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 8, 11.5 )
+7/shape_offset = Vector2( 8, 13 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 8, 13 )
 7/shape = SubResource( 1 )
 7/shape_one_way = true
 7/shape_one_way_margin = 1.0
@@ -126,7 +126,7 @@ extents = Vector2( 8, 4.5 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 11.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 13 )
 } ]
 7/z_index = 0
 8/name = "Brown-2"
@@ -424,8 +424,8 @@ extents = Vector2( 8, 4.5 )
 27/tile_mode = 0
 27/occluder_offset = Vector2( 8, 8 )
 27/navigation_offset = Vector2( 8, 8 )
-27/shape_offset = Vector2( 8, 11.5 )
-27/shape_transform = Transform2D( 1, 0, 0, 1, 8, 11.5 )
+27/shape_offset = Vector2( 8, 13 )
+27/shape_transform = Transform2D( 1, 0, 0, 1, 8, 13 )
 27/shape = SubResource( 1 )
 27/shape_one_way = true
 27/shape_one_way_margin = 1.0
@@ -434,7 +434,7 @@ extents = Vector2( 8, 4.5 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 11.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 13 )
 } ]
 27/z_index = 0
 28/name = "Purple-2"
@@ -732,8 +732,8 @@ extents = Vector2( 8, 4.5 )
 47/tile_mode = 0
 47/occluder_offset = Vector2( 8, 8 )
 47/navigation_offset = Vector2( 8, 8 )
-47/shape_offset = Vector2( 8, 11.5 )
-47/shape_transform = Transform2D( 1, 0, 0, 1, 8, 11.5 )
+47/shape_offset = Vector2( 8, 13 )
+47/shape_transform = Transform2D( 1, 0, 0, 1, 8, 13 )
 47/shape = SubResource( 1 )
 47/shape_one_way = true
 47/shape_one_way_margin = 1.0
@@ -742,7 +742,7 @@ extents = Vector2( 8, 4.5 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 11.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 13 )
 } ]
 47/z_index = 0
 48/name = "Red-2"
@@ -1033,8 +1033,8 @@ extents = Vector2( 8, 4.5 )
 67/tile_mode = 0
 67/occluder_offset = Vector2( 8, 8 )
 67/navigation_offset = Vector2( 8, 8 )
-67/shape_offset = Vector2( 8, 11.5 )
-67/shape_transform = Transform2D( 1, 0, 0, 1, 8, 11.5 )
+67/shape_offset = Vector2( 8, 13 )
+67/shape_transform = Transform2D( 1, 0, 0, 1, 8, 13 )
 67/shape = SubResource( 1 )
 67/shape_one_way = true
 67/shape_one_way_margin = 1.0
@@ -1043,7 +1043,7 @@ extents = Vector2( 8, 4.5 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 11.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 13 )
 } ]
 67/z_index = 0
 68/name = "Grey-2"
@@ -1362,8 +1362,8 @@ extents = Vector2( 8, 4.5 )
 87/tile_mode = 0
 87/occluder_offset = Vector2( 8, 8 )
 87/navigation_offset = Vector2( 8, 8 )
-87/shape_offset = Vector2( 8, 11.5 )
-87/shape_transform = Transform2D( 1, 0, 0, 1, 8, 11.5 )
+87/shape_offset = Vector2( 8, 13 )
+87/shape_transform = Transform2D( 1, 0, 0, 1, 8, 13 )
 87/shape = SubResource( 1 )
 87/shape_one_way = true
 87/shape_one_way_margin = 1.0
@@ -1372,7 +1372,7 @@ extents = Vector2( 8, 4.5 )
 "one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 8, 11.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 8, 13 )
 } ]
 87/z_index = 0
 88/name = "Green-2"
