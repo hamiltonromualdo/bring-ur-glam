@@ -81,6 +81,12 @@ func _physics_process(_delta):
     velocity.y += GRAVITY
     if not MOVING_ENEMY:
         velocity.x = 0
+    
+    if velocity.x != 0:
+        $AnimationPlayer.play("Walk")
+    else:
+        $AnimationPlayer.play("Idle")
+        
     velocity = move_and_slide(velocity, FLOOR)
 
     if is_on_wall() or not $EdgeDetector.is_colliding():
