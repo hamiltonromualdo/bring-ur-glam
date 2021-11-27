@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/UserInterface/HealthBarRbn.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/HealthBarRbn.tres" type="Texture" id=2]
 [ext_resource path="res://src/UserInterface/HealthBarRbn2.tres" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.133333 )
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.133333 )
+border_blend = true
+corner_detail = 1
 
 [node name="HealthBarRbn" type="Control"]
 anchor_left = -0.021
@@ -19,12 +28,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="ProgressBar" parent="."]
+margin_right = 100.0
+margin_bottom = 7.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ProgressBar" type="TextureProgress" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 100.0
 margin_bottom = 7.0
-value = 50.0
+value = 100.0
 texture_progress = ExtResource( 2 )
 nine_patch_stretch = true
 __meta__ = {
