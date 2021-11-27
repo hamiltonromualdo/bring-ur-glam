@@ -115,3 +115,8 @@ func _physics_process(_delta: float) -> void:
     if was_grounded == null || is_grounded != was_grounded:
         $ReachGroundSound.play()
         emit_signal("grounded_updated", is_grounded)
+
+
+func _on_PickableItemsDetector_area_entered(area: Area2D) -> void:
+    if area is Star:
+        PlayerData.stars_count += 1
