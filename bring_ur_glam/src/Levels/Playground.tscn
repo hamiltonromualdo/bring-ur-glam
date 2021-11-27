@@ -1839,8 +1839,8 @@ centered = false
 [node name="Sea" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Sea"]
-position = Vector2( -1382, 150 )
-motion_scale = Vector2( 0.5, 1 )
+position = Vector2( -1391, 136 )
+motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 320, 0 )
 __meta__ = {
 "_edit_group_": true
@@ -1850,16 +1850,16 @@ __meta__ = {
 texture = ExtResource( 18 )
 centered = false
 
-[node name="Sky2" type="ParallaxBackground" parent="."]
+[node name="Redeemer" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Sky2"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Redeemer"]
 position = Vector2( -696, -144 )
 motion_scale = Vector2( 0.3, 0.3 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Sky2/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="Redeemer/ParallaxLayer"]
 texture = ExtResource( 3 )
 centered = false
 
@@ -1912,6 +1912,7 @@ tile_data = PoolIntArray( 524305, 536870930, 0, 524354, 20, 0, 524370, 19, 0, 58
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1365, 177 )
 scale = Vector2( 1, 1.00698 )
+GODNESS_MODE = true
 
 [node name="DecorationOffset4" type="TileMap" parent="."]
 position = Vector2( 0, 4 )
