@@ -1,11 +1,11 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Playground.gd" type="Script" id=2]
 [ext_resource path="res://assets/bg/cristo.png" type="Texture" id=3]
 [ext_resource path="res://assets/sound/playground_theme.mp3" type="AudioStream" id=4]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/bg/pl_sunset.png" type="Texture" id=6]
 [ext_resource path="res://src/UserInterface/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tiles/path.tres" type="TileSet" id=8]
 [ext_resource path="res://src/Levels/Buildings.gd" type="Script" id=9]
@@ -17,7 +17,9 @@
 [ext_resource path="res://assets/tiles/fountain_2.png" type="Texture" id=15]
 [ext_resource path="res://assets/tiles/fountain_0.png" type="Texture" id=16]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=17]
-[ext_resource path="res://src/Objects/Star.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=18]
+[ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=19]
+[ext_resource path="res://src/Objects/Star.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -1829,25 +1831,51 @@ script = ExtResource( 2 )
 [node name="Sky" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Sky"]
-position = Vector2( -1360, -16 )
-motion_mirroring = Vector2( 2784, 2379 )
+position = Vector2( -1387, -54 )
+motion_mirroring = Vector2( 320, 0 )
 
 [node name="Sprite" type="Sprite" parent="Sky/ParallaxLayer"]
-position = Vector2( -1275, -1805 )
-scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 centered = false
 
-[node name="Sky2" type="ParallaxBackground" parent="."]
+[node name="City" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Sky2"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="City"]
+position = Vector2( -1375, 77 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 320, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="City/ParallaxLayer"]
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Sea" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Sea"]
+position = Vector2( -1384, 139 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 320, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Sea/ParallaxLayer"]
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Redeemer" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Redeemer"]
 position = Vector2( -696, -144 )
 motion_scale = Vector2( 0.3, 0.3 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Sky2/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="Redeemer/ParallaxLayer"]
 texture = ExtResource( 3 )
 centered = false
 
@@ -1882,13 +1910,12 @@ tile_data = PoolIntArray( 589763, 20, 0, 589795, 20, 0, 589814, 20, 0, 655348, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( -712, 171 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( 674, 170 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="DecorationOffset-4" type="TileMap" parent="."]
@@ -1896,7 +1923,7 @@ position = Vector2( 0, -4 )
 tile_set = ExtResource( 12 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 524305, 536870930, 0, 524354, 20, 0, 524370, 19, 0, 589900, 17, 0, 786362, 6, 0, 786363, 6, 0, 786386, 12, 0, 786388, 12, 0, 786397, 13, 0, 786404, 6, 0, 786411, 0, 0, 786415, 0, 0, 786431, 4, 0, 720896, 9, 0, 720903, 7, 0, 720914, 8, 0, 720919, 0, 0, 720921, 10, 0, 720923, 8, 0, 720924, 3, 0, 720931, 12, 0, 720982, 13, 0, 720989, 9, 0, 720990, 1, 0, 720991, 6, 0, 720992, 5, 0, 720998, 4, 0, 721008, 0, 0, 721009, 0, 0, 721015, 0, 0, 721016, 0, 0 )
+tile_data = PoolIntArray( 524305, 536870930, 0, 655442, 19, 0, 786362, 6, 0, 786363, 6, 0, 786386, 12, 0, 786388, 12, 0, 786397, 13, 0, 786404, 6, 0, 786411, 0, 0, 786415, 0, 0, 786431, 4, 0, 720896, 9, 0, 720903, 7, 0, 720914, 8, 0, 720919, 0, 0, 720921, 10, 0, 720923, 8, 0, 720924, 3, 0, 720931, 12, 0, 720982, 13, 0, 720989, 9, 0, 720990, 1, 0, 720991, 6, 0, 720992, 5, 0, 720998, 4, 0, 721008, 0, 0, 721009, 0, 0, 721015, 0, 0, 721016, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -1365, 177 )
@@ -1907,7 +1934,7 @@ position = Vector2( 0, 4 )
 tile_set = ExtResource( 12 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 786355, 9, 0, 786370, 11, 0, 786371, 11, 0 )
+tile_data = PoolIntArray( 589890, 20, 0, 655436, 17, 0, 786355, 9, 0, 786370, 11, 0, 786371, 11, 0 )
 
 [node name="Building Details" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
@@ -2025,5 +2052,5 @@ SHOOTING_INTERVAL = 0.3
 PLAYER_FINDER_SIZE = 2
 DIRECTION = false
 
-[node name="Star" parent="." instance=ExtResource( 18 )]
-position = Vector2( -1257, 60 )
+[node name="Star" parent="Enemies" instance=ExtResource( 20 )]
+position = Vector2( -1256, 60 )
