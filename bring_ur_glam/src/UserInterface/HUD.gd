@@ -9,6 +9,10 @@ func _ready() -> void:
     error = PlayerData.connect("score_updated", self, "update_score")
     if error:
         print("Error connecting score: ", error)
+        
+    error = PlayerData.connect("stars_count_updated", self, "update_stars_count_text")
+    if error:
+        print("Error connecting stars count: ", error)
 
     $HealthBarRbn.set_values(0, PlayerData.hp, PlayerData.total_hp)
     update_hp_text()
@@ -25,3 +29,7 @@ func update_hp() -> void:
 
 func update_hp_text() -> void:
     $HPValue.text = "{hp}/{total_hp}".format({"hp": PlayerData.hp, "total_hp": PlayerData.total_hp})
+
+
+func update_stars_count_text() -> void:
+    $StarsLabel.text = str(PlayerData.stars_count)

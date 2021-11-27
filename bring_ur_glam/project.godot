@@ -43,6 +43,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Actors/Player.gd"
+}, {
+"base": "Area2D",
+"class": "Star",
+"language": "GDScript",
+"path": "res://src/Objects/Star.gd"
 } ]
 _global_script_class_icons={
 "BulletBase": "",
@@ -51,7 +56,8 @@ _global_script_class_icons={
 "ColorSwatch": "",
 "Enemy": "",
 "HealthBar": "",
-"Player": ""
+"Player": "",
+"Star": ""
 }
 
 [application]
@@ -146,6 +152,7 @@ ui_jump={
 2d_physics/layer_3="environment"
 2d_physics/layer_4="powerups"
 2d_physics/layer_5="buildings"
+2d_physics/layer_6="powerup"
 
 [physics]
 
