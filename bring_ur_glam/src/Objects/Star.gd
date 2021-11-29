@@ -16,7 +16,7 @@ func _ready() -> void:
     initial_pos = $Sprite.position.y
 
 
-func _on_Star_body_entered(body: Node) -> void:
+func _on_Star_body_entered(_body: Node) -> void:
     $Bubble.pop()
     $AudioStreamPlayer2D.play()
 
@@ -25,7 +25,7 @@ func _on_Bubble_animation_finished() -> void:
     queue_free()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
     var pos = initial_pos - $Sprite.position.y
     if pos >= up_limit or pos <= down_limit:
         step *= -1
