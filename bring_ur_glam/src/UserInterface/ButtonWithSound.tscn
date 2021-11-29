@@ -12,11 +12,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FocusSound" type="AudioStreamPlayer2D" parent="."]
+[node name="FocusSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = 24.0
 
-[node name="PressedSound" type="AudioStreamPlayer2D" parent="."]
+[node name="PressedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = 24.0
 
