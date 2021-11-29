@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/objects/star.png" type="Texture" id=1]
-[ext_resource path="res://src/Objects/Star.gd" type="Script" id=2]
+[ext_resource path="res://src/Objects/PickableItem.gd" type="Script" id=2]
 [ext_resource path="res://src/Objects/Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/objects/bubble_shaddow.png" type="Texture" id=4]
 [ext_resource path="res://assets/sound/pop.wav" type="AudioStream" id=5]
@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.61299, 6.67737 )
 
-[node name="Star" type="Area2D"]
+[node name="PickableItem" type="Area2D"]
 collision_layer = 8
 script = ExtResource( 2 )
 

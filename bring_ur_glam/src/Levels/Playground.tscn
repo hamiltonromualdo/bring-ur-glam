@@ -19,7 +19,7 @@
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=18]
 [ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=19]
-[ext_resource path="res://src/Objects/Star.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Objects/PickableItem.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -1910,13 +1910,12 @@ tile_data = PoolIntArray( 589763, 20, 0, 589795, 20, 0, 589814, 20, 0, 655348, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( -712, 171 )
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( 674, 170 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="DecorationOffset-4" type="TileMap" parent="."]
@@ -1952,6 +1951,7 @@ bus = "Music"
 
 [node name="Star" parent="." instance=ExtResource( 20 )]
 position = Vector2( -1256, 60 )
+type = 1
 
 [node name="Star2" parent="." instance=ExtResource( 20 )]
 position = Vector2( -1158, 92 )
