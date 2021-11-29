@@ -121,3 +121,5 @@ func _on_PickableItemsDetector_area_entered(area: Area2D) -> void:
     if area is PickableItem:
         if area.type == PickableItemType.Type.Star:
             PlayerData.score += 5
+        if area.type == PickableItemType.Type.Heart:
+            PlayerData.hp += 20
