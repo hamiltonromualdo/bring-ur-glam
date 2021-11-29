@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sound/reach_ground.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.77374, 6.70734 )
+extents = Vector2( 5.7, 6.7 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8, 6.46318 )

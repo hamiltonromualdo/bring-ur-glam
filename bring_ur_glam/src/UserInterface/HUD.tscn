@@ -23,21 +23,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StarsLabel" type="Label" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -63.0
-margin_top = 21.0
-margin_right = -4.0
-margin_bottom = 37.0
-theme = ExtResource( 1 )
-text = "0"
-align = 2
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="HPLabel" type="Label" parent="."]
 margin_left = 4.0
 margin_top = 3.0

@@ -120,4 +120,4 @@ func _physics_process(_delta: float) -> void:
 func _on_PickableItemsDetector_area_entered(area: Area2D) -> void:
     if area is PickableItem:
         if area.type == PickableItemType.Type.Star:
-            PlayerData.stars_count += 1
+            PlayerData.score += 5
