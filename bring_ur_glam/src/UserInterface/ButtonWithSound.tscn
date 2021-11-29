@@ -12,13 +12,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="FocusSound" type="AudioStreamPlayer2D" parent="."]
+[node name="FocusSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = 24.0
+bus = "Effects"
 
-[node name="PressedSound" type="AudioStreamPlayer2D" parent="."]
+[node name="PressedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = 24.0
+bus = "Effects"
 
 [connection signal="button_up" from="." to="." method="_on_ButtonWithSound_button_up"]
 [connection signal="focus_exited" from="." to="." method="_on_ButtonWithSound_focus_exited"]
