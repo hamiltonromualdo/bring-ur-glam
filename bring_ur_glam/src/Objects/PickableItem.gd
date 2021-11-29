@@ -8,7 +8,8 @@ var step = 0.25
 
 const SPRITE = {
     PickableItemType.Type.Star: preload("res://assets/objects/star.png"),
-    PickableItemType.Type.Heart: preload("res://assets/objects/heart.png")
+    PickableItemType.Type.Heart: preload("res://assets/objects/heart.png"),
+    PickableItemType.Type.Unicorn: preload("res://assets/objects/unicorn.png"),
 }
 
 
