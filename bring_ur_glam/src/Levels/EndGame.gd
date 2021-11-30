@@ -22,7 +22,7 @@ func update_enemies_count() -> void:
 func update_number_of_enemies_in_screen() -> void:
     var enemiesKilled = totalEnemies - enemiesLeft
     enemiesInScreen = 4 if enemiesKilled <= 1 else int(ceil(4 * log(enemiesKilled) / log(2)))
-        
+
 
 func get_player_camera_rect() -> Rect2:
     # Get the canvas transform
@@ -44,7 +44,7 @@ func is_point_in_camera(pos: Vector2) -> bool:
     var viewportRect = get_player_camera_rect()
     return viewportRect.has_point(pos)
 
-    
+
 func is_point_in_building_tile_map(pos: Vector2) -> bool:
     var tilePos = $Buildings.world_to_map(pos)
     return $Buildings.get_cell(tilePos.x, tilePos.y) != TileMap.INVALID_CELL
@@ -57,13 +57,13 @@ func get_random_pos() -> Vector2:
     var posX = possibleXValues[rng.randi() % possibleXValues.size()]
     var posY = possibleYValues[rng.randi() % possibleYValues.size()]
     return Vector2(posX, posY)
-    
+
 
 func get_new_enemy_position() -> Vector2:
     var enemyPos = get_random_pos()
     while is_point_in_camera(enemyPos) or !is_point_in_building_tile_map(enemyPos):
         enemyPos = get_random_pos()
-    
+
     print("Instanced enemy at X: {x} Y: {y}".format({"x": enemyPos.x, "y": enemyPos.y}))
     return enemyPos
 
@@ -91,8 +91,8 @@ func set_camera_limits() -> void:
     $Player/Camera2D.limit_left = 0
     $Player/Camera2D.limit_right = 400
     $Player/Camera2D.limit_top = -300
-    
-    
+
+
 func _ready() -> void:
     rng.randomize()
     set_camera_limits()
