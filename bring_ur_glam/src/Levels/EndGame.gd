@@ -1,27 +1,41 @@
+tool
 extends Node2D
 
+export var win_scene: PackedScene
+export var totalEnemies: = 50
+
+func _get_configuration_warning() -> String:
+    return "Win scene is unset" if not win_scene else ""
+
+
 var Enemy = load("res://src/Actors/Enemy.tscn")
-var enemiesInScreen = 6
+var enemiesLeft = totalEnemies
 var liveEnemies = 0
-var enemiesLeft = 50
-var totalEnemies = 50
 var rng = RandomNumberGenerator.new()
 
 
 func _on_enemyDied() -> void:
     liveEnemies -= 1
     enemiesLeft -= 1
-    update_number_of_enemies_in_screen()
     update_enemies_count()
+    if enemiesLeft == 0:
+        win()
+
+
+func win() -> void:
+    var error = get_tree().change_scene_to(win_scene)
+    if error:
+        print("Error changing scene: ", error)
 
 
 func update_enemies_count() -> void:
     $EnemiesCountLayer/EnemiesCount.text = "{enemiesLeft}/{totalEnemies}".format({"enemiesLeft": enemiesLeft, "totalEnemies": totalEnemies})
 
 
-func update_number_of_enemies_in_screen() -> void:
+func enemies_to_spawn() -> int:
     var enemiesKilled = totalEnemies - enemiesLeft
-    enemiesInScreen = 4 if enemiesKilled <= 1 else int(ceil(4 * log(enemiesKilled) / log(2)))
+    var enemiesThatShouldBeOnScreen = 4 if enemiesKilled <= 1 else int(ceil(4 * log(enemiesKilled) / log(2)))
+    return int(clamp(enemiesThatShouldBeOnScreen - liveEnemies, 0, enemiesLeft))
 
 
 func get_player_camera_rect() -> Rect2:
@@ -82,7 +96,7 @@ func instance_enemy() -> void:
 
 
 func check_and_instance_enemies():
-    var enemiesToSpawn = int(clamp(enemiesInScreen - liveEnemies, 0, enemiesLeft))
+    var enemiesToSpawn = enemies_to_spawn()
     for n in enemiesToSpawn:
         instance_enemy()
 

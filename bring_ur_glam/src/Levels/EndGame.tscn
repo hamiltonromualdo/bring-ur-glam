@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/EndGame.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=9]
 [ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/sound/playground_theme.mp3" type="AudioStream" id=11]
+[ext_resource path="res://src/UserInterface/GameOverScreen.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -18,6 +19,7 @@ font_data = ExtResource( 10 )
 
 [node name="EndGame" type="Node2D"]
 script = ExtResource( 2 )
+win_scene = ExtResource( 12 )
 
 [node name="EnemiesCountLayer" type="CanvasLayer" parent="."]
 
