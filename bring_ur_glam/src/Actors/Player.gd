@@ -18,6 +18,8 @@ onready var sprite = $PlayerImages
 var is_grounded
 signal grounded_updated(is_grounded)
 
+var is_protected = false
+
 func _on_EnemyDetector_body_entered(_body: PhysicsBody2D) -> void:
     hurt()
 
@@ -32,6 +34,7 @@ func _on_DeathTimer_timeout() -> void:
 
 func _ready() -> void:
     $PlayerImages.load_data()
+    set_shield(false)
 
 
 func die():
@@ -43,6 +46,8 @@ func die():
 
 func hurt():
     if GODNESS_MODE:
+        return
+    if is_protected:
         return
     PlayerData.hp -= 10
     if PlayerData.hp <= 0:
@@ -117,9 +122,27 @@ func _physics_process(_delta: float) -> void:
         emit_signal("grounded_updated", is_grounded)
 
 
+func set_shield(enable: bool) -> void:
+    PlayerData.protected = enable
+    is_protected = enable
+    $Shield.visible = enable
+    if enable:
+        $ShieldTimer.start()
+        $CollisionShape2D.shape.extents = Vector2(10, 10)
+        $CollisionShape2D.position = Vector2(0, 5.4)
+    else:
+        $CollisionShape2D.shape.extents = Vector2(5.7, 6.7)
+        $CollisionShape2D.position = Vector2(0, 9)
+
 func _on_PickableItemsDetector_area_entered(area: Area2D) -> void:
     if area is PickableItem:
         if area.type == PickableItemType.Type.Star:
             PlayerData.score += 5
         if area.type == PickableItemType.Type.Heart:
             PlayerData.hp += 20
+        if area.type == PickableItemType.Type.Unicorn:
+            set_shield(true)
+
+
+func _on_ShieldTimer_timeout() -> void:
+    set_shield(false)
