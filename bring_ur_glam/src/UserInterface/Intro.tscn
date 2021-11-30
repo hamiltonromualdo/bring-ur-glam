@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/bg/cristo.png" type="Texture" id=10]
 [ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=11]
 [ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=12]
+[ext_resource path="res://assets/sound/intro_song.mp3" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFont" id=2]
 size = 12
@@ -158,6 +159,11 @@ texture = ExtResource( 7 )
 [node name="TextBoxTween" type="Tween" parent="."]
 
 [node name="CharacterTween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
+bus = "Music"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="tween_all_completed" from="BackgroundTween" to="." method="_on_BackgroundTween_tween_all_completed"]
