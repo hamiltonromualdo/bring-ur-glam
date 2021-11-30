@@ -65,10 +65,10 @@ func get_roof(color):
     return _get_rand_from_vec(PARTS[color]["Roof"])
 
 
-func set_cell(x: int, y: int, 
+func set_cell(x: int, y: int,
               tile: int,
-              flip_x: bool = false, flip_y: bool = false, 
-              transpose: bool = false, 
+              flip_x: bool = false, flip_y: bool = false,
+              transpose: bool = false,
               _autotile_coord: Vector2 = Vector2( 0, 0 )) -> void:
     if tile == GENERATION_TILE:
         # Get color from the tile on the right and use as reference
@@ -87,10 +87,10 @@ func set_cell(x: int, y: int,
         var max_y = y
         var x_tiles = x_bound - x
         var y_tiles = y - y_bound
-        
+
         if x_tiles <= 1 || y_tiles <= 1:
             return
-        
+
         # Windows
         for x_pos in range(x, x_bound, 1):
             for y_pos in range(y, y_bound, -2):
@@ -119,5 +119,5 @@ func set_cell(x: int, y: int,
         var y_pos = max_y - 1
         for x_pos in range(x, x_bound, 1):
             .set_cellv(Vector2(x_pos, y_pos), get_roof(color))
-    else: 
+    else:
         .set_cellv(Vector2(x, y), tile, flip_x, flip_y, transpose)
