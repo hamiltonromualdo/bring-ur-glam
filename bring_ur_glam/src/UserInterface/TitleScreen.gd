@@ -18,8 +18,15 @@ func _process(_delta):
     if ($Title.margin_top >= 45 && $Glam.is_emitting() == false):
         $Glam.set_emitting(true)
         set_up_menu()
-
+    
+    if $SoundControl.visible and Input.is_action_pressed("ui_cancel"):
+        $SoundControl.visible = false
+        $SettingsButton.release_focus()
 
 
 func _on_CreditsButton_pressed():
     get_tree().change_scene("res://src/UserInterface/CreditsScreen.tscn")
+
+
+func _on_SettingsButton_pressed() -> void:
+    $SoundControl.visible = true

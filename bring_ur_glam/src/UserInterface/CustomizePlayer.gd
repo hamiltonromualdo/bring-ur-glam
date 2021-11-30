@@ -76,3 +76,13 @@ func _on_StartGame_pressed() -> void:
     var error = get_tree().change_scene("res://src/Levels/Playground.tscn")
     if error:
         print("Error changing scene: ", error)
+
+
+func _process(delta: float) -> void:
+    if $SoundControl.visible and Input.is_action_pressed("ui_cancel"):
+        $SoundControl.visible = false
+        $SettingsButton.release_focus()
+
+
+func _on_SettingsButton_pressed() -> void:
+    $SoundControl.visible = true

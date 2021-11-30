@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://assets/sound/main_theme.mp3" type="AudioStream" id=7]
 [ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/sparkle.png" type="Texture" id=9]
+[ext_resource path="res://assets/icons/settings.png" type="Texture" id=10]
+[ext_resource path="res://assets/icons/settings_pressed.png" type="Texture" id=11]
+[ext_resource path="res://src/UserInterface/SoundControl.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Image" id=9]
 data = {
@@ -105,6 +108,7 @@ __meta__ = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
+bus = "Music"
 
 [node name="Menu" type="VBoxContainer" parent="."]
 visible = false
@@ -141,4 +145,21 @@ margin_right = 85.0
 margin_bottom = 77.0
 disabled = true
 
+[node name="SettingsButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.27451 )
+margin_left = 302.0
+margin_top = 2.0
+margin_right = 319.0
+margin_bottom = 19.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundControl" parent="." instance=ExtResource( 12 )]
+visible = false
+
 [connection signal="pressed" from="Menu/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=11]
 [ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=12]
 [ext_resource path="res://assets/sound/intro_song.mp3" type="AudioStream" id=13]
+[ext_resource path="res://assets/icons/settings.png" type="Texture" id=14]
+[ext_resource path="res://assets/icons/settings_pressed.png" type="Texture" id=15]
+[ext_resource path="res://src/UserInterface/SoundControl.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=2]
 size = 12
@@ -165,6 +168,23 @@ stream = ExtResource( 13 )
 autoplay = true
 bus = "Music"
 
+[node name="SettingsButton" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.27451 )
+margin_left = 302.0
+margin_top = 2.0
+margin_right = 319.0
+margin_bottom = 19.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundControl" parent="." instance=ExtResource( 16 )]
+visible = false
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="tween_all_completed" from="BackgroundTween" to="." method="_on_BackgroundTween_tween_all_completed"]
 [connection signal="tween_all_completed" from="TextBoxTween" to="." method="_on_TextBoxTween_tween_all_completed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

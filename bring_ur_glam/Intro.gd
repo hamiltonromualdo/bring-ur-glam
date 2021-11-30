@@ -57,6 +57,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     if Input.is_action_pressed("ui_accept") and $Timer.is_stopped() and current <= len(story):
         _next_line()
+    
+    if $SoundControl.visible and Input.is_action_pressed("ui_cancel"):
+        $SoundControl.visible = false
+        $SettingsButton.release_focus()
 
 
 func _on_Timer_timeout() -> void:
@@ -71,3 +75,7 @@ func _on_BackgroundTween_tween_all_completed() -> void:
 
 func _on_TextBoxTween_tween_all_completed() -> void:
     $Next.visible = true
+
+
+func _on_SettingsButton_pressed() -> void:
+    $SoundControl.visible = true
