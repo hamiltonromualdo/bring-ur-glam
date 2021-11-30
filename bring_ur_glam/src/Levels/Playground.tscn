@@ -1913,13 +1913,13 @@ tile_data = PoolIntArray( 589763, 20, 0, 589795, 20, 0, 589814, 20, 0, 655348, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( -712, 171 )
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( 674, 170 )
 frames = SubResource( 7 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="DecorationOffset-4" type="TileMap" parent="."]
@@ -1953,25 +1953,12 @@ volume_db = -7.0
 autoplay = true
 bus = "Music"
 
-[node name="Star" parent="." instance=ExtResource( 20 )]
-position = Vector2( -1256, 60 )
-type = 4
-
-[node name="Star2" parent="." instance=ExtResource( 20 )]
-position = Vector2( -1158, 92 )
-type = 2
-
-[node name="Star3" parent="." instance=ExtResource( 20 )]
-position = Vector2( -1105, 169 )
-type = 3
-
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( -1204, 100 )
+position = Vector2( -1330.65, 75.324 )
 HP = 5
 SPEED = 25
-PLAYER_FINDER_SIZE = 0
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 17 )]
 position = Vector2( -954, 181 )
@@ -2082,5 +2069,58 @@ collision_layer = 4
 [node name="DoorCollision" type="CollisionShape2D" parent="Door/DoorArea"]
 position = Vector2( 1975, 173 )
 shape = SubResource( 1 )
+
+[node name="PickableItems" type="Node2D" parent="."]
+
+[node name="Shield" type="Node2D" parent="PickableItems"]
+
+[node name="PickableItem" parent="PickableItems/Shield" instance=ExtResource( 20 )]
+position = Vector2( -781.258, 66.8944 )
+type = 3
+
+[node name="PickableItem3" parent="PickableItems/Shield" instance=ExtResource( 20 )]
+position = Vector2( 1210.63, 168.934 )
+type = 3
+
+[node name="Glam" type="Node2D" parent="PickableItems"]
+position = Vector2( 43.1257, -187.881 )
+
+[node name="PickableItem" parent="PickableItems/Glam" instance=ExtResource( 20 )]
+position = Vector2( 320.821, 59.8303 )
+type = 2
+
+[node name="PickableItem2" parent="PickableItems/Glam" instance=ExtResource( 20 )]
+position = Vector2( 1787.81, 166.343 )
+type = 2
+
+[node name="ScorePoints" type="Node2D" parent="PickableItems"]
+
+[node name="PickableItem" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( -1288.62, 59.9424 )
+type = 2
+
+[node name="PickableItem2" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( -683.56, 167.924 )
+type = 2
+
+[node name="PickableItem3" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( -217.286, 59.8501 )
+type = 2
+
+[node name="PickableItem4" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( 424.785, 167.924 )
+type = 2
+
+[node name="PickableItem5" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( 753.573, 92.3751 )
+type = 2
+
+[node name="PickableItem6" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( 1522.44, 167.956 )
+type = 2
+
+[node name="PickableItem7" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
+position = Vector2( 1943.09, 167.207 )
+type = 2
 
 [connection signal="body_entered" from="Door/DoorArea" to="." method="_on_DoorArea_body_entered"]
