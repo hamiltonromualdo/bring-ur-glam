@@ -60,10 +60,6 @@ func _on_ShoesColor_color_changed(color) -> void:
     player.set_shoes_color(color)
 
 
-func _on_Save_pressed() -> void:
-    player.save_data()
-
-
 func _on_StartGame_pressed() -> void:
     yield($Control/VBoxContainer/HBoxContainer2/StartGame/PressedSound, "finished")
     player.save_data()
