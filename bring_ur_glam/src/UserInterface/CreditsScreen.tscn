@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/UserInterface/CreditsScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=2]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/TitleScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/sound/customize_player_theme.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=7]
+[ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+font_data = ExtResource( 5 )
 
 [node name="CreditsScreen" type="Control"]
 anchor_right = 1.0
@@ -25,10 +31,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -112.0
-margin_top = 99.0
-margin_right = 113.0
-margin_bottom = 538.0
+margin_left = -127.0
+margin_top = 100.0
+margin_right = 125.0
+margin_bottom = 539.0
+theme = ExtResource( 8 )
+custom_constants/line_spacing = 6
+custom_fonts/font = SubResource( 1 )
 text = "Developed, with lots of love, by:
 
 Thamara Andrade
