@@ -74,7 +74,7 @@ func save_data() -> void:
         file.store_var(player_info)
         file.close()
 
-func load_data() -> bool:
+func load_data() -> Dictionary:
     var file = File.new()
     var error = file.open(save_path, File.READ)
     if error == OK:
@@ -86,5 +86,6 @@ func load_data() -> bool:
         set_gun_color(player_info["gun_color"])
         set_skin_color(player_info["skin_color"])
         file.close()
-    return error == OK
+        return player_info
+    return {}
 
