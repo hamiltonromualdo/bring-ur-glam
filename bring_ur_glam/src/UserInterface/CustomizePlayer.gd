@@ -10,6 +10,7 @@ onready var player = $PlayerImages
 
 var save_path = "user://player.dat"
 
+
 func randomize_char() -> void:
     randomize()
     player.change_hair(randi())
@@ -19,14 +20,23 @@ func randomize_char() -> void:
     player.set_gun_color(gunColor.get_rand_color())
     player.set_skin_color(skinColor.get_rand_color())
 
+
 func _ready() -> void:
     var loaded = player.load_data()
-    if not loaded:
+    if loaded:
+        update_swatches(loaded)
+    else:
         randomize_char()
 
     # Start with focus on StartGame to allow keyboard control
     $Control/VBoxContainer/HBoxContainer2/StartGame.grab_focus()
 
+func update_swatches(player_info) -> void:
+    hairColor.set_color(player_info["hair_color"])
+    dressColor.set_color(player_info["dress_color"])
+    shoesColor.set_color(player_info["shoes_color"])
+    gunColor.set_color(player_info["gun_color"])
+    skinColor.set_color(player_info["skin_color"])
 
 func _on_Rand_pressed() -> void:
     randomize_char()

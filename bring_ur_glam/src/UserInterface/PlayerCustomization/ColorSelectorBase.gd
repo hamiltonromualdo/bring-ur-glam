@@ -11,6 +11,9 @@ signal color_changed(color)
 func get_colors():
     pass
 
+func set_color(new_color) -> void:
+    color = new_color
+    hightlight_selected()
 
 func hightlight_selected() -> void:
     for swatch in get_children():
