@@ -3,10 +3,12 @@ extends ColorSelectorBase
 
 func get_colors():
     return [
-        "#f97ca4",
-        "#feffd0",
-        "#ccf6c2",
-        "#7ccfbc",
-        "#f7c73d",
-        "#303600",
+        "#ADB5C2",
+        "#FED271",
+        "#89C902",
+        "#EA6391",
+        "#EC1F0B",
+        "#993417",
+        "#7C1A74",
+        "#1D376E"
     ]
