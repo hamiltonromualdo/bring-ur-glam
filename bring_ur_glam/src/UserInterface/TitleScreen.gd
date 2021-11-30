@@ -18,7 +18,7 @@ func _process(_delta):
     if ($Title.margin_top >= 45 && $Glam.is_emitting() == false):
         $Glam.set_emitting(true)
         set_up_menu()
-        
+
 
 
 func _on_CreditsButton_pressed():
