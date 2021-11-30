@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/EndGame.gd" type="Script" id=2]
@@ -17,6 +17,11 @@
 size = 10
 font_data = ExtResource( 10 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 9
+outline_size = 1
+font_data = ExtResource( 10 )
+
 [node name="EndGame" type="Node2D"]
 script = ExtResource( 2 )
 win_scene = ExtResource( 12 )
@@ -31,7 +36,7 @@ margin_bottom = 38.0
 rect_pivot_offset = Vector2( -249, -132 )
 theme = ExtResource( 9 )
 custom_fonts/font = SubResource( 1 )
-text = "1/1"
+text = "50/50"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -49,6 +54,32 @@ text = "Enemies Left:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TimerLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelTimer" type="Timer" parent="TimerLayer"]
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="TimerLayer"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -62.0
+margin_top = -14.0
+margin_right = -8.0
+margin_bottom = -8.0
+theme = ExtResource( 9 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0:33"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="TimerLayer"]
 
 [node name="Sky" type="ParallaxBackground" parent="."]
 
@@ -99,4 +130,5 @@ bus = "Music"
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
+[connection signal="timeout" from="TimerLayer/LevelTimer" to="." method="_on_LevelTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]

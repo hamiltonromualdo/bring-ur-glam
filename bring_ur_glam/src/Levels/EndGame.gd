@@ -13,7 +13,7 @@ var enemiesLeft = totalEnemies
 var liveEnemies = 0
 var enemiesSpawned = 0
 var rng = RandomNumberGenerator.new()
-
+var secondsLeft = 5*60
 
 func linear_interpolate(from: float, to: float, inclination: float) -> float:
     return from + (to - from) * inclination
@@ -24,7 +24,7 @@ func linear_interpolate(from: float, to: float, inclination: float) -> float:
 func set_enemy_spec(enemy: Enemy) -> void:
     # Forcing float division by making one of te arguments a float
     var inclination = float(enemiesSpawned)/(totalEnemies - 1)
-    
+
     enemy.HP = int(round(linear_interpolate(1, 4, inclination)))
     enemy.SPEED = linear_interpolate(10, 75, inclination)
     enemy.SHOOTING_INTERVAL = linear_interpolate(1.2, 0.6, inclination)
@@ -136,8 +136,35 @@ func _ready() -> void:
     set_camera_limits()
     update_enemies_count()
     check_and_instance_enemies()
+    set_level_timer_label()
 
 
 func _on_EnemyTimer_timeout():
     check_and_instance_enemies()
     $EnemyTimer.start()
+
+
+func get_level_timer_minutes() -> String:
+    var minutes = secondsLeft/60
+    var seconds = secondsLeft - minutes*60
+
+    return "{min}:{s}".format({"min": minutes, "s": "%02d" % seconds})
+
+
+func set_level_timer_label() -> void:
+    $TimerLayer/TimerLabel.text = get_level_timer_minutes()
+
+    var outlineColor = Color.red if secondsLeft <= 60 else Color.black
+    $TimerLayer/TimerLabel.add_color_override("font_outline_modulate", outlineColor)
+
+    if secondsLeft <= 30:
+        $TimerLayer/Tween.interpolate_property($TimerLayer/TimerLabel.get("custom_fonts/font"), "size", 9, 13, 0.1, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+        $TimerLayer/Tween.interpolate_property($TimerLayer/TimerLabel.get("custom_fonts/font"), "size", 13, 9, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.1)
+        $TimerLayer/Tween.start()
+
+
+func _on_LevelTimer_timeout():
+    secondsLeft -= 1
+    set_level_timer_label()
+    if secondsLeft == 0:
+        $Player.die()
