@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/UserInterface/CreditsScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=2]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/TitleScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sound/customize_player_theme.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=7]
+
+[node name="CreditsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuRio" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+z_index = -10
+texture = ExtResource( 2 )
+
+[node name="Credits" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = 99.0
+margin_right = 113.0
+margin_bottom = 538.0
+text = "Developed, with lots of love, by:
+
+Thamara Andrade
+Hudson Oliveira
+Hamilton Romualdo
+Arthur Araújo
+Bárbara Almeida
+
+Made with Godot Engine
+for the Game Off Game Jam 2021
+
+Music Credits
+\"Explosions In The Sky\", by Jim Hall
+(CC BY 4.0 - https://bit.ly/3D0aSVf)
+
+\"Please Stay\", by Jim Hall
+(CC BY 4.0 - https://bit.ly/3D0aSVf)
+
+\"Bipolar Bear\", by AzureFlux
+(CC BY-NC-SA 4.0 -
+https://bit.ly/3o3oURt)
+
+Font Credits
+\"Dogica\", by Roberto Mocci
+(SIL Open Font License 1.1
+http://scripts.sil.org/OFL)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" parent="." instance=ExtResource( 3 )]
+margin_left = 259.0
+margin_top = 154.0
+margin_right = 311.0
+margin_bottom = 177.0
+theme = ExtResource( 7 )
+text = "Back"
+next_scene = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true

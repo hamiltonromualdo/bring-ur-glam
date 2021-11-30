@@ -19,3 +19,7 @@ func _process(_delta):
         $Glam.set_emitting(true)
         set_up_menu()
         
+
+
+func _on_CreditsButton_pressed():
+    get_tree().change_scene("res://src/UserInterface/CreditsScreen.tscn")
