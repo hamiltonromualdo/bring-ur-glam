@@ -32,8 +32,6 @@ shape = SubResource( 7 )
 
 [node name="Gun" parent="." instance=ExtResource( 4 )]
 
-[node name="DeathTimer" type="Timer" parent="."]
-
 [node name="EnemyDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
@@ -100,7 +98,6 @@ margin_right = -8.37802
 margin_bottom = -10.9344
 
 [connection signal="grounded_updated" from="." to="Camera2D" method="_on_Player_grounded_updated"]
-[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="body_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_body_entered"]
 [connection signal="area_entered" from="PickableItemsDetector" to="." method="_on_PickableItemsDetector_area_entered"]
 [connection signal="timeout" from="ShieldTimer" to="." method="_on_ShieldTimer_timeout"]

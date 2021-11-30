@@ -25,14 +25,6 @@ func _on_EnemyDetector_body_entered(_body: PhysicsBody2D) -> void:
     hurt()
 
 
-func _on_DeathTimer_timeout() -> void:
-    queue_free()
-    # Go to game over screen
-    var error = get_tree().change_scene("res://src/UserInterface/GameOverScreen.tscn")
-    if error:
-        print("Error changing scene: ", error)
-
-
 func _ready() -> void:
     $PlayerImages.load_data()
     $ShieldTimer.wait_time = SHIELD_DURATION
@@ -43,8 +35,13 @@ func _ready() -> void:
 func die():
     _velocity = Vector2.ZERO
     $CollisionShape2D.set_deferred("disabled", true)
-    $DeathTimer.start()
     sprite.flip_v(true)
+    yield(get_tree().create_timer(1), "timeout")
+    queue_free()
+    # Go to game over screen
+    var error = get_tree().change_scene("res://src/UserInterface/GameOverScreen.tscn")
+    if error:
+        print("Error changing scene: ", error)
 
 
 func hurt():
