@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Actors/PassThrough.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sound/jump_down.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/sound/reach_ground.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/objects/bubble.png" type="Texture" id=9]
+[ext_resource path="res://ShieldDurationBar.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 5.7, 6.7 )
@@ -86,11 +87,17 @@ bus = "Effects"
 wait_time = 5.0
 
 [node name="Shield" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0.297638, 4.91439 )
 scale = Vector2( 1.01825, 1.01825 )
 texture = ExtResource( 9 )
 hframes = 5
+
+[node name="ShieldDurationBar" parent="." instance=ExtResource( 10 )]
+visible = false
+margin_left = -8.37802
+margin_top = -10.9344
+margin_right = -8.37802
+margin_bottom = -10.9344
 
 [connection signal="grounded_updated" from="." to="Camera2D" method="_on_Player_grounded_updated"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]

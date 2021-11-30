@@ -19,6 +19,7 @@ var is_grounded
 signal grounded_updated(is_grounded)
 
 var is_protected = false
+const SHIELD_DURATION = 10
 
 func _on_EnemyDetector_body_entered(_body: PhysicsBody2D) -> void:
     hurt()
@@ -34,6 +35,8 @@ func _on_DeathTimer_timeout() -> void:
 
 func _ready() -> void:
     $PlayerImages.load_data()
+    $ShieldTimer.wait_time = SHIELD_DURATION
+    $ShieldDurationBar.TIMEOUT = SHIELD_DURATION
     set_shield(false)
 
 
@@ -126,10 +129,12 @@ func set_shield(enable: bool) -> void:
     PlayerData.protected = enable
     is_protected = enable
     $Shield.visible = enable
+    $ShieldDurationBar.visible = enable
     if enable:
         $ShieldTimer.start()
         $CollisionShape2D.shape.extents = Vector2(10, 10)
         $CollisionShape2D.position = Vector2(0, 5.4)
+        $ShieldDurationBar.start()
     else:
         $CollisionShape2D.shape.extents = Vector2(5.7, 6.7)
         $CollisionShape2D.position = Vector2(0, 9)

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ShieldDurationBar.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.176471, 0.470588, 0.886275, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.254902 )
+
+[node name="ShieldDurationBar" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -320.0
+margin_bottom = -180.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_left = -0.025
+anchor_top = -0.037
+margin_right = 16.0
+margin_bottom = 2.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 10.0
+step = 1.0
+value = 7.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
