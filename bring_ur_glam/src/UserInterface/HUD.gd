@@ -15,6 +15,9 @@ func _ready() -> void:
 
 func update_score() -> void:
     $ScoreLabel.text = str(PlayerData.score)
+    $Tween.interpolate_property($ScoreLabel, "rect_scale", Vector2(1, 1), Vector2(1.1, 1.1), 0.1, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+    $Tween.interpolate_property($ScoreLabel, "rect_scale", Vector2(1.1, 1.1), Vector2(1, 1), 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0.1)
+    $Tween.start()
 
 
 func update_hp() -> void:

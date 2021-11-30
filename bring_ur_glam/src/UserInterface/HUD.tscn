@@ -11,9 +11,9 @@ script = ExtResource( 2 )
 [node name="ScoreLabel" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -63.0
+margin_left = -68.0
 margin_top = 4.0
-margin_right = -4.0
+margin_right = -9.0
 margin_bottom = 20.0
 theme = ExtResource( 1 )
 text = "0"
@@ -43,3 +43,5 @@ margin_bottom = -7.58
 [node name="PauseOverlay" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
 visible = false
+
+[node name="Tween" type="Tween" parent="."]
