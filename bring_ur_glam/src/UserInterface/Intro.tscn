@@ -1,0 +1,164 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Intro.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=5]
+[ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/player/sal.png" type="Texture" id=7]
+[ext_resource path="res://assets/bg/pl_sunset.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/bg_intro.png" type="Texture" id=9]
+[ext_resource path="res://assets/bg/cristo.png" type="Texture" id=10]
+[ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=11]
+[ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 6
+font_data = ExtResource( 3 )
+
+[node name="Intro" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 110.256 ]
+}
+
+[node name="NodeGroup" type="Node2D" parent="."]
+position = Vector2( 0, 17.0646 )
+
+[node name="Sprite" type="Sprite" parent="NodeGroup"]
+position = Vector2( 160.402, -2.84658 )
+texture = ExtResource( 8 )
+
+[node name="Rio" type="Sprite" parent="NodeGroup"]
+position = Vector2( 148, -3.99548 )
+scale = Vector2( 1.79933, 1.79933 )
+texture = ExtResource( 11 )
+
+[node name="Sea" type="Sprite" parent="NodeGroup"]
+position = Vector2( 176.53, 107.559 )
+scale = Vector2( 1.79933, 1.79933 )
+texture = ExtResource( 12 )
+
+[node name="Cristo" type="Sprite" parent="NodeGroup"]
+position = Vector2( -9.64658, 82.8473 )
+scale = Vector2( 0.673732, 0.673732 )
+texture = ExtResource( 10 )
+
+[node name="Floor" type="Sprite" parent="NodeGroup"]
+position = Vector2( 159.956, 150.457 )
+texture = ExtResource( 9 )
+
+[node name="MainTextBox" type="ColorRect" parent="."]
+margin_left = -3.0
+margin_top = 123.354
+margin_right = 323.0
+margin_bottom = 200.354
+color = Color( 0.133333, 0.164706, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameTextBox" type="ColorRect" parent="."]
+margin_left = -3.0
+margin_top = 105.354
+margin_right = 323.0
+margin_bottom = 123.354
+color = Color( 0.0235294, 0.184314, 0.294118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 11.9932
+margin_top = 130.0
+margin_right = 308.993
+margin_bottom = 173.0
+theme = ExtResource( 2 )
+custom_constants/line_separation = 10
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[right]Some text with multiples lines just to see the worst case.[/right]"
+text = "Some text with multiples lines just to see the worst case."
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sal" type="RichTextLabel" parent="."]
+margin_left = 13.8781
+margin_top = 110.625
+margin_right = 122.878
+margin_bottom = 128.625
+theme = ExtResource( 2 )
+custom_constants/line_separation = 10
+custom_fonts/normal_font = SubResource( 1 )
+text = "Sal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Glamoureus" type="RichTextLabel" parent="."]
+margin_left = 249.245
+margin_top = 110.942
+margin_right = 358.245
+margin_bottom = 128.942
+theme = ExtResource( 2 )
+custom_constants/line_separation = 10
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+text = "Glamoureus"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Next" type="RichTextLabel" parent="."]
+margin_left = 285.547
+margin_top = 169.644
+margin_right = 349.547
+margin_bottom = 185.644
+theme = ExtResource( 2 )
+custom_constants/line_separation = 10
+custom_fonts/normal_font = SubResource( 1 )
+text = "[Space]"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ChangeSceneButton" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = 139.835
+margin_top = 152.794
+margin_right = 312.835
+margin_bottom = 175.794
+theme = ExtResource( 5 )
+text = "To the wardrobe"
+next_scene = ExtResource( 6 )
+
+[node name="SalImg" type="Sprite" parent="."]
+position = Vector2( 46.8457, 72.3973 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="GlamoureusImg" type="Sprite" parent="."]
+position = Vector2( 273.852, 72.3973 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 7 )
+
+[node name="BackgroundTween" type="Tween" parent="."]
+
+[node name="TextBoxTween" type="Tween" parent="."]
+
+[node name="CharacterTween" type="Tween" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tween_all_completed" from="BackgroundTween" to="." method="_on_BackgroundTween_tween_all_completed"]
+[connection signal="tween_all_completed" from="TextBoxTween" to="." method="_on_TextBoxTween_tween_all_completed"]
