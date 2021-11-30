@@ -28,7 +28,7 @@ func _ready() -> void:
         }
         file.store_var(audio_info)
         file.close()
-        
+
 
 
 func reset() -> void:
