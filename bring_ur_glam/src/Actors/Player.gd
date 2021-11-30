@@ -141,11 +141,11 @@ func set_shield(enable: bool) -> void:
 
 func _on_PickableItemsDetector_area_entered(area: Area2D) -> void:
     if area is PickableItem:
-        if area.type == PickableItemType.Type.Star:
-            PlayerData.score += 5
-        if area.type == PickableItemType.Type.Heart:
-            PlayerData.hp += 20
         if area.type == PickableItemType.Type.Unicorn:
+            PlayerData.score += 5
+        if area.type == PickableItemType.Type.Rainbow:
+            PlayerData.hp += 20
+        if area.type == PickableItemType.Type.Shield:
             set_shield(true)
 
 

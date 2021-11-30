@@ -1910,13 +1910,12 @@ tile_data = PoolIntArray( 589763, 20, 0, 589795, 20, 0, 589814, 20, 0, 655348, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( -712, 171 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( 674, 170 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [node name="DecorationOffset-4" type="TileMap" parent="."]
@@ -1952,14 +1951,15 @@ bus = "Music"
 
 [node name="Star" parent="." instance=ExtResource( 20 )]
 position = Vector2( -1256, 60 )
-type = 1
+type = 4
 
 [node name="Star2" parent="." instance=ExtResource( 20 )]
 position = Vector2( -1158, 92 )
+type = 2
 
 [node name="Star3" parent="." instance=ExtResource( 20 )]
 position = Vector2( -1105, 169 )
-type = 2
+type = 3
 
 [node name="Enemies" type="Node2D" parent="."]
 

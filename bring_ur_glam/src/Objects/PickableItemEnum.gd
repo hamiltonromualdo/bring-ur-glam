@@ -3,5 +3,7 @@ class_name PickableItemType
 enum Type {
     Star,
     Heart,
-    Unicorn
+    Unicorn,
+    Shield,
+    Rainbow
 }
