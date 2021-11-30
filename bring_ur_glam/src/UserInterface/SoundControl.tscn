@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/ui/flat_dark_pixel_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=1]
 [ext_resource path="res://src/UserInterface/SoundControl.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=4]
@@ -17,6 +17,8 @@ font_data = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -152, -48 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 centered = false
 
@@ -68,6 +70,7 @@ margin_bottom = 116.0
 margin_right = 280.0
 margin_bottom = 20.0
 theme = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 text = "Global sound"
 fit_content_height = true
@@ -84,6 +87,7 @@ margin_top = 39.0
 margin_right = 280.0
 margin_bottom = 59.0
 theme = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 text = "Music"
 fit_content_height = true
@@ -103,6 +107,7 @@ margin_top = 78.0
 margin_right = 280.0
 margin_bottom = 98.0
 theme = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 text = "Effects"
 fit_content_height = true
