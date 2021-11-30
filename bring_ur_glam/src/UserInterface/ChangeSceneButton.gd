@@ -1,7 +1,7 @@
 tool
 extends ButtonWithSound
 
-export (PackedScene) var next_scene
+export var next_scene: PackedScene
 
 func _on_button_up() -> void:
     yield($PressedSound, "finished")
