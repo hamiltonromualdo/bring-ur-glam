@@ -11,7 +11,23 @@ func _get_configuration_warning() -> String:
 var Enemy = load("res://src/Actors/Enemy.tscn")
 var enemiesLeft = totalEnemies
 var liveEnemies = 0
+var enemiesSpawned = 0
 var rng = RandomNumberGenerator.new()
+
+
+func linear_interpolate(from: float, to: float, inclination: float) -> float:
+    return from + (to - from) * inclination
+
+
+# Enemies get increasingly more difficult with spawn number.
+# Here we use linear interpolation in ranges for each setting
+func set_enemy_spec(enemy: Enemy) -> void:
+    # Forcing float division by making one of te arguments a float
+    var inclination = float(enemiesSpawned)/(totalEnemies - 1)
+    
+    enemy.HP = int(round(linear_interpolate(1, 4, inclination)))
+    enemy.SPEED = linear_interpolate(10, 75, inclination)
+    enemy.SHOOTING_INTERVAL = linear_interpolate(1.2, 0.6, inclination)
 
 
 func _on_enemyDied() -> void:
@@ -33,8 +49,8 @@ func update_enemies_count() -> void:
 
 
 func enemies_to_spawn() -> int:
-    var enemiesKilled = totalEnemies - enemiesLeft
-    var enemiesThatShouldBeOnScreen = 4 if enemiesKilled <= 1 else int(ceil(4 * log(enemiesKilled) / log(2)))
+    var inclination = float(enemiesSpawned)/(totalEnemies - 1)
+    var enemiesThatShouldBeOnScreen = int(round(linear_interpolate(5, 10, inclination)))
     return int(clamp(enemiesThatShouldBeOnScreen - liveEnemies, 0, enemiesLeft))
 
 
@@ -85,14 +101,22 @@ func get_new_enemy_position() -> Vector2:
 func instance_enemy() -> void:
     if liveEnemies < enemiesLeft:
         var enemy = Enemy.instance()
-        enemy.SHOOTING_INTERVAL = rng.randf_range(0.6, 1.2)
-        enemy.SPEED = rng.randi_range(1, 75)
-        enemy.HP = rng.randi_range(1, 4)
-        add_child(enemy)
-        liveEnemies += 1
-
+        set_enemy_spec(enemy)
         enemy.set_global_position(get_new_enemy_position())
         enemy.connect("died", self, "_on_enemyDied")
+
+        add_child(enemy)
+        liveEnemies += 1
+        enemiesSpawned += 1
+
+        print(
+            "Instanced enemy {num} with HP: {hp} Speed: {speed} Shooting Interval {shoot}".format({
+                "num": enemiesSpawned,
+                "hp": enemy.HP,
+                "speed": enemy.SPEED,
+                "shoot": enemy.SHOOTING_INTERVAL
+            })
+        )
 
 
 func check_and_instance_enemies():
