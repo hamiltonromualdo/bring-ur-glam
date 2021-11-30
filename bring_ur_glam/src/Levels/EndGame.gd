@@ -1,28 +1,42 @@
+tool
 extends Node2D
 
+export var win_scene: PackedScene
+export var totalEnemies: = 50
+
+func _get_configuration_warning() -> String:
+    return "Win scene is unset" if not win_scene else ""
+
+
 var Enemy = load("res://src/Actors/Enemy.tscn")
-var enemiesInScreen = 6
+var enemiesLeft = totalEnemies
 var liveEnemies = 0
-var enemiesLeft = 50
-var totalEnemies = 50
 var rng = RandomNumberGenerator.new()
 
 
 func _on_enemyDied() -> void:
     liveEnemies -= 1
     enemiesLeft -= 1
-    update_number_of_enemies_in_screen()
     update_enemies_count()
+    if enemiesLeft == 0:
+        win()
+
+
+func win() -> void:
+    var error = get_tree().change_scene_to(win_scene)
+    if error:
+        print("Error changing scene: ", error)
 
 
 func update_enemies_count() -> void:
     $EnemiesCountLayer/EnemiesCount.text = "{enemiesLeft}/{totalEnemies}".format({"enemiesLeft": enemiesLeft, "totalEnemies": totalEnemies})
 
 
-func update_number_of_enemies_in_screen() -> void:
+func enemies_to_spawn() -> int:
     var enemiesKilled = totalEnemies - enemiesLeft
-    enemiesInScreen = 4 if enemiesKilled <= 1 else int(ceil(4 * log(enemiesKilled) / log(2)))
-        
+    var enemiesThatShouldBeOnScreen = 4 if enemiesKilled <= 1 else int(ceil(4 * log(enemiesKilled) / log(2)))
+    return int(clamp(enemiesThatShouldBeOnScreen - liveEnemies, 0, enemiesLeft))
+
 
 func get_player_camera_rect() -> Rect2:
     # Get the canvas transform
@@ -44,7 +58,7 @@ func is_point_in_camera(pos: Vector2) -> bool:
     var viewportRect = get_player_camera_rect()
     return viewportRect.has_point(pos)
 
-    
+
 func is_point_in_building_tile_map(pos: Vector2) -> bool:
     var tilePos = $Buildings.world_to_map(pos)
     return $Buildings.get_cell(tilePos.x, tilePos.y) != TileMap.INVALID_CELL
@@ -57,13 +71,13 @@ func get_random_pos() -> Vector2:
     var posX = possibleXValues[rng.randi() % possibleXValues.size()]
     var posY = possibleYValues[rng.randi() % possibleYValues.size()]
     return Vector2(posX, posY)
-    
+
 
 func get_new_enemy_position() -> Vector2:
     var enemyPos = get_random_pos()
     while is_point_in_camera(enemyPos) or !is_point_in_building_tile_map(enemyPos):
         enemyPos = get_random_pos()
-    
+
     print("Instanced enemy at X: {x} Y: {y}".format({"x": enemyPos.x, "y": enemyPos.y}))
     return enemyPos
 
@@ -82,7 +96,7 @@ func instance_enemy() -> void:
 
 
 func check_and_instance_enemies():
-    var enemiesToSpawn = int(clamp(enemiesInScreen - liveEnemies, 0, enemiesLeft))
+    var enemiesToSpawn = enemies_to_spawn()
     for n in enemiesToSpawn:
         instance_enemy()
 
@@ -91,8 +105,8 @@ func set_camera_limits() -> void:
     $Player/Camera2D.limit_left = 0
     $Player/Camera2D.limit_right = 400
     $Player/Camera2D.limit_top = -300
-    
-    
+
+
 func _ready() -> void:
     rng.randomize()
     set_camera_limits()

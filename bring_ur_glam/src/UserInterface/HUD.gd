@@ -10,7 +10,7 @@ func _ready() -> void:
     if error:
         print("Error connecting score: ", error)
 
-    $HealthBarRbn.set_values(0, PlayerData.hp, PlayerData.total_hp)
+    $HealthBarRbn.set_values(0, PlayerData.total_hp, PlayerData.hp)
 
 
 func update_score() -> void:
