@@ -1913,13 +1913,13 @@ tile_data = PoolIntArray( 589763, 20, 0, 589795, 20, 0, 589814, 20, 0, 655348, 1
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( -712, 171 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Decoration"]
 position = Vector2( 674, 170 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="DecorationOffset-4" type="TileMap" parent="."]
@@ -2087,11 +2087,11 @@ position = Vector2( 43.1257, -187.881 )
 
 [node name="PickableItem" parent="PickableItems/Glam" instance=ExtResource( 20 )]
 position = Vector2( 281.111, 247.87 )
-type = 2
+type = 4
 
 [node name="PickableItem2" parent="PickableItems/Glam" instance=ExtResource( 20 )]
 position = Vector2( 1920.62, -208.436 )
-type = 2
+type = 4
 
 [node name="ScorePoints" type="Node2D" parent="PickableItems"]
 
