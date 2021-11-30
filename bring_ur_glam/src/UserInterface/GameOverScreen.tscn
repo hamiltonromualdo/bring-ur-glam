@@ -9,6 +9,7 @@
 [node name="GameOverScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 7 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -18,7 +19,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
-color = Color( 0.741176, 0.576471, 0.905882, 0.180392 )
+color = Color( 0, 0.647059, 1, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
