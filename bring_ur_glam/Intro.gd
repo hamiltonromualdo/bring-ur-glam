@@ -7,9 +7,12 @@ const story = [
     ["Glamoureus", "The toxic maculinity is taking over."],
     ["Glamoureus", "We need HER!"],
     ["Glamoureus", "We need Salette!"],
-    ["Sal", "She is retired..."],
+    ["Sal", "You know she retired..."],
+    ["Glamoureus", "Only her GLAM will save us."],
+    ["Sal", "I'm not sure..."],
     ["Glamoureus", "She is our last hope!"],
-    ["Sal", "Ok. But just because I miss her too."],
+    ["Sal", "Ok. But you know she will need a new outfit, right?"],
+    ["Glamoureus", "All she needs!"],
     ["Sal", "I'll get ready!"],
 ]
 
@@ -55,7 +58,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-    if Input.is_action_pressed("ui_accept") and $Timer.is_stopped() and current <= len(story):
+    if Input.is_action_just_pressed("ui_accept") and $Timer.is_stopped() and current <= len(story):
         _next_line()
     
     if $SoundControl.visible and Input.is_action_pressed("ui_cancel"):
