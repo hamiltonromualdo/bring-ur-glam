@@ -12,6 +12,14 @@ func get_colors():
     pass
 
 
+func hightlight_selected() -> void:
+    for swatch in get_children():
+        if swatch.color == color:
+            swatch.contour = true
+        else:
+            swatch.contour = false
+
+
 func _ready() -> void:
     for n in get_children():
         remove_child(n)
@@ -26,13 +34,17 @@ func _ready() -> void:
         if error:
             print("Error connecting swatch: ", error)
     color = COLORS[randi() % len(COLORS)]
+    hightlight_selected()
 
 
 func get_rand_color() -> Color:
     var COLORS = get_colors()
-    return Color(COLORS[randi() % len(COLORS)])
-    
+    color = Color(COLORS[randi() % len(COLORS)])
+    hightlight_selected()
+    return color
+
 
 func _on_ColorSwatch_pressed(color_string: String) -> void:
     color = Color(color_string)
+    hightlight_selected()
     emit_signal("color_changed", color)
