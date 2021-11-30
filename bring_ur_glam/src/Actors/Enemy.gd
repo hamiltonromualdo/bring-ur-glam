@@ -65,18 +65,9 @@ func _physics_process(_delta):
     if HP <= 0:
         return
 
-    if player != null:
-        velocity = position.direction_to(player.global_position) * SPEED
-        velocity.y = 0
-        velocity.normalized()
-        set_direction(velocity.x >= 0)
-    else:
-        velocity.x = SPEED
-        if not DIRECTION:
-            velocity.x *= -1
-
-    if player != null:
-        fire()
+    velocity.x = SPEED
+    if not DIRECTION:
+        velocity.x *= -1
 
     velocity.y += GRAVITY
     if not MOVING_ENEMY:
@@ -89,9 +80,13 @@ func _physics_process(_delta):
 
     velocity = move_and_slide(velocity, FLOOR)
 
-    if is_on_wall() or not $EdgeDetector.is_colliding():
-        if player == null:
-            set_direction(!DIRECTION)
+
+    if player != null:
+        var x = position.direction_to(player.global_position).x
+        set_direction(x >= 0)
+        fire()
+    elif is_on_wall() or not $EdgeDetector.is_colliding():
+        set_direction(!DIRECTION)
 
     if get_slide_count() > 0:
         for i in range(get_slide_count()):
