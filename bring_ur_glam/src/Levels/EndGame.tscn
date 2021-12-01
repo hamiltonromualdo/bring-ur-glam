@@ -53,6 +53,16 @@ texture = ExtResource( 14 )
 
 [node name="EnemiesCountLayer" type="CanvasLayer" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="EnemiesCountLayer"]
+margin_left = -27.0
+margin_top = -1.0
+margin_right = 423.0
+margin_bottom = 34.0
+color = Color( 0, 0, 0, 0.345098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="EnemiesCount" type="Label" parent="EnemiesCountLayer"]
 margin_left = 118.0
 margin_top = 21.0
@@ -97,7 +107,7 @@ margin_bottom = -8.0
 theme = ExtResource( 9 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "5:00"
+text = "8:00"
 align = 2
 valign = 2
 __meta__ = {
