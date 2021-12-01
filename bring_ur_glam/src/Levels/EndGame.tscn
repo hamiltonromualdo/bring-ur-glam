@@ -141,5 +141,22 @@ bus = "Music"
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
+[node name="PickableItemPositions" type="Node2D" parent="."]
+position = Vector2( 38, -65 )
+
+[node name="Position1" type="Position2D" parent="PickableItemPositions"]
+
+[node name="Position2" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 202, 65 )
+
+[node name="Position3" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 50, -139 )
+
+[node name="Position4" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 297, -109 )
+
+[node name="Position5" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 234, 196 )
+
 [connection signal="timeout" from="TimerLayer/LevelTimer" to="." method="_on_LevelTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
