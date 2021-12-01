@@ -18,7 +18,7 @@ var enemiesLeft = totalEnemies
 var liveEnemies = 0
 var enemiesSpawned = 0
 var rng = RandomNumberGenerator.new()
-var secondsLeft = 5*60
+var secondsLeft = 8*60
 
 func linear_interpolate(from: float, to: float, inclination: float) -> float:
     return from + (to - from) * inclination
