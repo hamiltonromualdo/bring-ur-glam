@@ -1937,7 +1937,7 @@ format = 1
 tile_data = PoolIntArray( 524305, 536870930, 0, 655442, 19, 0, 786362, 6, 0, 786363, 6, 0, 786386, 12, 0, 786388, 12, 0, 786397, 13, 0, 786404, 6, 0, 786411, 0, 0, 786415, 0, 0, 786431, 4, 0, 720896, 9, 0, 720903, 7, 0, 720914, 8, 0, 720919, 0, 0, 720921, 10, 0, 720923, 8, 0, 720924, 3, 0, 720931, 12, 0, 720982, 13, 0, 720989, 9, 0, 720990, 1, 0, 720991, 6, 0, 720992, 5, 0, 720998, 4, 0, 721008, 0, 0, 721009, 0, 0, 721015, 0, 0, 721016, 0, 0, 721018, 12, 0, 721019, 12, 0, 721021, 12, 0, 721022, 13, 0, 721036, 11, 0, 721037, 11, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -1216, 175 )
+position = Vector2( -1213.47, 174.755 )
 scale = Vector2( 1, 1.00698 )
 
 [node name="DecorationOffset4" type="TileMap" parent="."]
@@ -2120,7 +2120,7 @@ position = Vector2( 1522.44, 167.956 )
 type = 2
 
 [node name="PickableItem7" parent="PickableItems/ScorePoints" instance=ExtResource( 20 )]
-position = Vector2( 1860.68, 28.0387 )
+position = Vector2( 1862.81, 28.0388 )
 type = 2
 
 [node name="Tween" type="Tween" parent="."]
