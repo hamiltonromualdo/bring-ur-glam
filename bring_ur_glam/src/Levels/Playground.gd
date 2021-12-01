@@ -17,6 +17,7 @@ func _on_DoorArea_body_entered(_body):
 func _on_Enemy15_died() -> void:
     # This is a special enemy that will spawn a key to the door
     var key = KEY.instance()
+    key.type = PickableItemType.Type.Key
     key.position = Vector2(1947.932, 166.945)
     key.set_as_toplevel(true)
     add_child(key)

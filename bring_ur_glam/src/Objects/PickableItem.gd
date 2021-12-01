@@ -10,6 +10,7 @@ const SPRITE = {
     PickableItemType.Type.Unicorn: preload("res://assets/objects/unicorn.png"),
     PickableItemType.Type.Shield: preload("res://assets/objects/shield.png"),
     PickableItemType.Type.Rainbow: preload("res://assets/objects/rainbow.png"),
+    PickableItemType.Type.Key: preload("res://assets/objects/key.png"),
 }
 
 

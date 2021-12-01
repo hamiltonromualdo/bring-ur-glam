@@ -5,5 +5,6 @@ enum Type {
     Heart,
     Unicorn,
     Shield,
-    Rainbow
+    Rainbow,
+    Key
 }
