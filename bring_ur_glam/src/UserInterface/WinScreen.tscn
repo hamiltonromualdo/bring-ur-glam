@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=1]
 [ext_resource path="res://src/UserInterface/GameOverScreen.gd" type="Script" id=2]
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sound/win_song.mp3" type="AudioStream" id=4]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=7]
@@ -161,6 +162,11 @@ visible = false
 
 [node name="Shadow" parent="Star2" index="3"]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "Music"
 
 [editable path="Unicorn"]
 [editable path="Rainbow"]
