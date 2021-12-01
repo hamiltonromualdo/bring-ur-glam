@@ -74,7 +74,7 @@ margin_bottom = 19.0
 rect_min_size = Vector2( 70, 0 )
 bbcode_enabled = true
 bbcode_text = "[center]Hair[/center]"
-text = "Hair"
+text = "[center]Hair[/center]"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,7 +177,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.486275, 0.101961, 0.454902, 1 )
-contour = true
 
 [node name="ColorSwatch8" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 84.0
@@ -190,6 +189,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.113725, 0.215686, 0.431373, 1 )
+contour = true
 
 [node name="SkinColor" parent="Control/VBoxContainer" instance=ExtResource( 8 )]
 margin_top = 49.0
@@ -331,6 +331,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.196078, 1, 0, 1 )
+contour = true
 
 [node name="ColorSwatch4" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 36.0
@@ -355,7 +356,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.243137, 0.537255, 0.882353, 1 )
-contour = true
 
 [node name="ColorSwatch6" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 60.0
@@ -420,7 +420,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.243137, 0.643137, 0.976471, 1 )
-contour = true
 
 [node name="ColorSwatch3" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 24.0
@@ -469,6 +468,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.729412, 0.0784314, 0.12549, 1 )
+contour = true
 
 [node name="ColorSwatch7" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 72.0
