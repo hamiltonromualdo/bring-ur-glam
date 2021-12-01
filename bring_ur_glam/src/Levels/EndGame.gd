@@ -9,6 +9,11 @@ func _get_configuration_warning() -> String:
 
 
 var Enemy = load("res://src/Actors/Enemy.tscn")
+var PickableItem = load("res://src/Objects/PickableItem.tscn")
+var pickupTypes = [PickableItemType.Type.Rainbow, PickableItemType.Type.Shield]
+var existingPickups = Dictionary() # by position
+
+
 var enemiesLeft = totalEnemies
 var liveEnemies = 0
 var enemiesSpawned = 0
@@ -144,6 +149,42 @@ func _on_EnemyTimer_timeout():
     $EnemyTimer.start()
 
 
+func _on_pickupPicked(instance_id: int) -> void:
+    var index = -1
+    for posId in existingPickups.keys():
+        if instance_id == existingPickups[posId]:
+            index = posId
+    if index != -1:
+        existingPickups.erase(index)
+
+
+func spawn_random_pickup() -> void:
+    var positions = $PickableItemPositions.get_children()
+    if existingPickups.size() == positions.size():
+        return
+
+    var randPosition = positions[rng.randi() % positions.size()]
+    while existingPickups.has(randPosition.get_instance_id()):
+        randPosition = positions[rng.randi() % positions.size()]
+
+    var pickupType = pickupTypes[rng.randi() % pickupTypes.size()]
+    var pickup = PickableItem.instance()
+    pickup.type = pickupType
+
+    pickup.set_global_position(randPosition.global_position)
+    add_child(pickup)
+    pickup.connect("picked", self, "_on_pickupPicked")
+
+    existingPickups[randPosition.get_instance_id()] = pickup.get_instance_id()
+
+    print(
+        "Instanced pickup {num} of type {type} at {pos}".format({
+            "num": existingPickups.size(),
+            "type": pickupType,
+            "pos": randPosition.global_position
+        })
+    )
+
 func get_level_timer_minutes() -> String:
     var minutes = secondsLeft/60
     var seconds = secondsLeft - minutes*60
@@ -168,3 +209,6 @@ func _on_LevelTimer_timeout():
     set_level_timer_label()
     if secondsLeft == 0:
         $Player.die()
+
+    if secondsLeft % 20 == 0:
+        spawn_random_pickup()

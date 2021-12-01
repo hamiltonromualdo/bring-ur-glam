@@ -70,9 +70,9 @@ margin_top = -14.0
 margin_right = -8.0
 margin_bottom = -8.0
 theme = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "0:33"
+text = "5:00"
 align = 2
 valign = 2
 __meta__ = {
@@ -129,6 +129,23 @@ autoplay = true
 bus = "Music"
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="PickableItemPositions" type="Node2D" parent="."]
+position = Vector2( 38, -65 )
+
+[node name="Position1" type="Position2D" parent="PickableItemPositions"]
+
+[node name="Position2" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 202, 65 )
+
+[node name="Position3" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 50, -139 )
+
+[node name="Position4" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 297, -109 )
+
+[node name="Position5" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 234, 196 )
 
 [connection signal="timeout" from="TimerLayer/LevelTimer" to="." method="_on_LevelTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
