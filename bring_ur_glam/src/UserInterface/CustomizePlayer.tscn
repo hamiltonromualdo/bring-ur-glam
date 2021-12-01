@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/UserInterface/PlayerCustomization/HairColorSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://src/UserInterface/ButtonWithSound.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/icons/settings_pressed.png" type="Texture" id=16]
 [ext_resource path="res://src/UserInterface/SoundControl.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=18]
 
 [node name="CustomizablePlayer" type="Node2D"]
 script = ExtResource( 2 )
@@ -30,7 +31,7 @@ position = Vector2( 36, 34 )
 scale = Vector2( 2, 2 )
 
 [node name="CompositionalSprites" parent="PlayerImages" index="0"]
-position = Vector2( 16, 16.5 )
+position = Vector2( 24.5, 20.5 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -41,10 +42,10 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = 134.0
-margin_top = 5.0
-margin_right = 289.0
-margin_bottom = 197.0
+margin_left = 148.0
+margin_top = 22.0
+margin_right = 303.0
+margin_bottom = 199.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 11
@@ -55,11 +56,11 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
 margin_right = 155.0
-margin_bottom = 23.0
+margin_bottom = 19.0
 
 [node name="HairChangeLeft" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-margin_right = 13.0
-margin_bottom = 23.0
+margin_right = 9.0
+margin_bottom = 19.0
 text = "<"
 flat = true
 __meta__ = {
@@ -67,9 +68,9 @@ __meta__ = {
 }
 
 [node name="Hair" type="RichTextLabel" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 17.0
-margin_right = 87.0
-margin_bottom = 23.0
+margin_left = 13.0
+margin_right = 83.0
+margin_bottom = 19.0
 rect_min_size = Vector2( 70, 0 )
 bbcode_enabled = true
 bbcode_text = "[center]Hair[/center]"
@@ -80,9 +81,9 @@ __meta__ = {
 }
 
 [node name="HairChangeRight" type="Button" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 91.0
-margin_right = 104.0
-margin_bottom = 23.0
+margin_left = 87.0
+margin_right = 96.0
+margin_bottom = 19.0
 text = ">"
 flat = true
 __meta__ = {
@@ -90,9 +91,9 @@ __meta__ = {
 }
 
 [node name="HairColor" parent="Control/VBoxContainer" instance=ExtResource( 1 )]
-margin_top = 34.0
+margin_top = 30.0
 margin_right = 155.0
-margin_bottom = 42.0
+margin_bottom = 38.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -103,8 +104,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.976471, 0.486275, 0.643137, 1 )
-contour = true
+color = Color( 0.678431, 0.709804, 0.760784, 1 )
 
 [node name="ColorSwatch2" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 12.0
@@ -116,7 +116,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.996078, 1, 0.815686, 1 )
+color = Color( 0.996078, 0.823529, 0.443137, 1 )
 
 [node name="ColorSwatch3" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 24.0
@@ -128,7 +128,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.8, 0.964706, 0.760784, 1 )
+color = Color( 0.537255, 0.788235, 0.00784314, 1 )
 
 [node name="ColorSwatch4" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 36.0
@@ -140,7 +140,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.486275, 0.811765, 0.737255, 1 )
+color = Color( 0.917647, 0.388235, 0.568627, 1 )
 
 [node name="ColorSwatch5" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 48.0
@@ -152,7 +152,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.968627, 0.780392, 0.239216, 1 )
+color = Color( 0.92549, 0.121569, 0.0431373, 1 )
 
 [node name="ColorSwatch6" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 60.0
@@ -164,12 +164,37 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.188235, 0.211765, 0, 1 )
+color = Color( 0.6, 0.203922, 0.0901961, 1 )
+
+[node name="ColorSwatch7" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
+margin_left = 72.0
+margin_right = 80.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 8, 8 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.486275, 0.101961, 0.454902, 1 )
+contour = true
+
+[node name="ColorSwatch8" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
+margin_left = 84.0
+margin_right = 92.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 8, 8 )
+expand = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+color = Color( 0.113725, 0.215686, 0.431373, 1 )
 
 [node name="SkinColor" parent="Control/VBoxContainer" instance=ExtResource( 8 )]
-margin_top = 53.0
+margin_top = 49.0
 margin_right = 155.0
-margin_bottom = 61.0
+margin_bottom = 57.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -180,7 +205,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.207843, 0.0509804, 0.00784314, 1 )
+color = Color( 1, 0.713726, 0.670588, 1 )
 
 [node name="ColorSwatch2" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_left = 12.0
@@ -192,7 +217,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.419608, 0.168627, 0.105882, 1 )
+color = Color( 0.85098, 0.498039, 0.439216, 1 )
 
 [node name="ColorSwatch3" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_left = 24.0
@@ -204,7 +229,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.54902, 0.278431, 0.196078, 1 )
+color = Color( 0.764706, 0.345098, 0.219608, 1 )
 
 [node name="ColorSwatch4" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_left = 36.0
@@ -229,7 +254,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 1, 0.713726, 0.670588, 1 )
+color = Color( 0.54902, 0.278431, 0.196078, 1 )
 
 [node name="ColorSwatch6" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_left = 60.0
@@ -241,7 +266,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.85098, 0.498039, 0.439216, 1 )
+color = Color( 0.678431, 0.192157, 0, 1 )
 
 [node name="ColorSwatch7" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_left = 72.0
@@ -253,7 +278,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.764706, 0.345098, 0.219608, 1 )
+color = Color( 0.419608, 0.168627, 0.105882, 1 )
 
 [node name="ColorSwatch8" type="TextureButton" parent="Control/VBoxContainer/SkinColor" instance=ExtResource( 9 )]
 margin_left = 84.0
@@ -265,12 +290,12 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.678431, 0.192157, 0, 1 )
+color = Color( 0.207843, 0.0509804, 0.00784314, 1 )
 
 [node name="GunColor" parent="Control/VBoxContainer" instance=ExtResource( 11 )]
-margin_top = 72.0
+margin_top = 68.0
 margin_right = 155.0
-margin_bottom = 80.0
+margin_bottom = 76.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -281,7 +306,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.247059, 0.0117647, 0.160784, 1 )
+color = Color( 0.00392157, 1, 0.698039, 1 )
 
 [node name="ColorSwatch2" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 12.0
@@ -293,7 +318,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.388235, 0.00392157, 0.207843, 1 )
+color = Color( 0.760784, 1, 0.0117647, 1 )
 
 [node name="ColorSwatch3" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 24.0
@@ -305,7 +330,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.611765, 0.341176, 0.188235, 1 )
+color = Color( 0.196078, 1, 0, 1 )
 
 [node name="ColorSwatch4" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 36.0
@@ -317,7 +342,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.12549, 0.00392157, 0.270588, 1 )
+color = Color( 1, 0.486275, 0, 1 )
 
 [node name="ColorSwatch5" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 48.0
@@ -329,7 +354,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.113725, 0.121569, 0.109804, 1 )
+color = Color( 0.243137, 0.537255, 0.882353, 1 )
 contour = true
 
 [node name="ColorSwatch6" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
@@ -342,7 +367,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.882353, 0.337255, 0.890196, 1 )
+color = Color( 0.964706, 0.152941, 0.482353, 1 )
 
 [node name="ColorSwatch7" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 72.0
@@ -354,7 +379,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.0392157, 0.396078, 0.113725, 1 )
+color = Color( 0.796078, 0.133333, 0.917647, 1 )
 
 [node name="ColorSwatch8" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 84.0
@@ -366,12 +391,12 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.996078, 0.313726, 0, 1 )
+color = Color( 0.196078, 0.156863, 0.317647, 1 )
 
 [node name="DressColor" parent="Control/VBoxContainer" instance=ExtResource( 12 )]
-margin_top = 91.0
+margin_top = 87.0
 margin_right = 155.0
-margin_bottom = 99.0
+margin_bottom = 95.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -382,7 +407,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0, 0.701961, 0.337255, 1 )
+color = Color( 1, 0.956863, 0.415686, 1 )
 
 [node name="ColorSwatch2" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 12.0
@@ -394,7 +419,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.760784, 0.580392, 0, 1 )
+color = Color( 0.243137, 0.643137, 0.976471, 1 )
 contour = true
 
 [node name="ColorSwatch3" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
@@ -407,7 +432,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.682353, 0.184314, 0.0196078, 1 )
+color = Color( 0.952941, 0.356863, 0.203922, 1 )
 
 [node name="ColorSwatch4" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 36.0
@@ -419,7 +444,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.2, 0.219608, 0.223529, 1 )
+color = Color( 0.878431, 0.227451, 0.666667, 1 )
 
 [node name="ColorSwatch5" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 48.0
@@ -431,7 +456,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0, 0.701961, 0.337255, 1 )
+color = Color( 0.262745, 0.458824, 0.25098, 1 )
 
 [node name="ColorSwatch6" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 60.0
@@ -443,7 +468,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.729412, 0.0470588, 0.184314, 1 )
+color = Color( 0.729412, 0.0784314, 0.12549, 1 )
 
 [node name="ColorSwatch7" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 72.0
@@ -455,7 +480,7 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.498039, 0.329412, 0.192157, 1 )
+color = Color( 0.27451, 0.176471, 0.67451, 1 )
 
 [node name="ColorSwatch8" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 84.0
@@ -467,12 +492,12 @@ script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-color = Color( 0.239216, 0.00784314, 0.419608, 1 )
+color = Color( 0.388235, 0.129412, 0.168627, 1 )
 
 [node name="ShoesColor" parent="Control/VBoxContainer" instance=ExtResource( 13 )]
-margin_top = 110.0
+margin_top = 106.0
 margin_right = 155.0
-margin_bottom = 118.0
+margin_bottom = 114.0
 
 [node name="ColorSwatch" type="TextureButton" parent="Control/VBoxContainer/ShoesColor" instance=ExtResource( 9 )]
 margin_right = 8.0
@@ -571,13 +596,13 @@ __meta__ = {
 color = Color( 0.0156863, 0.0156863, 0.0705882, 1 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
-margin_top = 129.0
+margin_top = 125.0
 margin_right = 155.0
-margin_bottom = 152.0
+margin_bottom = 144.0
 
 [node name="Rand" type="Button" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_right = 46.0
-margin_bottom = 23.0
+margin_right = 42.0
+margin_bottom = 19.0
 rect_min_size = Vector2( 30, 15 )
 text = "      "
 flat = true
@@ -587,35 +612,28 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/VBoxContainer/HBoxContainer2/Rand"]
-modulate = Color( 0, 0.352941, 0.509804, 1 )
 position = Vector2( 19, 10 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
 [node name="StartGame" parent="Control/VBoxContainer/HBoxContainer2" instance=ExtResource( 15 )]
-margin_left = 50.0
-margin_right = 98.0
-margin_bottom = 23.0
+margin_left = 46.0
+margin_right = 90.0
+margin_bottom = 19.0
 text = "Play"
 
 [node name="Background" type="CanvasLayer" parent="Control"]
-layer = -1
+layer = -6
 
-[node name="ColorRect" type="ColorRect" parent="Control/Background"]
+[node name="Sprite" type="Sprite" parent="Control/Background"]
+position = Vector2( 160, 90 )
+texture = ExtResource( 18 )
+
+[node name="ColorRect3" type="ColorRect" parent="Control/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0.647059, 1, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="Control/Background"]
-margin_left = 39.0
-margin_top = 34.0
-margin_right = 79.0
-margin_bottom = 74.0
 rect_scale = Vector2( 1.50376, 2.12089 )
-color = Color( 0, 0.588235, 0.901961, 1 )
+color = Color( 0.270588, 0.337255, 0.517647, 0.870588 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

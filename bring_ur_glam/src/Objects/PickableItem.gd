@@ -3,8 +3,6 @@ extends Area2D
 
 const up_limit = 4
 const down_limit = -4
-var initial_pos = 0
-var step = 0.25
 
 const SPRITE = {
     PickableItemType.Type.Star: preload("res://assets/objects/star.png"),
@@ -15,6 +13,8 @@ const SPRITE = {
 }
 
 
+export (float) var initial_pos = 0
+export (float) var step = 0.25
 export (PickableItemType.Type) var type = PickableItemType.Type.Star
 signal picked(instance_id)
 
