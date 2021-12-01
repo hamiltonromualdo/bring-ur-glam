@@ -5,7 +5,7 @@ func set_up_menu() -> void:
     $Menu.set_visible(true)
 
     $Menu/PlayButton.disabled = false
-    $Menu/QuitButton.disabled = false
+    $Menu/CreditsButton.disabled = false
 
     # Start with focus on PlayButton to allow keyboard control
     $Menu/PlayButton.grab_focus()
