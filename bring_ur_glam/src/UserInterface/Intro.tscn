@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=5]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/player/sal.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/sal_shadow.png" type="Texture" id=7]
 [ext_resource path="res://assets/bg/pl_sunset.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/bg_intro.png" type="Texture" id=9]
 [ext_resource path="res://assets/bg/cristo.png" type="Texture" id=10]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/icons/settings.png" type="Texture" id=14]
 [ext_resource path="res://assets/icons/settings_pressed.png" type="Texture" id=15]
 [ext_resource path="res://src/UserInterface/SoundControl.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/player/glamoureus.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=2]
 size = 12
@@ -153,9 +154,9 @@ scale = Vector2( 4, 4 )
 texture = ExtResource( 7 )
 
 [node name="GlamoureusImg" type="Sprite" parent="."]
-position = Vector2( 273.852, 72.3973 )
+position = Vector2( 276, 40 )
 scale = Vector2( 4, 4 )
-texture = ExtResource( 7 )
+texture = ExtResource( 17 )
 
 [node name="BackgroundTween" type="Tween" parent="."]
 
