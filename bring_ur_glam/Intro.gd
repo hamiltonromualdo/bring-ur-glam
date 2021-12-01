@@ -3,17 +3,20 @@ extends Node2D
 const story = [
     ["Glamoureus", "Hello Sal"],
     ["Sal", "Hey!"],
-    ["Glamoureus", "Brazil is undergoing a serious crisis."],
-    ["Glamoureus", "The toxic maculinity is taking over."],
-    ["Glamoureus", "We need HER!"],
+    ["Glamoureus", "Rio is undergoing a serious crisis."],
+    ["Glamoureus", "The toxic masculinity soldiers are taking over."],
+    ["Glamoureus", "We need... HER!"],
     ["Glamoureus", "We need Salette!"],
-    ["Sal", "You know she retired..."],
-    ["Glamoureus", "Only her GLAM will save us."],
-    ["Sal", "I'm not sure..."],
+    ["Sal", "You know, she retired..."],
+    ["Glamoureus", "Only she can save us."],
+    ["Sal", "I'm not so sure..."],
     ["Glamoureus", "She is our last hope!"],
-    ["Sal", "Ok. But you know she will need a new outfit, right?"],
-    ["Glamoureus", "All she needs!"],
+    ["Sal", "Fine. But you know she will need a new outfit, right?"],
+    ["Glamoureus", "Whatever she needs!"],
     ["Sal", "I'll get ready!"],
+    ["Glamoureus", "Oh, and Sal, one more thing..."],
+    ["Sal", "Yes?"],
+    ["Glamoureus", "BRING UR GLAM!"],
 ]
 
 var current = -1
@@ -27,18 +30,17 @@ func _next_line():
         return
     current += 1
     var story_line = story[current]
+    $Text.bbcode_text = "{line}".format({"line": story_line[1]})
     if story_line[0] == "Sal":
         $Sal.visible = true
         $SalImg.visible = true
         $Glamoureus.visible = false
         $GlamoureusImg.visible = false
-        $Text.bbcode_text = "{line}".format({"line": story_line[1]})
     else:
         $Sal.visible = false
         $SalImg.visible = false
         $Glamoureus.visible = true
         $GlamoureusImg.visible = true
-        $Text.bbcode_text = "[right]{line}[/right]".format({"line": story_line[1]})
     $Timer.start()
     $Next.visible = false
 

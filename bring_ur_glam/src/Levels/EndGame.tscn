@@ -1,17 +1,20 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/EndGame.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Levels/Buildings.gd" type="Script" id=5]
-[ext_resource path="res://assets/bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=6]
 [ext_resource path="res://assets/tiles/buildings.tres" type="TileSet" id=7]
 [ext_resource path="res://assets/tiles/path.tres" type="TileSet" id=8]
 [ext_resource path="res://src/UserInterface/HUDTheme.tres" type="Theme" id=9]
 [ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/sound/playground_theme.mp3" type="AudioStream" id=11]
 [ext_resource path="res://src/UserInterface/GameOverScreen.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/bg/pl_sunset_large.png" type="Texture" id=13]
+[ext_resource path="res://assets/bg/cristo.png" type="Texture" id=14]
+[ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -25,6 +28,28 @@ font_data = ExtResource( 10 )
 [node name="EndGame" type="Node2D"]
 script = ExtResource( 2 )
 win_scene = ExtResource( 12 )
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 216, -96 )
+z_index = -150
+texture = ExtResource( 13 )
+
+[node name="City" type="Sprite" parent="."]
+position = Vector2( 216, -29.2648 )
+scale = Vector2( 1.40323, 1.40323 )
+z_index = -100
+texture = ExtResource( 6 )
+
+[node name="Sea" type="Sprite" parent="."]
+position = Vector2( 192, 58 )
+scale = Vector2( 1.40323, 1.40323 )
+z_index = -100
+texture = ExtResource( 15 )
+
+[node name="Redeemer" type="Sprite" parent="."]
+position = Vector2( 64, 38 )
+z_index = -90
+texture = ExtResource( 14 )
 
 [node name="EnemiesCountLayer" type="CanvasLayer" parent="."]
 
@@ -70,9 +95,9 @@ margin_top = -14.0
 margin_right = -8.0
 margin_bottom = -8.0
 theme = ExtResource( 9 )
-custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "0:33"
+text = "5:00"
 align = 2
 valign = 2
 __meta__ = {
@@ -80,20 +105,6 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="TimerLayer"]
-
-[node name="Sky" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Sky"]
-visible = false
-position = Vector2( -1360, -16 )
-motion_scale = Vector2( 0.5, 0.5 )
-motion_mirroring = Vector2( 2784, 2379 )
-
-[node name="Sprite" type="Sprite" parent="Sky/ParallaxLayer"]
-position = Vector2( -736, -1760 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 6 )
-centered = false
 
 [node name="WalkingPath" type="TileMap" parent="."]
 show_behind_parent = true
@@ -129,6 +140,23 @@ autoplay = true
 bus = "Music"
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="PickableItemPositions" type="Node2D" parent="."]
+position = Vector2( 38, -65 )
+
+[node name="Position1" type="Position2D" parent="PickableItemPositions"]
+
+[node name="Position2" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 202, 65 )
+
+[node name="Position3" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 50, -139 )
+
+[node name="Position4" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 297, -109 )
+
+[node name="Position5" type="Position2D" parent="PickableItemPositions"]
+position = Vector2( 234, 196 )
 
 [connection signal="timeout" from="TimerLayer/LevelTimer" to="." method="_on_LevelTimer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
