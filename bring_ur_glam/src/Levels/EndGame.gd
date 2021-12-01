@@ -106,6 +106,8 @@ func get_new_enemy_position() -> Vector2:
 func instance_enemy() -> void:
     if liveEnemies < enemiesLeft:
         var enemy = Enemy.instance()
+        var enemyColor = EnemyColor.Type.values()[rng.randi() % EnemyColor.Type.size()]
+        enemy.ENEMY_COLOR = enemyColor
         set_enemy_spec(enemy)
         enemy.set_global_position(get_new_enemy_position())
         enemy.connect("died", self, "_on_enemyDied")

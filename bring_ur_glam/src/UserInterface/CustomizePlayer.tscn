@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/UserInterface/PlayerCustomization/HairColorSelector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.gd" type="Script" id=2]
@@ -18,6 +18,39 @@
 [ext_resource path="res://assets/icons/settings_pressed.png" type="Texture" id=16]
 [ext_resource path="res://src/UserInterface/SoundControl.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/bg/menu_rio.png" type="Texture" id=18]
+[ext_resource path="res://assets/objects/mirror-Sheet.png" type="Texture" id=19]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mirror:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Mirror:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [node name="CustomizablePlayer" type="Node2D"]
 script = ExtResource( 2 )
@@ -27,7 +60,7 @@ __meta__ = {
 }
 
 [node name="PlayerImages" parent="." instance=ExtResource( 3 )]
-position = Vector2( 36, 34 )
+position = Vector2( 39, 44 )
 scale = Vector2( 2, 2 )
 
 [node name="CompositionalSprites" parent="PlayerImages" index="0"]
@@ -74,7 +107,7 @@ margin_bottom = 19.0
 rect_min_size = Vector2( 70, 0 )
 bbcode_enabled = true
 bbcode_text = "[center]Hair[/center]"
-text = "[center]Hair[/center]"
+text = "Hair"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,6 +210,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.486275, 0.101961, 0.454902, 1 )
+contour = true
 
 [node name="ColorSwatch8" type="TextureButton" parent="Control/VBoxContainer/HairColor" instance=ExtResource( 9 )]
 margin_left = 84.0
@@ -189,7 +223,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.113725, 0.215686, 0.431373, 1 )
-contour = true
 
 [node name="SkinColor" parent="Control/VBoxContainer" instance=ExtResource( 8 )]
 margin_top = 49.0
@@ -331,7 +364,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.196078, 1, 0, 1 )
-contour = true
 
 [node name="ColorSwatch4" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 36.0
@@ -356,6 +388,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.243137, 0.537255, 0.882353, 1 )
+contour = true
 
 [node name="ColorSwatch6" type="TextureButton" parent="Control/VBoxContainer/GunColor" instance=ExtResource( 9 )]
 margin_left = 60.0
@@ -420,6 +453,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.243137, 0.643137, 0.976471, 1 )
+contour = true
 
 [node name="ColorSwatch3" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 24.0
@@ -468,7 +502,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 color = Color( 0.729412, 0.0784314, 0.12549, 1 )
-contour = true
 
 [node name="ColorSwatch7" type="TextureButton" parent="Control/VBoxContainer/DressColor" instance=ExtResource( 9 )]
 margin_left = 72.0
@@ -637,6 +670,28 @@ color = Color( 0.270588, 0.337255, 0.517647, 0.870588 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="Control/Background"]
+margin_left = 61.0
+margin_top = 58.0
+margin_right = 94.0
+margin_bottom = 64.0
+rect_scale = Vector2( 1.64764, 12.1601 )
+color = Color( 0.454902, 0.560784, 0.662745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mirror" type="Sprite" parent="Control/Background"]
+position = Vector2( 87, 86 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+hframes = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Background"]
+autoplay = "New Anim"
+"anims/New Anim" = SubResource( 1 )
+anims/RESET = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
