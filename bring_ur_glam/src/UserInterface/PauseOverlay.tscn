@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/UserInterface/CustomizePlayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/UserInterface/PauseOverlay.gd" type="Script" id=4]
 [ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=5]
@@ -34,7 +33,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 150.0
-margin_bottom = 111.0
+margin_bottom = 104.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -61,11 +60,6 @@ margin_top = 69.0
 margin_right = 150.0
 margin_bottom = 88.0
 text = "How to play"
-
-[node name="QuitButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 92.0
-margin_right = 150.0
-margin_bottom = 111.0
 
 [node name="SoundControl" parent="." instance=ExtResource( 7 )]
 visible = false
