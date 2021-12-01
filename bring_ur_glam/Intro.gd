@@ -1,7 +1,7 @@
 extends Node2D
 
 const story = [
-    ["Glamoureus", "Hello Sal"],
+    ["Glamoureus", "Hello Sal."],
     ["Sal", "Hey!"],
     ["Glamoureus", "Rio is undergoing a serious crisis."],
     ["Glamoureus", "The toxic masculinity soldiers are taking over."],
@@ -20,13 +20,15 @@ const story = [
 ]
 
 var current = -1
-
+var ready = false
+var complete = false
 
 func _next_line():
     if current + 1 == len(story):
         $ChangeSceneButton.visible = true
-        $ChangeSceneButton.grab_focus()
         $Next.visible = false
+        complete = true
+        $Timer.start()
         return
     current += 1
     var story_line = story[current]
@@ -60,7 +62,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-    if Input.is_action_just_pressed("ui_accept") and $Timer.is_stopped() and current <= len(story):
+    if ready and Input.is_action_just_pressed("ui_accept") and $Timer.is_stopped() and current <= len(story):
         _next_line()
     
     if $SoundControl.visible and Input.is_action_pressed("ui_cancel"):
@@ -69,7 +71,10 @@ func _process(delta: float) -> void:
 
 
 func _on_Timer_timeout() -> void:
-    $Next.visible = true
+    if not complete:
+        $Next.visible = true
+    else:
+        $ChangeSceneButton.grab_focus()
 
 
 func _on_BackgroundTween_tween_all_completed() -> void:
@@ -80,6 +85,7 @@ func _on_BackgroundTween_tween_all_completed() -> void:
 
 func _on_TextBoxTween_tween_all_completed() -> void:
     $Next.visible = true
+    ready = true
 
 
 func _on_SettingsButton_pressed() -> void:
