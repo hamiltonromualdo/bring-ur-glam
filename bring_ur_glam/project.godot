@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/Enemy.gd"
 }, {
+"base": "Reference",
+"class": "EnemyColor",
+"language": "GDScript",
+"path": "res://src/Actors/EnemyColor.gd"
+}, {
 "base": "Control",
 "class": "HealthBar",
 "language": "GDScript",
@@ -60,6 +65,7 @@ _global_script_class_icons={
 "ColorSelectorBase": "",
 "ColorSwatch": "",
 "Enemy": "",
+"EnemyColor": "",
 "HealthBar": "",
 "PickableItem": "",
 "PickableItemType": "",
