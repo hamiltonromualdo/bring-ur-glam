@@ -9,6 +9,9 @@ func _on_DoorArea_body_entered(_body):
         var error = get_tree().change_scene("res://src/Levels/EndGame.tscn")
         if error:
             print("Error in door enter: ", error)
+    else:
+        $HelpMessage.visible = true
+        $HelpTimer.start()
 
 
 func _on_Enemy15_died() -> void:
@@ -23,3 +26,7 @@ func _on_Enemy15_died() -> void:
     $Tween.start()
     
     can_go_to_next = true
+
+
+func _on_HelpTimer_timeout() -> void:
+    $HelpMessage.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://src/Levels/WalkingPath.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Playground.gd" type="Script" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=18]
 [ext_resource path="res://assets/bg/pl_city.png" type="Texture" id=19]
 [ext_resource path="res://src/Objects/PickableItem.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://assets/ui/flat_pixel_theme.tres" type="Theme" id=22]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -1826,6 +1828,10 @@ extents = Vector2( 8, 3 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 18.5 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 8
+font_data = ExtResource( 21 )
+
 [node name="Playground" type="Node2D"]
 script = ExtResource( 2 )
 KEY = ExtResource( 20 )
@@ -2118,5 +2124,26 @@ type = 2
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="HelpMessage" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 2057.11
+margin_top = 78.4846
+margin_right = 2201.11
+margin_bottom = 117.485
+theme = ExtResource( 22 )
+custom_constants/line_separation = 4
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]One of the enemies might be holding the key to finish all this![/center]"
+text = "One of the enemies might be holding the key to finish all this!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="died" from="Enemies/Enemy15" to="." method="_on_Enemy15_died"]
 [connection signal="body_entered" from="DoorArea" to="." method="_on_DoorArea_body_entered"]
+[connection signal="timeout" from="HelpTimer" to="." method="_on_HelpTimer_timeout"]
