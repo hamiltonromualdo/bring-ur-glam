@@ -49,15 +49,15 @@ border_width_bottom = 2
 border_color = Color( 0, 0.270588, 0.396078, 1 )
 
 [sub_resource type="StyleBoxLine" id=15]
-color = Color( 0, 0.270588, 0.396078, 1 )
+color = Color( 0.337255, 0.419608, 0.65098, 1 )
 thickness = 6
 
 [sub_resource type="StyleBoxLine" id=16]
-color = Color( 0, 0.352941, 0.509804, 1 )
+color = Color( 0.416, 0.5184, 0.8, 1 )
 thickness = 6
 
 [sub_resource type="StyleBoxLine" id=17]
-color = Color( 0, 0.447059, 0.686275, 1 )
+color = Color( 0.133333, 0.164706, 0.25098, 1 )
 thickness = 6
 
 [sub_resource type="DynamicFont" id=10]
