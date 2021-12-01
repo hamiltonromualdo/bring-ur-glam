@@ -16,6 +16,8 @@ const SPRITE = {
 
 
 export (PickableItemType.Type) var type = PickableItemType.Type.Star
+signal picked(instance_id)
+
 
 func _incr_position(pos: float) -> void:
     $Sprite.position.y += pos
@@ -34,6 +36,7 @@ func _on_Star_body_entered(_body: Node) -> void:
 
 
 func _on_Bubble_animation_finished() -> void:
+    emit_signal("picked", get_instance_id())
     queue_free()
 
 
