@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/bg/pl_sunset_large.png" type="Texture" id=13]
 [ext_resource path="res://assets/bg/cristo.png" type="Texture" id=14]
 [ext_resource path="res://assets/bg/pl_sea.png" type="Texture" id=15]
+[ext_resource path="res://src/UserInterface/WinScreen.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
@@ -27,7 +28,7 @@ font_data = ExtResource( 10 )
 
 [node name="EndGame" type="Node2D"]
 script = ExtResource( 2 )
-win_scene = ExtResource( 12 )
+win_scene = ExtResource( 16 )
 
 [node name="Sky" type="Sprite" parent="."]
 position = Vector2( 216, -96 )
