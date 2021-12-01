@@ -11,6 +11,8 @@ func _unhandled_input(event: InputEvent) -> void:
         # to the pause screen
         if $SoundControl.visible:
             $SoundControl.visible = false
+        elif $HowToPlay.visible:
+            $HowToPlay.visible = false
         else:
             self.paused = not self.paused
 
@@ -37,3 +39,7 @@ func _on_Resume_button_up() -> void:
 
 func _on_SoundControlButton_pressed() -> void:
     $SoundControl.visible = true
+
+
+func _on_HowToPlayButton_pressed() -> void:
+    $HowToPlay.visible = true

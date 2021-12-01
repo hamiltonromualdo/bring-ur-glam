@@ -1,0 +1,226 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/dogica/dogicapixel.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/buttons.png" type="Texture" id=2]
+[ext_resource path="res://src/Objects/PickableItem.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/menu_rio.png-de65a1cb4e1340052aa5831c31ce0d85.stex"
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+font_data = ExtResource( 1 )
+
+[node name="HowToPlay" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( -16, -56 )
+scale = Vector2( 1.5, 1.5 )
+texture = SubResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0.270588, 0.337255, 0.517647, 0.623529 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 49, 69 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 24, 40, 8, 8 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 33, 87 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 48, 8, 8 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 49, 87 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 24, 48, 8, 8 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 65, 87 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 32, 48, 8, 8 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 122, 85 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 64, 16, 8 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 73, 137 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 56, 8, 8 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+position = Vector2( 97, 137 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 88, 0, 8, 8 )
+
+[node name="HowToPlay" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 316.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]How to Play[/center]"
+text = "How to Play"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 21.0
+margin_top = 98.0
+margin_right = 77.0
+margin_bottom = 110.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Move[/center]"
+text = "Move"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 94.0
+margin_top = 98.0
+margin_right = 150.0
+margin_bottom = 110.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Jump[/center]"
+text = "Jump"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 57.0
+margin_top = 150.0
+margin_right = 113.0
+margin_bottom = 162.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Shoot[/center]"
+text = "Shoot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 215.0
+margin_top = 66.0
+margin_right = 293.0
+margin_bottom = 78.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Shield"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+margin_left = 215.0
+margin_top = 103.0
+margin_right = 291.0
+margin_bottom = 115.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Glam"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+margin_left = 215.0
+margin_top = 137.0
+margin_right = 302.0
+margin_bottom = 149.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite8" type="Sprite" parent="."]
+
+[node name="Shield" parent="." instance=ExtResource( 3 )]
+position = Vector2( 194, 71 )
+type = 3
+
+[node name="CollisionShape2D" parent="Shield" index="1"]
+visible = false
+
+[node name="Shadow" parent="Shield" index="3"]
+visible = false
+
+[node name="Glam" parent="." instance=ExtResource( 3 )]
+position = Vector2( 194, 107 )
+type = 4
+
+[node name="CollisionShape2D" parent="Glam" index="1"]
+visible = false
+
+[node name="Shadow" parent="Glam" index="3"]
+visible = false
+
+[node name="Unicorn" parent="." instance=ExtResource( 3 )]
+position = Vector2( 194, 142 )
+type = 2
+
+[node name="CollisionShape2D" parent="Unicorn" index="1"]
+visible = false
+
+[node name="Shadow" parent="Unicorn" index="3"]
+visible = false
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="."]
+margin_left = 232.0
+margin_top = 168.0
+margin_right = 320.0
+margin_bottom = 176.0
+custom_fonts/normal_font = SubResource( 4 )
+text = "[Esc to leave]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="Shield"]
+[editable path="Glam"]
+[editable path="Unicorn"]
